@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="utf-8">
+		<title>Gini Graph</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<style>
+			#plot {
+				height: 600px;
+				width: 1000px;
+				background-color: white
+			}
+		</style>
+	</head>
+
+	<body>
+		
+		<div id='plot'></div>
+		<button id='button' onclick="toRaw()">Raw axes</button>
+		<button id='button' onclick="toNormal()">Normalilzed axes</button>		
+		<button id='button' onclick="toRatio()">Raw axes (payments to GDP ratio)</button>
+		
+		<script>
+			var margin = {top:40, bottom:40, left:150, right:40}
+			var width = 1000 - margin.left - margin.right
+			var height = 600 - margin.top - margin.bottom
+			
+			var svg = d3.select('#plot').append('svg')
+							.attr('width', width + margin.left + margin.right)
+							.attr('height', height + margin.top + margin.bottom)
+						.append('g')
+							.attr('transform','translate('+margin.left+','+margin.top+')')
+			
+			//svg.append('circle').attr('cx',0).attr('cy',0).attr('r',5)
+			var tooltip = d3.select("body")
+										.append("div")
+										.attr('class','tooltip')
+										.style('color','black')
+										.style("position", "absolute")
+										.style("z-index", "10")
+			
+			var dat
+			
+			var datNest
+			
+			var flags = [], uniqueCountry = [], l, i;
+			
+			d3.csv('giniData2.csv', function(data) {
+				dat = data
+				
+				datNest = d3.nest()
+							.key(function(d){return d.country})
+							.sortKeys(d3.ascending)
+							.entries(data)
+							
+				for( i=0; i<datNest.length; i++) {
+					if( flags[datNest[i].key]) continue;
+					flags[datNest[i].key] = true;
+					uniqueCountry.push(datNest[i].key);
+				}
+				
+				yScaleRaw = d3.scaleLinear()
+								.domain([0, d3.max(data, function(d){return +d.raw_pay})])
+								.range([height, 0])
+				
+				yScaleNorm = d3.scaleLinear()
+								.domain([0, d3.max(data, function(d){return +d.norm_pay})])
+								.range([height, 0])
+				
+				yScaleGDP = d3.scaleLinear()
+								.domain([0, d3.max(data, function(d){return +d.ratio_pay})])
+								.range([height, 0])
+				
+				xScaleRaw = d3.scaleLinear()
+								.domain([0, d3.max(data, function(d){return +d.raw_place})])
+								.range([0, width])
+				
+				xScaleNorm = d3.scaleLinear()
+								.domain([0, d3.max(data, function(d){return +d.norm_place})])
+								.range([0, width])
+								
+				fillScale = d3.scaleOrdinal()
+								.range(d3.schemeCategory20) //(d3.schemeCategory20);
+								.domain([uniqueCountry])
+				
+				lineScaleRaw = d3.line()
+								//.curve(d3.curveCardinal())
+								.x(function(d){return xScaleRaw(d.raw_place)})
+								.y(function(d){return yScaleRaw(d.raw_pay)})								
+				lineScaleNormal = d3.line()
+								//.curve(d3.curveCardinal())
+								.x(function(d){return xScaleNorm(d.norm_place)})
+								.y(function(d){return yScaleNorm(d.norm_pay)})				
+				lineScaleRatio = d3.line()
+								//.curve(d3.curveCardinal())
+								.x(function(d){return xScaleRaw(d.raw_place)})
+								.y(function(d){return yScaleGDP(d.ratio_pay)})				
+				
+					
+				
+				xAxisRaw = d3.axisBottom(xScaleRaw)
+				xAxisNormal = d3.axisBottom(xScaleNorm)
+				
+				yAxisRaw = d3.axisLeft(yScaleRaw)
+				yAxisRatio = d3.axisLeft(yScaleGDP)
+				yAxisNormal = d3.axisLeft(yScaleNorm)
+				
+				svg.selectAll('path')
+					.data(datNest, function(d) {return d})
+					.enter()
+					.append('path')
+						.attr('d', function(d) {return lineScaleRaw(d.values)})
+						.attr('stroke', function(d) {return fillScale(d.key)})
+						.attr('stroke-width', 2)
+						.attr('opacity',.6)
+						.attr('fill', 'none')
+						.on('mouseover', function(d,i) {
+							d3.select(this)
+								.transition()
+								.duration(400)
+								.attr('stroke-width', 4)
+								.attr('stroke', 'black')
+								.attr('opacity',1)
+							d3.select('.tooltip')
+								tooltip.transition()
+									.style('visibility','visible')
+								tooltip.html('<b>'+ d.key +'</b>')
+											.style('font-size','14px')
+											.style('font-family','sans-serif')
+											.style("left", (d3.event.pageX + 8) + "px")
+											.style("top", (d3.event.pageY - 35) + "px")
+						})
+						.on('mouseout', function(d,i) {
+							d3.select(this)
+								.transition()
+								.duration(400)
+								.attr('stroke-width', 2)
+								.attr('opacity',.6)
+								.attr('stroke', function(d){return fillScale(d.key)})
+							d3.select('.tooltip')
+								tooltip.transition()
+									.style('visibility','hidden')
+						})
+				svg.append('text')
+					.attr('class', 'xlab')
+					.attr('x', width/2)
+					.attr('y', height+margin.bottom-7)
+					.attr('opacity', 1)
+					.attr('text-anchor', 'middle')
+					.style('font-size','16px').style('font-family','sans-serif')						
+					.text("Number of companies")
+				svg.append('text')
+					.attr('class', 'ylab')
+					.attr('text-anchor', 'middle')
+					.attr('opacity', 1)
+					//.attr('x', '50%')
+					//.attr('y', height/2)
+					.attr('transform','translate('+(-margin.left/1.5)+','+(height/2)+')'+'rotate(-90)')
+					.style('font-size','16px').style('font-family','sans-serif')						
+					.text("Cumulative Payments (USD)")
+						
+				d3.select('svg').append('g')
+					.attr('class', 'xaxis')
+					.attr('transform', 'translate('+ margin.left +','+ (height+margin.bottom) +')')
+					.call(xAxisRaw)
+				d3.select('svg').append('g')
+					.attr('class', 'yaxis')
+					.attr('transform', 'translate('+ margin.left +','+ margin.top +')')
+					.call(yAxisRaw)
+				
+				
+			});
+			
+			xAxisToNormal = function() {
+				d3.select('.axis')
+					.transition()
+					.duration(3000)
+					.call(xAxisNormal)
+				
+			}
+			
+			toNormal = function() {				
+				//d3.selectAll('path')
+				svg.selectAll('path')
+					.transition()
+					.duration(3000)
+						//.attr('stroke-width', 5)
+						.attr('d', function(d) {return lineScaleNormal(d.values)})
+				d3.select('.xaxis')
+					.transition()
+					.duration(3000)
+					.call(xAxisNormal)
+				d3.select('.yaxis')
+					.transition()
+					.duration(3000)
+					.call(yAxisNormal)
+				d3.select('.ylab')
+					.transition()
+						.duration(1500)
+						.attr('opacity', 0)
+					.transition()
+						.duration(1500)
+						.text('Cumulative share of payments')
+						.attr('opacity', 1)
+				d3.select('.xlab')
+					.transition()
+						.duration(1500)
+						.attr('opacity', 0)
+					.transition()
+						.duration(1500)
+						.text('Cumulative share of companies')
+						.attr('opacity', 1)
+						
+			}
+			
+			toRaw = function() {				
+				//d3.selectAll('path')
+				svg.selectAll('path')
+					.transition()
+					.duration(3000)
+						//.attr('stroke-width', 5)
+						.attr('d', function(d) {return lineScaleRaw(d.values)})
+				d3.select('.xaxis')
+					.transition()
+					.duration(3000)
+					.call(xAxisRaw)
+				d3.select('.yaxis')
+					.transition()
+					.duration(3000)
+					.call(yAxisRaw)
+				d3.select('.ylab')
+					.transition()
+						.duration(1500)
+						.attr('opacity', 0)
+					.transition()
+						.duration(1500)
+						.text('Cumulative payments (USD)')
+						.attr('opacity', 1)
+				d3.select('.xlab')
+					.transition()
+						.duration(1500)
+						.attr('opacity', 0)
+					.transition()
+						.duration(1500)
+						.text('Cumulative number of companies')
+						.attr('opacity', 1)
+				
+			}
+			
+			toRatio = function() {				
+				//d3.selectAll('path')
+				svg.selectAll('path')
+					.transition()
+					.duration(3000)
+						//.attr('stroke-width', 5)
+						.attr('d', function(d) {return lineScaleRatio(d.values)})
+				d3.select('.xaxis')
+					.transition()
+					.duration(3000)
+					.call(xAxisRaw)
+				d3.select('.yaxis')
+					.transition()
+					.duration(3000)
+					.call(yAxisRatio)
+				d3.select('.ylab')
+					.transition()
+						.duration(1500)
+						.attr('opacity', 0)
+					.transition()
+						.duration(1500)
+						.text('Cumulative ratio of payments to GDP')
+						.attr('opacity', 1)
+				d3.select('.xlab')
+					.transition()
+						.duration(1500)
+						.attr('opacity', 0)
+					.transition()
+						.duration(1500)
+						.text('Cumulative number of companies')
+						.attr('opacity', 1)
+						
+			}
+		
+		
+		</script>
+	</body>
+
+
+</html>
