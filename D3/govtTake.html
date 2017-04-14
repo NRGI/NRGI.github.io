@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="utf-8">
-		<title>Gini Graph</title>
+		<title>Latin America Government Take</title>
         <script src="https://d3js.org/d3.v4.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		
@@ -38,7 +38,7 @@
 		</div>
 		
 		<div>
-			<button id='button' onclick="switchGraph()">Switch Y Axis</button>
+			<button id='button' onclick="switchGraph()">Switch</button>
 			<h4></h4>
 		</div>
 		<script>
@@ -193,7 +193,7 @@
 					.attr('y', -0)
 					.text("Bolivia")
 				
-				d3.select('h4').append('text').text('Showing: Government revenue from extractive industries (million USD)')
+				d3.select('h4').append('text').text('Y-axis: Government revenue from extractive industries (million USD)')
 				
 				
 			})
@@ -213,7 +213,7 @@
 								d3.select('h4')
 									.transition()
 									.duration(1000)
-									.text('Showing: Total value of extraction industries production  (million USD)')
+									.text('Y-axis: Total value of extraction industries production  (million USD)')
 								
 								active2 = 'no'
 							} else {
@@ -232,7 +232,7 @@
 								d3.select('h4')
 									.transition()
 									.duration(1000)
-									.text('Showing: Government revenue from extractive industries  (million USD)')
+									.text('Y-axis: Government revenue from extractive industries  (million USD)')
 								
 								active2 = 'yes'
 							}			
