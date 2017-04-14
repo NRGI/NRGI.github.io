@@ -88,6 +88,7 @@
 				xScale = d3.scaleLinear()
 							.domain([d3.min(dat, function(d){return +d.Year}), d3.max(dat, function(d){return +d.Year})])
 							.range([0 , width])
+							//.format('04d')//.tickFormat(d3.format("d"))
 							
 				//Use w/ `value`
 				yScaleGov =d3.scaleLinear()
@@ -108,7 +109,7 @@
 									.range([.3, 1])
 
 				
-				xAxis = d3.axisBottom(xScale)
+				xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d"))
 				yAxisGov = d3.axisLeft(yScaleGov)
 				yAxisTotal = d3.axisLeft(yScaleTotal)
 				
