@@ -125,7 +125,7 @@
 									.range([.3, 1])
 
 				
-				xAxis = d3.axisBottom(xScale)
+				xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d"))
 				yAxisGov = d3.axisLeft(yScaleGov)
 				yAxisTotal = d3.axisLeft(yScaleTotal)
 				
