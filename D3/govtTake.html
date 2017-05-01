@@ -3,14 +3,18 @@
 	
 	<head>
 		<meta charset="utf-8">
-		<title>Latin America Government Take</title>
+		<title>Gini Graph</title>
         <script src="https://d3js.org/d3.v4.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		
 		<style>
+			html {
+				font-family: "Lucida Sans Unicode"
+			}
+		
 			#plot {
 				height:600px;
-				width:1000px
+				width:1500px
 			}
 			
 			#plot1 {
@@ -25,6 +29,12 @@
 				width: 500px;
 				background-color: white
 			}
+			#plot3 {
+				float: right;
+				height: 600px;
+				width: 500px;
+				background-color: white
+			}
 			#button {
 				float: left;
 			}
@@ -35,10 +45,11 @@
 		<div id='plot'>
 			<div id='plot1'></div>
 			<div id='plot2'></div>
+			<div id='plot3'></div>
 		</div>
 		
 		<div>
-			<button id='button' onclick="switchGraph()">Switch</button>
+			<button id='button' onclick="switchGraph()">Switch Y Axis</button>
 			<h4></h4>
 		</div>
 		<script>
@@ -53,6 +64,12 @@
 							.attr('transform','translate('+margin.left+','+margin.top+')')
 			
 			var svg2 = d3.select('#plot2').append('svg')
+							.attr('width', width + margin.left + margin.right)
+							.attr('height', height + margin.top + margin.bottom)
+						.append('g')
+							.attr('transform','translate('+margin.left+','+margin.top+')')
+			
+			var svg3 = d3.select('#plot3').append('svg')
 							.attr('width', width + margin.left + margin.right)
 							.attr('height', height + margin.top + margin.bottom)
 						.append('g')
@@ -83,12 +100,11 @@
 			var active2 = 'yes'
 			var samp
 			
-			d3.csv('govtTake.csv', function(data) {
+			d3.csv('govtTake3.csv', function(data) {
 				dat = data
 				xScale = d3.scaleLinear()
 							.domain([d3.min(dat, function(d){return +d.Year}), d3.max(dat, function(d){return +d.Year})])
 							.range([0 , width])
-							//.format('04d')//.tickFormat(d3.format("d"))
 							
 				//Use w/ `value`
 				yScaleGov =d3.scaleLinear()
@@ -109,7 +125,7 @@
 									.range([.3, 1])
 
 				
-				xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d"))
+				xAxis = d3.axisBottom(xScale)
 				yAxisGov = d3.axisLeft(yScaleGov)
 				yAxisTotal = d3.axisLeft(yScaleTotal)
 				
@@ -119,6 +135,7 @@
 					.enter()
 					.append('rect')
 						.attr('class', 'Peru')
+						.attr('class', function(d,i){return "bar"+i})
 						.attr('year', function(d){return Math.round(d.Year)})
 						.attr('x', function(d){return xScale(+d.Year)-15})
 						.attr('y', function(d){return yScaleGov(+d.value)})
@@ -134,6 +151,7 @@
 					.append('rect')
 						.attr('year', function(d){return Math.round(d.Year)})
 						.attr('class', 'Bolivia')
+						.attr('class', function(d,i){return "bar"+i})
 						.attr('x', function(d){return xScale(+d.Year)-15})
 						.attr('y', function(d){return yScaleGov(+d.value)})
 						.attr('height', function(d){return height-yScaleGov(+d.value)})
@@ -141,6 +159,20 @@
 						.attr('fill','#FF6E49')
 						.attr('stroke','black')
 						//.attr('opacity', function(d){return oScale(+d.Percent)})
+				
+				svg3.selectAll('rect')
+					.data(dat.filter(function(d){return d.Country==='Ecuador'}))
+					.enter()
+					.append('rect')
+						.attr('year', function(d){return Math.round(d.Year)})
+						.attr('class', 'Ecuador')
+						.attr('class', function(d,i){return "bar"+i})
+						.attr('x', function(d){return xScale(+d.Year)-15})
+						.attr('y', function(d){return yScaleGov(+d.value)})
+						.attr('height', function(d){return height-yScaleGov(+d.value)})
+						.attr('width', 30)
+						.attr('fill','#FF6E49')
+						.attr('stroke','black')
 					
 				d3.selectAll('rect')
 					.on('mouseover', function(d,i) {
@@ -152,14 +184,15 @@
 								.transition()
 								.duration(400)
 								.attr('fill','#517186')
-							d3.select('.tooltip')
-								tooltip.transition()
-									.style('visibility','visible')
-								tooltip.html('<b>$'+ display.toLocaleString() +'</b>')
-											.style('font-size','14px')
-											.style('font-family','sans-serif')
-											.style("left", (d3.event.pageX-10) + "px")
-											.style("top", (d3.event.pageY - 35) + "px")
+							//d3.select('.tooltip')
+							//	tooltip.transition()
+							//		.style('visibility','visible')
+							//	tooltip.html('<b>$'+ display.toLocaleString() +'</b>')
+							//				.style('font-size','14px')
+							//				.style('font-family','sans-serif')
+							//				.style("left", (d3.event.pageX-10) + "px")											
+							//				.style("top", (d3.event.pageY - 35) + "px")
+											
 						})
 						.on('mouseout', function(d,i) {
 							d3.selectAll('[year="'+year+'"]')
@@ -167,9 +200,9 @@
 								.duration(400)
 								.attr('fill','#FF6E49')
 								//.attr('stroke', function(d){return fillScale(d.key)})
-							d3.select('.tooltip')
-								tooltip.transition()
-									.style('visibility','hidden')
+							//d3.select('.tooltip')
+							//	tooltip.transition()
+							//		.style('visibility','hidden')
 						})
 				
 				
@@ -187,13 +220,20 @@
 				svg1.append('text')
 					.attr('x', ((width/2)-margin.left))
 					.attr('y', -10)
+					.style('font-family', "Lucida Sans Unicode")
 					.text("Peru")
 				svg2.append('text')
 					.attr('x', ((width/2)-margin.left))
 					.attr('y', -0)
+					.style('font-family', "Lucida Sans Unicode")
 					.text("Bolivia")
+				svg3.append('text')
+					.attr('x', ((width/2)-margin.left))
+					.attr('y', -0)
+					.style('font-family', "Lucida Sans Unicode")
+					.text("Ecuador")
 				
-				d3.select('h4').append('text').text('Y-axis: Government revenue from extractive industries (million USD)')
+				d3.select('h4').append('text').text('Showing: Government take (million USD)')
 				
 				
 			})
@@ -213,7 +253,7 @@
 								d3.select('h4')
 									.transition()
 									.duration(1000)
-									.text('Y-axis: Total value of extraction industries production  (million USD)')
+									.text('Showing: Total production value (million USD)')
 								
 								active2 = 'no'
 							} else {
@@ -232,7 +272,7 @@
 								d3.select('h4')
 									.transition()
 									.duration(1000)
-									.text('Y-axis: Government revenue from extractive industries  (million USD)')
+									.text('Showing: Government take (million USD)')
 								
 								active2 = 'yes'
 							}			
