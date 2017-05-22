@@ -5,7 +5,6 @@
 		<meta charset="utf-8">
 		<title>Gini Graph</title>
         <script src="https://d3js.org/d3.v4.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		
 		<style>
 			html {
@@ -38,20 +37,25 @@
 			#button {
 				float: left;
 			}
+			
+			.yaxis { font: 14px sans-sarif; }
+			
+			.xaxis { font: 14px sans-serif; }
+			
 		</style>
 	</head>
 
 	<body>
-		<div id='plot'>
-			<div id='plot1'></div>
-			<div id='plot2'></div>
-			<div id='plot3'></div>
-		</div>
-		
 		<div>
 			<button id='button' onclick="switchGraph()">Switch Y Axis</button>
 			<h4></h4>
 		</div>
+		<div id='plot'>
+			<div id='plot1'></div>
+			<div id='plot2'></div>
+			<div id='plot3'></div>
+		</div>		
+		
 		<script>
 			var margin = {top:40, bottom:40, left:70, right:40}
 			var width = 500 - margin.left - margin.right
@@ -86,6 +90,8 @@
 			//svg.append('circle').attr('cx',0).attr('cy',0).attr('r',5)
 						
 			var dat
+			
+			//var jdat = [{"Year":"2004.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":504.3557,"totalValue":1793.2067,"Percent":0.2813},{"Year":"2004.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":2115.4,"totalValue":1622,"Percent":1.3042},{"Year":"2004.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":1128.135,"totalValue":9264.6184,"Percent":0.1218},{"Year":"2005.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":924.2705,"totalValue":2419.7542,"Percent":0.382},{"Year":"2005.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":2211.598,"totalValue":2300,"Percent":0.9616},{"Year":"2005.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":2099.6016,"totalValue":12520.2069,"Percent":0.1677},{"Year":"2006.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":1605.7171,"totalValue":3484.7992,"Percent":0.4608},{"Year":"2006.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":3235.007,"totalValue":3773,"Percent":0.8574},{"Year":"2006.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":3767.4477,"totalValue":18661.4408,"Percent":0.2019},{"Year":"2007.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":2050.1553,"totalValue":4137.581,"Percent":0.4955},{"Year":"2007.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":3318.06,"totalValue":4012,"Percent":0.827},{"Year":"2007.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":4192.5156,"totalValue":21824.896,"Percent":0.1921},{"Year":"2008.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":2849.7179,"totalValue":6004.4781,"Percent":0.4746},{"Year":"2008.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":8675.272,"totalValue":6463,"Percent":1.3423},{"Year":"2008.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":4046.4139,"totalValue":23513.5267,"Percent":0.1721},{"Year":"2009.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":2751.3778,"totalValue":4667.4792,"Percent":0.5895},{"Year":"2009.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":5211.501,"totalValue":4460,"Percent":1.1685},{"Year":"2009.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":3285.3254,"totalValue":19844.3933,"Percent":0.1656},{"Year":"2010.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":2908.6627,"totalValue":6290.2828,"Percent":0.4624},{"Year":"2010.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":7845.02,"totalValue":6728,"Percent":1.166},{"Year":"2010.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":4939.4771,"totalValue":26567.966,"Percent":0.1859},{"Year":"2011.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":3697.3589,"totalValue":8540.6074,"Percent":0.4329},{"Year":"2011.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":12934.602,"totalValue":11762,"Percent":1.0997},{"Year":"2011.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":6816.3201,"totalValue":34489.2534,"Percent":0.1976},{"Year":"2012.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":4899.3079,"totalValue":10486.4125,"Percent":0.4672},{"Year":"2012.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":12219.706,"totalValue":12711,"Percent":0.9613},{"Year":"2012.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":6521.9281,"totalValue":32821.1892,"Percent":0.1987},{"Year":"2013.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":5782.8644,"totalValue":11063.1333,"Percent":0.5227},{"Year":"2013.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":11433.388,"totalValue":13412,"Percent":0.8525},{"Year":"2013.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":5580.3545,"totalValue":29591.4218,"Percent":0.1886},{"Year":"2014.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":5960.6,"totalValue":11461.765,"Percent":0.52},{"Year":"2014.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":10905.823,"totalValue":13016,"Percent":0.8379},{"Year":"2014.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":4712.8469,"totalValue":26286.5874,"Percent":0.1793}]
 			
 			var xScale							
 			var yScaleGov
@@ -210,10 +216,12 @@
 				
 				d3.selectAll('svg').append('g')
 					.attr('class', 'xaxis')
+					//.attr('class', 'axis')
 					.attr('transform', 'translate('+ margin.left +','+ (height+margin.bottom) +')')
 					.call(xAxis)
 				d3.selectAll('svg').append('g')
 					.attr('class', 'yaxis')
+					//.attr('class','axis')
 					.attr('transform', 'translate('+ (margin.left-20) +','+ margin.top +')')
 					.call(yAxisGov)
 				
@@ -236,7 +244,7 @@
 				d3.select('h4').append('text').text('Showing: Government take (million USD)')
 				
 				
-			})
+			})			
 			
 			function switchGraph() {
 				if(active2=='yes') {
@@ -277,6 +285,8 @@
 								active2 = 'yes'
 							}			
 			}
+			
+
 		
 		
 		</script>
