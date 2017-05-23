@@ -184,6 +184,10 @@
 		
 			movePath2 = function() {
 				
+				console.log("start of movePath2")
+				
+				console.log(datNest[0].values[0])
+				
 				d3.selectAll('[tag=lines]').remove().selectAll('circle').remove()
 			//Add paths
 				lineScale = d3.line()
