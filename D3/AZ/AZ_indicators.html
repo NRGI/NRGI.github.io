@@ -116,7 +116,7 @@
 								.range([0, width])
 				lineScale = d3.line()
 								.curve(d3.curveCardinal())
-								.x(function(d){return timeScale(new Date(d.Year+',1,1'))})
+								.x(function(d){return xScale(d.Year)})//timeScale(new Date(d.Year+',1,1'))})
 								.y(function(d){return yScale(d.Value)}) //yVar??
 								
 				svg.append('g')
