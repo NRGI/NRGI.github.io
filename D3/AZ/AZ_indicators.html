@@ -18,7 +18,7 @@
 
 	<body>
 		
-		<button onClick="movePath2()" type="button">Click Me!</button>
+		<button onClick="movePath2()" type="button">Click for indicators</button>
 		
 		<div id="checks">
 			<label><input type="checkbox" class="box" value="Budget expenses of SOFAZ-total">Budget expenses of SOFAZ-total</label><br>
@@ -29,6 +29,7 @@
 			<label><input type="checkbox" class="box" value="Infrastructure-industrial">Infrastructure-industrial</label><br>
 			<label><input type="checkbox" class="box" value="Non-oil revenues of state budget">Non-oil revenues of state budget</label><br>
 			<label><input type="checkbox" class="box" value="Oil money in budget">Oil money in budget</label>
+			
 		</div>
 		
 		
@@ -37,18 +38,13 @@
 		
 		
 		<script>
-		$(document).ready(function(){
-			$('input[type=checkbox]').attr('checked',false);
-		});
 		
-		window.onload = function() {
-			console.log("loaded the onload")
+			$(document).ready(function(){
+				$('input[type=checkbox]').prop("checked", false);
+			});
 			
-		}
-			
-			d3.selectAll('[type=checkbox]').attr('checked', false)
-			var margin = {top:40, bottom:40, left:80, right:40}
-			var width = 1000 - margin.left - margin.right
+			var margin = {top:40, bottom:40, left:80, right:240}
+			var width = 1200 - margin.left - margin.right
 			var height = 600 - margin.top - margin.bottom
 			
 			var svg = d3.select('#plot').append('svg')
@@ -73,9 +69,12 @@
 			var lineScale
 			var flags = [], uniqueInd = [], l, i;
 			
-			
+			console.log("before load csv")
 			
 			d3.csv('az_long.csv', function(data) {
+				
+				dat=data
+				console.log("in the csv call")
 				//dat=data
 				data.forEach(function(d) {
 					d.Value = +d.Value;
@@ -93,7 +92,7 @@
 					uniqueInd.push(datNest[i].key);
 				}
 				
-				
+				console.log(datNest)
 				
 				
 				
@@ -101,11 +100,13 @@
 								.domain([0,d3.max(data, function(d){return +d.Value})])
 								.range([height,0])
 				xScale = d3.scaleLinear()
-								.domain([d3.min(data, function(d){return +d.Year}), d3.max(data, function(d){return +d.Year})])
+								.domain([d3.min(dat, function(d){return +d.Year}), d3.max(dat, function(d){return +d.Year})])
 								.range([0, width])
+								
+				
 				//rScale = d3.scaleLinear()
 				//				.domain([d3.min(data, function(d){return +d.GHG}),d3.max(data, function(d){return +d.GHG})])
-								.range([0,50])
+				//				.range([0,50])
 				fillScale = d3.scaleOrdinal()
 								.range(d3.schemeCategory20) //NRGI colors: "#FF6F4C", "#557288", "#53CAEC", "#DD5061", "#ffa893", "#aab9c4", "#5B5D62"
 								.domain([uniqueInd])
@@ -124,19 +125,30 @@
 					//.attr('transform','translate(-25,0)')
 					.call(d3.axisLeft(yScale))
 				
-				
+				console.log("end of csv")
 			
 			})				
 			
 		//FUNCTION set variables in datNest using a function
-		
-			var datNestTemp
+		console.log("after d3.csv")
+		var datNestTemp
 			
-			var choices = []	
+		var choices = []	
 			
-			d3.selectAll(".box").on("change",update);
-			update();			  
+		var tooltip = svg
+			.append("text")
+			//.style("position", "absolute")
+			.style("z-index", "10")
+			.style("visibility", "hidden")
+			//.text("a simple tooltip");
+			
+			
+			
+			
+				  
 			  
+			console.log("after update")
+			
 			function update(){
 				choices = []
 				d3.selectAll(".box").each(function(d){
@@ -164,16 +176,14 @@
 				}
 			}
 			
-			
-			
-		//movePath2 = function() {console.log("works")}
+			d3.selectAll(".box").on("change",update);
 			
 		//FUNCTION movePath2
 			var path
 		
 			movePath2 = function() {
 				
-				d3.selectAll('[name=lines]').remove().selectAll('circle').remove()
+				d3.selectAll('[tag=lines]').remove().selectAll('circle').remove()
 			//Add paths
 				lineScale = d3.line()
 								.curve(d3.curveCatmullRom)
@@ -189,7 +199,9 @@
 									.attr('d',function(d){return lineScale(d.values)})
 									.attr('class',function(d){return d.key.replace(/ /g,'')})
 									.attr('stroke',function(d){return fillScale(d.key)})
-									.attr('name', 'lines')
+									.attr('name', function(d){return d.key})
+									//.attr('xmax', d3.max(d, function(d){return d.Year}))
+									.attr('tag', 'lines')
 									.attr('stroke-width',2)
 									.attr('fill','none')
 								.each(function(d,i){
@@ -198,9 +210,29 @@
 										.attr("stroke-dasharray", node1 + " " + node1)
 										.attr("stroke-dashoffset", node1)
 										.transition()
-										.duration(10000)
+										.duration(5000)
 											.attr("stroke-dashoffset", 0);
-								})
+								})	
+								.on('mouseover', function(d){
+										len = d.values.length - 1
+										
+										d3.select(this)
+											.attr('stroke-width', 5)
+										tooltip.style("visibility", "visible")
+											.text(d.key)
+											.attr('x', xScale(2016)+6)
+											.attr('y', yScale(d.values[len].Value)+3)
+										console.log(d.values)
+									})
+								.on('mouseout', function(d){
+										d3.select(this)
+											.attr('stroke-width', 2)
+										tooltip.style("visibility", "hidden")
+									})
+				
+				
+				
+				
 			
 			//Add & move circles
 				svg.selectAll('circle')
