@@ -116,8 +116,8 @@
 								.range([0, width])
 				lineScale = d3.line()
 								.curve(d3.curveCardinal())
-								.x(function(d){return xScale(d.Year)})//timeScale(new Date(d.Year+',1,1'))})
-								.y(function(d){return yScale(d.yVar)}) //yVar??
+								//.x(function(d){return xScale(d.Year)})//timeScale(new Date(d.Year+',1,1'))})
+								//.y(function(d){return yScale(d.yVar)}) //yVar??
 								
 				svg.append('g')
 					.attr('transform','translate(0,'+height+')')
@@ -199,7 +199,7 @@
 				console.log(datNestTemp[0].values)
 				
 				svg.selectAll('path')
-								.data(datNestTemp, function(d){return d})
+								.data(datNestTemp, function(d){console.log("in datNestTemp data call"); return d})
 								.enter()
 								.append('path')
 									.attr('d',function(d){return lineScale(d.values)})
