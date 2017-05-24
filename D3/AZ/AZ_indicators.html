@@ -111,9 +111,14 @@
 				fillScale = d3.scaleOrdinal()
 								.range(d3.schemeCategory20) //NRGI colors: "#FF6F4C", "#557288", "#53CAEC", "#DD5061", "#ffa893", "#aab9c4", "#5B5D62"
 								.domain([uniqueInd])
+				//timeScale = d3.scaleTime()
+				//				.domain([new Date(d3.min(data, function(d){return (+d.Year) +',0,1'})), new Date(d3.max(data, function(d){return +d.Year+',0,1'}))])
+				//				.range([0, width])
 				timeScale = d3.scaleTime()
-								.domain([new Date(d3.min(data, function(d){return (+d.Year) +',0,1'})), new Date(d3.max(data, function(d){return +d.Year+',0,1'}))])
-								.range([0, width])
+								.domain(d3.extent(data, function(d) { return new Date(d.Year, 0, 1); }))
+								.range([0, width]);
+				
+				
 				lineScale = d3.line()
 								.curve(d3.curveCardinal())
 								//.x(function(d){return xScale(d.Year)})//timeScale(new Date(d.Year+',1,1'))})
@@ -191,8 +196,8 @@
 				d3.selectAll('[tag=lines]').remove().selectAll('circle').remove()
 			//Add paths
 				lineScale = d3.line()
-								.curve(d3.curveCatmullRom)
-								.x(function(d){return timeScale(new Date(d.Year+',1,1'))})
+								.curve(d3.curveCardinal)
+								.x(function(d){return xScale(d.Year)})//timeScale(new Date(d.Year+',1,1'))})
 								.y(function(d){return yScale(eval(d.Value))})
 				
 				
