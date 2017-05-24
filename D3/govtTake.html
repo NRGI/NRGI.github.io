@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="utf-8">
-		<title>Gini Graph</title>
+		<title>Andean DB</title>
         <script src="https://d3js.org/d3.v4.min.js"></script>
 		
 		<style>
@@ -12,28 +12,21 @@
 			}
 		
 			#plot {
-				height:600px;
-				width:1500px
+				
 			}
-			
 			#plot1 {
 				float: left;
-				height: 600px;
-				width: 500px;
-				background-color: white
+				
 			}
 			#plot2 {
 				float: left;
-				height: 600px;
-				width: 500px;
-				background-color: white
+				
 			}
 			#plot3 {
-				float: right;
-				height: 600px;
-				width: 500px;
-				background-color: white
+				float: left;
+				
 			}
+			
 			#button {
 				float: left;
 			}
@@ -57,9 +50,23 @@
 		</div>		
 		
 		<script>
+			
+			var plotHeight = 300
+			var plotWidth = 350
+			
 			var margin = {top:40, bottom:40, left:70, right:40}
-			var width = 500 - margin.left - margin.right
-			var height = 600 - margin.top - margin.bottom
+			var width = plotWidth - margin.left - margin.right
+			var height = plotHeight - margin.top - margin.bottom
+			
+			d3.select('#plot').style('height', plotHeight).style('width', 3 * plotWidth)
+			
+			d3.select('#plot').selectAll('div')
+								.data([['plot1','left'],['plot2', 'left'],['plot3','right']])
+								.enter()
+									.attr('id', function(d){return d[0]})
+									.attr('height', plotHeight)
+									.attr('width', plotWidth)
+									.style('float', function(d){return d[1]})
 			
 			var svg1 = d3.select('#plot1').append('svg')
 							.attr('width', width + margin.left + margin.right)
@@ -85,9 +92,6 @@
 										.style('color','black')
 										.style("position", "absolute")
 										.style("z-index", "10")
-			
-			
-			//svg.append('circle').attr('cx',0).attr('cy',0).attr('r',5)
 						
 			var dat
 			
@@ -105,6 +109,7 @@
 			var active1 = 'yes'
 			var active2 = 'yes'
 			var samp
+			var svgs = [[svg1, "Peru"], [svg2,"Bolivia"], [svg3,"Ecuador"]]
 			
 			d3.csv('govtTake3.csv', function(data) {
 				dat = data
@@ -114,72 +119,49 @@
 							
 				//Use w/ `value`
 				yScaleGov =d3.scaleLinear()
-								.domain([0, d3.max(dat, function(d){return +d.value})])
+								.domain([0, d3.max(dat, function(d){return +d.value/1000})])
 								.range([height, 0])
 				
 				//Use w/ `totalValue`
 				yScaleTotal =d3.scaleLinear()
-								.domain([0, d3.max(dat, function(d){return +d.totalValue})])
+								.domain([0, d3.max(dat, function(d){return +d.totalValue/1000})])
 								.range([height, 0])
 				
 				colorScale = d3.scaleQuantize()
 								.domain([d3.min(dat, function(d){return +d.Percent}), d3.max(dat, function(d){return +d.Percent})])
 								.range(["#5E4FA2", "#3288BD", "#66C2A5", "#ABDDA4", "#E6F598", "#FFFFBF", "#FEE08B", "#FDAE61", "#F46D43", "#D53E4F", "#9E0142"])
 
-				oScale = d3.scaleLinear()
-									.domain([0,1])//.domain([d3.min(dat, function(d){return +d.Percent}), d3.max(dat, function(d){return +d.Percent})])
-									.range([.3, 1])
-
 				
-				xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d"))
-				yAxisGov = d3.axisLeft(yScaleGov)
+				xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d")).ticks(5);
+				yAxisGov = d3.axisLeft(yScaleGov).ticks(5);
 				yAxisTotal = d3.axisLeft(yScaleTotal)
+			
+			///////////////////////////////
+			//GRAPH LOOP
 				
+				for(var i=0; i<svgs.length; i++) {
+					svgs[i][0].selectAll('rect')
+						.data(dat.filter(function(d){return d.Country===svgs[i][1]}))
+						.enter()
+						.append('rect')
+							.attr('class', 'Peru')
+							.attr('class', function(d,i){return "bar"+i})
+							.attr('year', function(d){return Math.round(d.Year)})
+							.attr('x', function(d){return xScale(+d.Year)-15})
+							.attr('y', function(d){return yScaleGov(+d.value/1000)})
+							.attr('height', function(d){return height-yScaleGov(+d.value/1000)})
+							.attr('width', 20)
+							.attr('fill','#FF6E49')
+							.attr('stroke','black')
+							
+					svgs[i][0].append('text')
+					.attr('x', ((width/2)-margin.left))
+					.attr('y', -10)
+					.style('font-family', "Lucida Sans Unicode")
+					.text(svgs[i][1])
+				}
 				
-				svg1.selectAll('rect')
-					.data(dat.filter(function(d){return d.Country==='Peru'}))
-					.enter()
-					.append('rect')
-						.attr('class', 'Peru')
-						.attr('class', function(d,i){return "bar"+i})
-						.attr('year', function(d){return Math.round(d.Year)})
-						.attr('x', function(d){return xScale(+d.Year)-15})
-						.attr('y', function(d){return yScaleGov(+d.value)})
-						.attr('height', function(d){return height-yScaleGov(+d.value)})
-						.attr('width', 30)
-						.attr('fill','#FF6E49')
-						.attr('stroke','black')
-						//.attr('opacity', function(d){return oScale(+d.Percent)})
-
-				svg2.selectAll('rect')
-					.data(dat.filter(function(d){return d.Country==='Bolivia'}))
-					.enter()
-					.append('rect')
-						.attr('year', function(d){return Math.round(d.Year)})
-						.attr('class', 'Bolivia')
-						.attr('class', function(d,i){return "bar"+i})
-						.attr('x', function(d){return xScale(+d.Year)-15})
-						.attr('y', function(d){return yScaleGov(+d.value)})
-						.attr('height', function(d){return height-yScaleGov(+d.value)})
-						.attr('width', 30)
-						.attr('fill','#FF6E49')
-						.attr('stroke','black')
-						//.attr('opacity', function(d){return oScale(+d.Percent)})
-				
-				svg3.selectAll('rect')
-					.data(dat.filter(function(d){return d.Country==='Ecuador'}))
-					.enter()
-					.append('rect')
-						.attr('year', function(d){return Math.round(d.Year)})
-						.attr('class', 'Ecuador')
-						.attr('class', function(d,i){return "bar"+i})
-						.attr('x', function(d){return xScale(+d.Year)-15})
-						.attr('y', function(d){return yScaleGov(+d.value)})
-						.attr('height', function(d){return height-yScaleGov(+d.value)})
-						.attr('width', 30)
-						.attr('fill','#FF6E49')
-						.attr('stroke','black')
-					
+									
 				d3.selectAll('rect')
 					.on('mouseover', function(d,i) {
 					
@@ -189,60 +171,25 @@
 							d3.selectAll('[year="'+year+'"]')
 								.transition()
 								.duration(400)
-								.attr('fill','#517186')
-							//d3.select('.tooltip')
-							//	tooltip.transition()
-							//		.style('visibility','visible')
-							//	tooltip.html('<b>$'+ display.toLocaleString() +'</b>')
-							//				.style('font-size','14px')
-							//				.style('font-family','sans-serif')
-							//				.style("left", (d3.event.pageX-10) + "px")											
-							//				.style("top", (d3.event.pageY - 35) + "px")
-											
+								.attr('fill','#517186')							
 						})
 						.on('mouseout', function(d,i) {
 							d3.selectAll('[year="'+year+'"]')
 								.transition()
 								.duration(400)
-								.attr('fill','#FF6E49')
-								//.attr('stroke', function(d){return fillScale(d.key)})
-							//d3.select('.tooltip')
-							//	tooltip.transition()
-							//		.style('visibility','hidden')
+								.attr('fill','#FF6E49')								
 						})
-				
-				
-				
 				
 				d3.selectAll('svg').append('g')
 					.attr('class', 'xaxis')
-					//.attr('class', 'axis')
 					.attr('transform', 'translate('+ margin.left +','+ (height+margin.bottom) +')')
 					.call(xAxis)
 				d3.selectAll('svg').append('g')
 					.attr('class', 'yaxis')
-					//.attr('class','axis')
 					.attr('transform', 'translate('+ (margin.left-20) +','+ margin.top +')')
 					.call(yAxisGov)
-				
-				svg1.append('text')
-					.attr('x', ((width/2)-margin.left))
-					.attr('y', -10)
-					.style('font-family', "Lucida Sans Unicode")
-					.text("Peru")
-				svg2.append('text')
-					.attr('x', ((width/2)-margin.left))
-					.attr('y', -0)
-					.style('font-family', "Lucida Sans Unicode")
-					.text("Bolivia")
-				svg3.append('text')
-					.attr('x', ((width/2)-margin.left))
-					.attr('y', -0)
-					.style('font-family', "Lucida Sans Unicode")
-					.text("Ecuador")
-				
-				d3.select('h4').append('text').text('Showing: Government take (million USD)')
-				
+								
+				d3.select('h4').append('text').text('Showing: Government take (billion USD)')				
 				
 			})			
 			
@@ -251,8 +198,8 @@
 								d3.selectAll('rect')
 									.transition()
 									.duration(1000)
-										.attr('y', function(d){return yScaleTotal(+d.totalValue)})
-										.attr('height', function(d){return height-yScaleTotal(+d.totalValue)});
+										.attr('y', function(d){return yScaleTotal(+d.totalValue/1000)})
+										.attr('height', function(d){return height-yScaleTotal(+d.totalValue/1000)});
 								
 								d3.selectAll('.yaxis')
 									.transition()
@@ -261,7 +208,7 @@
 								d3.select('h4')
 									.transition()
 									.duration(1000)
-									.text('Showing: Total production value (million USD)')
+									.text('Showing: Total production value (billion USD)')
 								
 								active2 = 'no'
 							} else {
@@ -269,8 +216,8 @@
 								d3.selectAll('rect')
 									.transition()
 									.duration(1000)
-										.attr('y', function(d){return yScaleGov(+d.value)})
-										.attr('height', function(d){return height-yScaleGov(+d.value)})
+										.attr('y', function(d){return yScaleGov(+d.value/1000)})
+										.attr('height', function(d){return height-yScaleGov(+d.value/1000)})
 								
 								d3.selectAll('.yaxis')
 									.transition()
@@ -280,7 +227,7 @@
 								d3.select('h4')
 									.transition()
 									.duration(1000)
-									.text('Showing: Government take (million USD)')
+									.text('Showing: Government take (billion USD)')
 								
 								active2 = 'yes'
 							}			

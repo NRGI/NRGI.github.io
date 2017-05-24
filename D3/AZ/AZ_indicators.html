@@ -69,9 +69,13 @@
 			var lineScale
 			var flags = [], uniqueInd = [], l, i;
 			
-			console.log("before load csv")
-			
-			d3.csv('az_long.csv', function(data) {
+			d3.csv('az_long.csv', function(data) {				
+				data = data.filter(function(d){
+					if(isNaN(d.Value)){
+						return false;
+					}
+					return true
+				})
 				
 				dat=data
 				console.log("in the csv call")
@@ -92,33 +96,22 @@
 					flags[datNest[i].key] = true;
 					uniqueInd.push(datNest[i].key);
 				}
-				
-				console.log(datNest)
-				
-				
-				
+								
 				yScale = d3.scaleLinear()
 								.domain([0,d3.max(data, function(d){return +d.Value})])
 								.range([height,0])
 				xScale = d3.scaleLinear()
 								.domain([d3.min(dat, function(d){return +d.Year}), d3.max(dat, function(d){return +d.Year})])
 								.range([0, width])
-								
-				
 				//rScale = d3.scaleLinear()
 				//				.domain([d3.min(data, function(d){return +d.GHG}),d3.max(data, function(d){return +d.GHG})])
 				//				.range([0,50])
 				fillScale = d3.scaleOrdinal()
 								.range(d3.schemeCategory20) //NRGI colors: "#FF6F4C", "#557288", "#53CAEC", "#DD5061", "#ffa893", "#aab9c4", "#5B5D62"
-								.domain([uniqueInd])
-				//timeScale = d3.scaleTime()
-				//				.domain([new Date(d3.min(data, function(d){return (+d.Year) +',0,1'})), new Date(d3.max(data, function(d){return +d.Year+',0,1'}))])
-				//				.range([0, width])
+								.domain([uniqueInd])				
 				timeScale = d3.scaleTime()
 								.domain(d3.extent(data, function(d) { return new Date(d.Year, 0, 1); }))
-								.range([0, width]);
-				
-				
+								.range([0, width])				
 				lineScale = d3.line()
 								.curve(d3.curveCardinal())
 								//.x(function(d){return xScale(d.Year)})//timeScale(new Date(d.Year+',1,1'))})
@@ -128,32 +121,22 @@
 					.attr('transform','translate(0,'+height+')')
 					.call(d3.axisBottom(timeScale))
 				svg.append('g')
+					.attr('class','yaxis')
 					//.attr('transform','translate(-25,0)')
-					.call(d3.axisLeft(yScale))
-				
-				console.log("end of csv")
-			
+					.call(d3.axisLeft(yScale))							
 			})				
 			
 		//FUNCTION set variables in datNest using a function
-		console.log("after d3.csv")
+
 		var datNestTemp
 			
 		var choices = []	
 			
 		var tooltip = svg
-			.append("text")
-			//.style("position", "absolute")
+			.append("text")			
 			.style("z-index", "10")
 			.style("visibility", "hidden")
-			//.text("a simple tooltip");
 			
-			
-			
-			
-				  
-			  
-			console.log("after update")
 			
 			function update(){
 				choices = []
@@ -188,10 +171,24 @@
 			var path
 		
 			movePath2 = function() {
+			
+				var max = d3.max(datNestTemp, function(d) {
+					return d3.max(d.values, function(d){return d.Value})
 				
-				console.log("start of movePath2")
+				})
 				
-				//console.log(datNest[0].values[0])
+				console.log('max: '+max)
+				
+				yScale = d3.scaleLinear()
+								.domain([0,max])
+								.range([height,0])
+				
+				d3.selectAll('.yaxis')
+						.transition()
+						.duration(1000)
+						.call(d3.axisLeft(yScale))
+		
+		
 				
 				d3.selectAll('[tag=lines]').remove().selectAll('circle').remove()
 			//Add paths
@@ -201,13 +198,11 @@
 								.y(function(d){return yScale(eval(d.Value))})
 				
 				
-				//console.log(datNestTemp[0].values)
-				
 				svg.selectAll('path')
-								.data(datNestTemp, function(d){console.log(d); return d})
+								.data(datNestTemp, function(d){return d})
 								.enter()
 								.append('path')
-									.attr('d',function(d){console.log(lineScale(d.values)); return lineScale(d.values)})
+									.attr('d',function(d){return lineScale(d.values)})
 									.attr('class',function(d){return d.key.replace(/ /g,'')})
 									.attr('stroke',function(d){return fillScale(d.key)})
 									.attr('name', function(d){return d.key})
@@ -231,7 +226,7 @@
 											.attr('stroke-width', 5)
 										tooltip.style("visibility", "visible")
 											.text(d.key)
-											.attr('x', xScale(2016)+6)
+											.attr('x', xScale(d.values[len].Year)+6)
 											.attr('y', yScale(d.values[len].Value)+3)
 										console.log(d.values)
 									})
