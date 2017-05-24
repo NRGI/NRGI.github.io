@@ -199,7 +199,7 @@
 				console.log(datNestTemp[0].values)
 				
 				svg.selectAll('path')
-								.data(datNestTemp, function(d){console.log("in datNestTemp data call"); return d})
+								.data(datNestTemp, function(d){console.log(d); return d})
 								.enter()
 								.append('path')
 									.attr('d',function(d){return lineScale(d.values)})
