@@ -186,7 +186,7 @@
 				
 				console.log("start of movePath2")
 				
-				console.log(datNest[0].values[0])
+				//console.log(datNest[0].values[0])
 				
 				d3.selectAll('[tag=lines]').remove().selectAll('circle').remove()
 			//Add paths
@@ -196,13 +196,13 @@
 								.y(function(d){return yScale(eval(d.Value))})
 				
 				
-				console.log(datNestTemp[0].values)
+				//console.log(datNestTemp[0].values)
 				
 				svg.selectAll('path')
 								.data(datNestTemp, function(d){console.log(d); return d})
 								.enter()
 								.append('path')
-									.attr('d',function(d){return lineScale(d.values)})
+									.attr('d',function(d){console.log(lineScale(d.values)); return lineScale(d.values)})
 									.attr('class',function(d){return d.key.replace(/ /g,'')})
 									.attr('stroke',function(d){return fillScale(d.key)})
 									.attr('name', function(d){return d.key})
