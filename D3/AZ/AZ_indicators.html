@@ -269,13 +269,13 @@
 								.attrTween('transform', translateAlong(path1))
 					})
 					
-				svg.selectAll('circle')
-					.data(datNestTemp, function(d,i){return d[i].values})
-					.enter()
-					.append('circle')
-						.attr('cy', function(d) {return yScale(d.Value)})
-						.attr('cx', function(d) {return xScale(+d.Year)})
-						.attr('r', 5)//function(d) {return rScale(d.GHG)})
+				//svg.selectAll('circle')
+				//	.data(datNestTemp, function(d,i){return d[i].values})
+				//	.enter()
+				//	.append('circle')
+				//		.attr('cy', function(d) {return yScale(d.Value)})
+				//		.attr('cx', function(d) {return xScale(+d.Year)})
+				//		.attr('r', 5)//function(d) {return rScale(d.GHG)})
 					
 				function translateAlong(path) {
 				  var l = path.getTotalLength();
