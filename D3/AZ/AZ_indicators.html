@@ -117,7 +117,7 @@
 				lineScale = d3.line()
 								.curve(d3.curveCardinal())
 								.x(function(d){return xScale(d.Year)})//timeScale(new Date(d.Year+',1,1'))})
-								.y(function(d){return yScale(d.Value)}) //yVar??
+								.y(function(d){return yScale(d.yVar)}) //yVar??
 								
 				svg.append('g')
 					.attr('transform','translate(0,'+height+')')
