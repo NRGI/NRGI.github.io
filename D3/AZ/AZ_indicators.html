@@ -39,15 +39,6 @@
 				<input type="radio" name="rad" class="box" value="2">Group 3<br>
 			</form>
 			
-			<!-- <label><input type="checkbox" class="box" value="Budget expenses of SOFAZ-total"><span></span>Budget expenses of SOFAZ-total</label><br>
-			<label><input type="checkbox" class="box" value="Budget expenses total"><span></span>Budget expenses total</label><br>
-			<label><input type="checkbox" class="box" value="Budget revenues total"><span></span>Budget revenues total</label><br>
-			<label><input type="checkbox" class="box" value="Education expenses"><span></span>Education expenses</label><br>
-			<label><input type="checkbox" class="box" value="Health expenses"><span></span>Health expenses</label><br>
-			<label><input type="checkbox" class="box" value="Infrastructure-industrial"><span></span>Infrastructure-industrial</label><br>
-			<label><input type="checkbox" class="box" value="Non-oil revenues of state budget"><span></span>Non-oil revenues of state budget</label><br>
-			<label><input type="checkbox" class="box" value="Oil money in budget"><span></span>Oil money in budget</label> -->
-			
 		</div>
 		
 		
@@ -73,7 +64,7 @@
 			"Total social expenses"]
 		
 			var group = [["Budget expenses of SOFAZ-total","Budget expenses total","Budget revenues total"],
-						 ["Education expenses","Health expenses","Infrastructure-industrial","SOFAZ trasfers to state budget", "State budget current expenses"],
+						 ["Education expenses","Health expenses","Infrastructure-industrial","SOFAZ transfers to state budget", "State budget current expenses"],
 						 ["SOFAZ transfers to state budget","Budget expenses of SOFAZ-total","State budget current expenses", "State budget revenues without SOFAZ transfers"]]
 			
 		
@@ -81,8 +72,8 @@
 				$('input[type=radio]').prop("checked", false);
 			});
 			
-			var margin = {top:40, bottom:40, left:80, right:240}
-			var width = 1200 - margin.left - margin.right
+			var margin = {top:40, bottom:40, left:80, right:340}
+			var width = 1300 - margin.left - margin.right
 			var height = 600 - margin.top - margin.bottom
 			
 			var svg = d3.select('#plot').append('svg')
@@ -171,6 +162,14 @@
 						.attr('y2', function(d){return yScale(d)})
 						.attr('stroke','grey')
 						
+				svg.append("text")
+					  .attr("transform", "rotate(-90)")
+					  .attr("y", 0 - margin.left)
+					  .attr("x",0 - (height / 2))
+					  .attr("dy", "1em")
+					  .style("text-anchor", "middle")
+					  .text("Million USD");    
+						
 			})
 			
 		//FUNCTION set variables in datNest using a function
@@ -229,7 +228,8 @@
 				var max = d3.max(datNestTemp, function(d) {
 					return d3.max(d.values, function(d){return d.Value})				
 				})
-				
+			
+			//Axis & grid
 				yScale = d3.scaleLinear()
 								.domain([0,max])
 								.range([height,0])
@@ -262,13 +262,73 @@
 					.duration(1000)
 						.attr('x2', width)
 
+			//Legend
+				d3.selectAll('.legend')
+					//.transition()
+					//.duration(1000)
+					//	.attr('opacity', 0)
+					.remove();					
+				d3.selectAll('.legendtext')
+					//.transition()
+					//.duration(1000)
+					//	.style('opacity', 0)
+					.remove()
 				
-		
+				
+				svg.selectAll('rect')
+					.data(choices)
+					.enter()
+					.append('rect')
+						.attr('class', 'legend')
+						.attr('x', width + 20)
+						.attr('y', function(d, i){return 200+(i*25)})
+						.attr('height',20)
+						.attr('width', 20)
+						.attr('hover', function(d){return d})
+						.attr('fill', function(d){return fillScale(d)})
+						.attr('opacity', 0)
+					.on('mouseover', function(d){
+						hov = d3.select(this).attr('hover')
+						d3.select(this).attr('stroke', 'black')
+						
+						d3.selectAll('[hover="'+hov+'"]')
+							.attr('stroke-width', 5)
+					})
+					.on('mouseout', function(d){
+						hov = d3.select(this).attr('hover')
+						d3.select(this).attr('stroke', '')
+						
+						d3.selectAll('[hover="'+hov+'"]')
+							.attr('stroke-width', 2)
+					})
+					
+					.transition()
+						.delay(2000)
+						.duration(1000)
+							.attr('opacity', 1)
+					
+				
+				svg.selectAll('.text')
+					.data(choices)
+					.enter()
+					.append('text')
+						.attr('class', 'legendtext')
+						.attr('x', width + 40)
+						.attr('y', function(d, i){return 215+(i*25)})
+						.text(function(d){return d})
+					.attr('opacity', 0)
+					.transition()
+						.delay(2000)
+						.duration(1000)
+							.attr('opacity', 1)
+						
+		////////////////////////
 				
 				d3.selectAll('[tag=lines]').remove().selectAll('circle').remove()
 				d3.selectAll('.txtLabel').remove()	
-				
-			//Add paths
+			
+			////////////////////////
+			//ADD paths
 				lineScale = d3.line()
 								.curve(d3.curveCardinal)
 								.x(function(d){return xScale(d.Year)})//timeScale(new Date(d.Year+',1,1'))})
@@ -283,6 +343,7 @@
 									.attr('class',function(d){return d.key.replace(/ /g,'')})
 									.attr('stroke',function(d){return fillScale(d.key)})
 									.attr('name', function(d){return d.key})
+									.attr('hover', function(d){return d.key})
 									//.attr('name', function(d, i) {return i})
 									//.attr('xmax', d3.max(d, function(d){return d.Year}))
 									.attr('tag', 'lines')
@@ -298,36 +359,16 @@
 										.delay(2000)
 										.duration(5000)
 											.attr("stroke-dashoffset", 0);
-										
-									svg
-										.append("text")
-										.style("z-index", "10")
-										.text(d.key)
-										.attr('class', 'txtLabel')
-										//.attr('name', function(d, i){return d.key})
-										.attr('x', xScale(d.values[len].Year)+6)
-										.attr('y', yScale(d.values[len].Value)+3)
-										.attr('opacity', 0)
-										.transition()
-										.delay(4000)
-										.duration(1000)
-											.attr('opacity', 1)
-									
 								})	
 								.on('mouseover', function(d){
 										len = d.values.length - 1
 										
 										d3.select(this)
-											.attr('stroke-width', 5)
-										tooltip.style("visibility", "visible")
-											.text(d.key)
-											.attr('x', xScale(d.values[len].Year)+6)
-											.attr('y', yScale(d.values[len].Value)+3)										
+											.attr('stroke-width', 5)																			
 									})
 								.on('mouseout', function(d){
 										d3.select(this)
-											.attr('stroke-width', 2)
-										tooltip.style("visibility", "hidden")
+											.attr('stroke-width', 2)										
 									})
 				
 				
