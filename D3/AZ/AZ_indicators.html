@@ -8,10 +8,21 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		
 		<style>
+			html {
+				font-family: "Lucida Sans Unicode"
+			}
+		
 			#plot {
 				height: 600px;
 				width: 1000px;
 				background-color: white
+			}			
+			.grid {
+				stroke: blue;
+				opacity: 0.7;
+			}
+			.grid path {
+				  stroke-width: 0;
 			}
 		</style>
 	</head>
@@ -21,14 +32,21 @@
 		<button onClick="movePath2()" type="button">Click for indicators</button>
 		
 		<div id="checks">
-			<label><input type="checkbox" class="box" value="Budget expenses of SOFAZ-total">Budget expenses of SOFAZ-total</label><br>
-			<label><input type="checkbox" class="box" value="Budget expenses total">Budget expenses total</label><br>
-			<label><input type="checkbox" class="box" value="Budget revenues total">Budget revenues total</label><br>
-			<label><input type="checkbox" class="box" value="Education expenses">Education expenses</label><br>
-			<label><input type="checkbox" class="box" value="Health expenses">Health expenses</label><br>
-			<label><input type="checkbox" class="box" value="Infrastructure-industrial">Infrastructure-industrial</label><br>
-			<label><input type="checkbox" class="box" value="Non-oil revenues of state budget">Non-oil revenues of state budget</label><br>
-			<label><input type="checkbox" class="box" value="Oil money in budget">Oil money in budget</label>
+		
+			<form>
+				<input type="radio" name="rad" class="box" value="0">Group 1<br>
+				<input type="radio" name="rad" class="box" value="1">Group 2<br>
+				<input type="radio" name="rad" class="box" value="2">Group 3<br>
+			</form>
+			
+			<!-- <label><input type="checkbox" class="box" value="Budget expenses of SOFAZ-total"><span></span>Budget expenses of SOFAZ-total</label><br>
+			<label><input type="checkbox" class="box" value="Budget expenses total"><span></span>Budget expenses total</label><br>
+			<label><input type="checkbox" class="box" value="Budget revenues total"><span></span>Budget revenues total</label><br>
+			<label><input type="checkbox" class="box" value="Education expenses"><span></span>Education expenses</label><br>
+			<label><input type="checkbox" class="box" value="Health expenses"><span></span>Health expenses</label><br>
+			<label><input type="checkbox" class="box" value="Infrastructure-industrial"><span></span>Infrastructure-industrial</label><br>
+			<label><input type="checkbox" class="box" value="Non-oil revenues of state budget"><span></span>Non-oil revenues of state budget</label><br>
+			<label><input type="checkbox" class="box" value="Oil money in budget"><span></span>Oil money in budget</label> -->
 			
 		</div>
 		
@@ -38,9 +56,29 @@
 		
 		
 		<script>
+			
+			["Budget expenses of SOFAZ-total",
+			"Budget expenses total",
+			"Budget revenues total",
+			"Education expenses",
+			"Health expenses",
+			"Infrastructure-industrial",
+			"Non-oil revenues of state budget",
+			"Oil money in budget",
+			"Oil revenues of SOFAZ-total",
+			"SOFAZ transfers to state budget",
+			"Social protection expenses",
+			"State budget current expenses",
+			"State budget revenues without SOFAZ transfers",
+			"Total social expenses"]
+		
+			var group = [["Budget expenses of SOFAZ-total","Budget expenses total","Budget revenues total"],
+						 ["Education expenses","Health expenses","Infrastructure-industrial","SOFAZ trasfers to state budget", "State budget current expenses"],
+						 ["SOFAZ transfers to state budget","Budget expenses of SOFAZ-total","State budget current expenses", "State budget revenues without SOFAZ transfers"]]
+			
 		
 			$(document).ready(function(){
-				$('input[type=checkbox]').prop("checked", false);
+				$('input[type=radio]').prop("checked", false);
 			});
 			
 			var margin = {top:40, bottom:40, left:80, right:240}
@@ -96,7 +134,7 @@
 					flags[datNest[i].key] = true;
 					uniqueInd.push(datNest[i].key);
 				}
-								
+				
 				yScale = d3.scaleLinear()
 								.domain([0,d3.max(data, function(d){return +d.Value})])
 								.range([height,0])
@@ -122,9 +160,18 @@
 					.call(d3.axisBottom(timeScale))
 				svg.append('g')
 					.attr('class','yaxis')
-					//.attr('transform','translate(-25,0)')
-					.call(d3.axisLeft(yScale))							
-			})				
+					.call(d3.axisLeft(yScale).ticks(7))
+					
+				svg.selectAll("line .horizontalGrid").data(yScale.ticks(7)).enter()
+					.append("line")
+						.attr('class', 'horizontalGrid')
+						.attr('x1', 0)
+						.attr('x2', width)
+						.attr('y1', function(d){return yScale(d)})
+						.attr('y2', function(d){return yScale(d)})
+						.attr('stroke','grey')
+						
+			})
 			
 		//FUNCTION set variables in datNest using a function
 
@@ -136,8 +183,12 @@
 			.append("text")			
 			.style("z-index", "10")
 			.style("visibility", "hidden")
-			
-			
+
+		///////////////////////////////////////////
+		//GRID Lines
+		
+    
+		///////////////////////////////////////////
 			function update(){
 				choices = []
 				d3.selectAll(".box").each(function(d){
@@ -146,6 +197,8 @@
 					choices.push(cb.property("value"));
 				  }
 				});
+				
+				choices = group[choices]
 				
 				if(choices.length > 0){
 				  //datNestTemp = datNest.filter(function(d,i){return d.key.includes(choices)});
@@ -167,30 +220,54 @@
 			
 			d3.selectAll(".box").on("change",update);
 			
+
 		//FUNCTION movePath2
 			var path
 		
 			movePath2 = function() {
 			
 				var max = d3.max(datNestTemp, function(d) {
-					return d3.max(d.values, function(d){return d.Value})
-				
+					return d3.max(d.values, function(d){return d.Value})				
 				})
-				
-				console.log('max: '+max)
 				
 				yScale = d3.scaleLinear()
 								.domain([0,max])
 								.range([height,0])
+								
+				fillScale = d3.scaleOrdinal()
+								.range(["#FF6F4C", "#557288", "#53CAEC", "#DD5061", "#ffa893", "#aab9c4", "#5B5D62"]) //NRGI colors: "#FF6F4C", "#557288", "#53CAEC", "#DD5061", "#ffa893", "#aab9c4", "#5B5D62"
+								.domain(choices)
 				
 				d3.selectAll('.yaxis')
 						.transition()
 						.duration(1000)
-						.call(d3.axisLeft(yScale))
-		
+						.call(d3.axisLeft(yScale).ticks(7))
+				
+				d3.selectAll(".horizontalGrid")
+					.transition()
+					.duration(1000)
+						.attr('x2', 0)
+						.remove()
+					
+				svg.selectAll("line .horizontalGrid").data(yScale.ticks(7)).enter()
+					.append("line")
+						.attr('class', 'horizontalGrid')
+						.attr('x1', 0)
+						.attr('x2', 0)
+						.attr('y1', function(d){return yScale(d)})
+						.attr('y2', function(d){return yScale(d)})
+						.attr('stroke','grey')
+					.transition()
+					.delay(1000)
+					.duration(1000)
+						.attr('x2', width)
+
+				
 		
 				
 				d3.selectAll('[tag=lines]').remove().selectAll('circle').remove()
+				d3.selectAll('.txtLabel').remove()	
+				
 			//Add paths
 				lineScale = d3.line()
 								.curve(d3.curveCardinal)
@@ -206,18 +283,36 @@
 									.attr('class',function(d){return d.key.replace(/ /g,'')})
 									.attr('stroke',function(d){return fillScale(d.key)})
 									.attr('name', function(d){return d.key})
+									//.attr('name', function(d, i) {return i})
 									//.attr('xmax', d3.max(d, function(d){return d.Year}))
 									.attr('tag', 'lines')
 									.attr('stroke-width',2)
 									.attr('fill','none')
 								.each(function(d,i){
+									len = d.values.length - 1
 									var node1 = d3.select(this).node().getTotalLength()
 									d3.select(this)
 										.attr("stroke-dasharray", node1 + " " + node1)
 										.attr("stroke-dashoffset", node1)
 										.transition()
+										.delay(2000)
 										.duration(5000)
 											.attr("stroke-dashoffset", 0);
+										
+									svg
+										.append("text")
+										.style("z-index", "10")
+										.text(d.key)
+										.attr('class', 'txtLabel')
+										//.attr('name', function(d, i){return d.key})
+										.attr('x', xScale(d.values[len].Year)+6)
+										.attr('y', yScale(d.values[len].Value)+3)
+										.attr('opacity', 0)
+										.transition()
+										.delay(4000)
+										.duration(1000)
+											.attr('opacity', 1)
+									
 								})	
 								.on('mouseover', function(d){
 										len = d.values.length - 1
@@ -227,8 +322,7 @@
 										tooltip.style("visibility", "visible")
 											.text(d.key)
 											.attr('x', xScale(d.values[len].Year)+6)
-											.attr('y', yScale(d.values[len].Value)+3)
-										console.log(d.values)
+											.attr('y', yScale(d.values[len].Value)+3)										
 									})
 								.on('mouseout', function(d){
 										d3.select(this)
