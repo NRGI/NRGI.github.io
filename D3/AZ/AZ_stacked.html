@@ -114,7 +114,7 @@
 			
 			var datNest
 			var dat
-			
+			var ymax
 			var tooltip = d3.select("body")
 										.append("div")
 										.attr('class','tooltip')
@@ -163,6 +163,8 @@
 				xScale = d3.scaleLinear()
 							.domain(d3.extent(dat, function(d){return d.Year}))
 							.range([0, width])
+							//.ticks(5).tickFormat(5,"+%");
+							
 				yScale = d3.scaleLinear()
 							.domain([0, ymax])
 							.range([height, 0])		
@@ -170,7 +172,7 @@
 				svg.append('g')
 						.attr('class','xaxis')
 						.attr('transform','translate(0,'+height+')')						
-						.call(d3.axisBottom(xScale))
+						.call(d3.axisBottom(xScale).ticks(11, ""))
 				svg.append('g')
 						.attr('class','yaxis')
 						.attr('transform','translate(-20,0)')						
@@ -205,7 +207,9 @@
 		}
 		
 		function socialFunction() {
+			lineDat = []
 			clearFunction()
+			ymax = 100
 			lineLegendCounter=0
 			stackGraph(["Social protection expenses","Education expenses","Health expenses","Infrastructure/industrial"], 0)
 			window.setTimeout(function() {
@@ -218,6 +222,7 @@
 		}
 		
 		function budgetFunction() {
+			lineDat = []
 			clearFunction()
 			lineLegendCounter=0
 			stackGraph(["Oil money in budget(SOFAZtransfers+SOCAR+foreigncompanies).","Non-oil revenues of state budget"], 1)
@@ -255,16 +260,43 @@
 							.domain(d3.extent(dat, function(d){return d.Year}))
 							.range([0, width])
 					
-					
+					oldMax = ymax
 					newYmax = d3.max(dataStack[dataStack.length-1], function(d){return d[1]})
 				
 					if(newYmax>ymax){
 						ymax = newYmax
+						yScale = d3.scaleLinear()
+							.domain([0, ymax])
+							.range([height, 0])	
+						
+						d3.selectAll(".horizontalGrid")
+						.transition()
+						.duration(1000)
+							.attr('x2', 0)
+							.remove()
+					
+						svg.selectAll('.gridLine')
+							.data(['empty'])
+							.enter()
+							.append('g')
+								.attr('class', 'gridLine')					
+							.selectAll("line .horizontalGrid")
+								.data(yScale.ticks(5))
+								.enter()
+								.append("line")
+									.attr('class', 'horizontalGrid')
+									.attr('x1', 0-20)
+									.attr('x2', -20)
+									.attr('y1', function(d){return yScale(d)})
+									.attr('y2', function(d){return yScale(d)})
+									.attr('stroke','grey')							
+								.transition()
+								.delay(1000)
+								.duration(1000)
+									.attr('x2', width+20)
 					}
 					
-					yScale = d3.scaleLinear()
-							.domain([0, ymax])
-							.range([height, 0])					
+									
 					zScale = d3.scaleOrdinal()
 							.domain(Object.keys(group))
 							.range(["#FF6F4C", "#557288", "#53CAEC", "#DD5061", "#ffa893", "#aab9c4", "#5B5D62"])
@@ -290,31 +322,7 @@
 					//	.attr('transform','translate(-20,0)')						
 					//	.call(d3.axisLeft(yScale).ticks(5))
 					
-					d3.selectAll(".horizontalGrid")
-						.transition()
-						.duration(1000)
-							.attr('x2', 0)
-							.remove()
 					
-					svg.selectAll('.gridLine')
-						.data(['empty'])
-						.enter()
-						.append('g')
-							.attr('class', 'gridLine')					
-						.selectAll("line .horizontalGrid")
-							.data(yScale.ticks(5))
-							.enter()
-							.append("line")
-								.attr('class', 'horizontalGrid')
-								.attr('x1', 0-20)
-								.attr('x2', -20)
-								.attr('y1', function(d){return yScale(d)})
-								.attr('y2', function(d){return yScale(d)})
-								.attr('stroke','grey')							
-							.transition()
-							.delay(1000)
-							.duration(1000)
-								.attr('x2', width+20)
 							
 					
 					/////////////////////////////////////
@@ -324,7 +332,7 @@
 						.append('g')
 							.attr('class','serie')
 							.attr('name', function(d){return d.key})
-							.attr('fill',function(d){console.log(zScale.range());return zScale(d.key)})
+							.attr('fill',function(d){return zScale(d.key)})
 						.selectAll('rect')
 							.data(function(d){return d})
 							.enter()
@@ -366,7 +374,7 @@
 								d3.select(parent)
 									.transition()
 									.duration(50)
-										.attr('fill',function(d){console.log(zScale.range());return zScale(d.key)})
+										.attr('fill',function(d){return zScale(d.key)})
 								d3.select('.legend [name="'+parentName+'"]')
 									.transition()
 									.duration(50)
@@ -445,8 +453,32 @@
 				
 				newYmax = d3.max(lineDat[0].values, function(d){return d.Value})
 				
+				console.log(newYmax>ymax)
+				
 				if(newYmax>ymax){
+					console.log("new: "+newYmax + ' old: '+ymax)
 					ymax = newYmax
+					d3.selectAll(".horizontalGrid")
+					.transition()
+					.duration(1000)
+						.attr('x2', 0)
+						.remove()
+					
+				
+					svg.select('.gridLine')
+						.selectAll("line .horizontalGrid")
+						.data(yScale.ticks(5)).enter()
+						.append("line")
+							.attr('class', 'horizontalGrid')
+							.attr('x1', 0-20)
+							.attr('x2', 0-20)
+							.attr('y1', function(d){return yScale(d)})
+							.attr('y2', function(d){return yScale(d)})
+							.attr('stroke','grey')
+						.transition()
+						.delay(1000)
+						.duration(1000)
+							.attr('x2', width+20)
 				}
 				
 				yScale.domain([0, ymax])
@@ -462,27 +494,7 @@
 						.duration(1000)
 						.call(d3.axisLeft(yScale).ticks(5))
 				
-				d3.selectAll(".horizontalGrid")
-					.transition()
-					.duration(1000)
-						.attr('x2', 0)
-						.remove()
-					
 				
-				svg.select('.gridLine')
-					.selectAll("line .horizontalGrid")
-					.data(yScale.ticks(5)).enter()
-					.append("line")
-						.attr('class', 'horizontalGrid')
-						.attr('x1', 0-20)
-						.attr('x2', 0-20)
-						.attr('y1', function(d){return yScale(d)})
-						.attr('y2', function(d){return yScale(d)})
-						.attr('stroke','grey')
-					.transition()
-					.delay(1000)
-					.duration(1000)
-						.attr('x2', width+20)
 			
 			//3. Transition stacked
 				svg.selectAll('.serie rect')
