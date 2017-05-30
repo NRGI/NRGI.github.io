@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="utf-8">
+		<title>The AZ Stack</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<style>
+			html {
+				font-family: "Lucida Sans Unicode"
+			}
+		
+			#plot {
+				height: 600px;
+				width: 1000px;
+				background-color: white
+			}			
+			.grid {
+				stroke: blue;
+				opacity: 0.7;
+			}
+			.grid path {
+				  stroke-width: 0;
+			}
+			div.tooltip {	
+				position: absolute;			
+				text-align: center;
+				color: white;
+				width: 60px;					
+				height: 28px;					
+				padding: 2px;				
+				font: 12px sans-serif;		
+				background: black;	
+				border: 0px;		
+				border-radius: 8px;			
+				pointer-events: none;			
+			}
+
+		</style>
+	</head>
+
+	<body>
+		
+		
+		<form>
+				<input type="radio" name="rad" class="box" value="0" onclick="socialFunction()">Budget volatility<br>
+				<input type="radio" name="rad" class="box" value="0" onclick="budgetFunction()">Budget dependence on extractives<br>
+				<!-- <input type="radio" name="rad" class="box" value="1">Life standard vs government revenue growth<br> -->
+				<!-- <input type="radio" name="rad" class="box" value="2">Budget dependence on extractive sector<br> -->
+				<!-- <input type="radio" name="rad" class="box" value="3">Budget priorities vs. extractive revenues<br> -->
+		</form>
+		
+		
+		<!-- <button onClick='stackGraph(["Social protection expenses","Education expenses","Health expenses","Infrastructure/industrial"])' type="button">Click</button> -->
+		<!-- <br> -->
+		
+		
+		<!-- <input type="checkbox" id="social">Social spending<br> -->
+		<!-- <input type="checkbox" id="oilRevenue">SOFAZ revenues<br> -->
+		<!-- <input type="checkbox">label<br> -->
+		
+		
+		<div id='plot'></div>
+		
+		
+		<script>
+			
+			["Budget expenses of SOFAZ-total",
+			"Budget expenses total",
+			"Budget revenues total",
+			"Education expenses",
+			"Health expenses",
+			"Infrastructure-industrial",
+			"Non-oil revenues of state budget",
+			"Oil money in budget",
+			"Oil revenues of SOFAZ-total",
+			"SOFAZ transfers to state budget",
+			"Social protection expenses",
+			"State budget current expenses",
+			"State budget revenues without SOFAZ transfers",
+			"Total social expenses"]
+			
+			["Social protection expenses","Education expenses","Health expenses","Infrastructure-industrial"]
+			
+			var group=[["SOFAZ transfers to state budget","Oil money in budget"],
+					   ["Budget revenues total"],
+					   ["Budget revenues total","Oil revenues of SOFAZ-total","SOFAZ transfers to state budget","Oil money in budget","State budget revenues without SOFAZ transfers","Non-oil revenues of state budget"],
+					   ["Budget revenues total","Budget expenses total","Social protection expenses","Education expenses","Health expenses","Infrastructure-industrial","Oil money in budget","Non-oil revenues of state budget"]]
+		
+		
+			$(document).ready(function(){
+				$('input[type=radio]').prop("checked", false);
+			});
+			
+			var margin = {top:40, bottom:40, left:80, right:340}
+			var width = 1300 - margin.left - margin.right
+			var height = 600 - margin.top - margin.bottom
+			
+			var svg = d3.select('#plot').append('svg')
+							.attr('width', width + margin.left + margin.right)
+							.attr('height', height + margin.top + margin.bottom)
+						.append('g')
+							.attr('transform','translate('+margin.left+','+margin.top+')')
+			
+			var dat
+			
+			var yScale
+			var xScale
+		
+			var result = []
+			var lineDat = []
+			
+			var datNest
+			var dat
+			
+			var tooltip = d3.select("body")
+										.append("div")
+										.attr('class','tooltip')
+										.style('color','white')
+										.style("position", "absolute")
+										.style("z-index", "10")
+			
+			var flags = [], uniqueInd = [], l, i;
+			
+			function clean(obj) {
+			  for (var propName in obj) { 
+				if (isNaN(obj[propName])) {
+				  delete obj[propName];
+				}
+			  }
+			}
+		//////////////////////
+		//CSV
+			d3.csv('az_wide.csv', function(data) {
+				
+				for(var i=0; i<data.length; i++){
+					clean(data[i])
+				}
+				
+				data.forEach(function(d){
+					d.Year = +d.Year
+				})
+					
+				dat = data 
+				
+				for(var i=0; i<dat.length; i++) {
+					var sum=0;
+					for(var key in dat[i]) {
+						if(key!= 'Year') {
+							//console.log(dat[i][key])
+							sum += +dat[i][key];
+						}
+					}
+					result.push({date: dat[i].Type, sum: sum});
+				};	
+
+				uniqueInd = Object.keys(dat[0]).slice(0)
+				uniqueInd = uniqueInd.slice(1,uniqueInd.length)
+				
+				ymax = 100
+				xScale = d3.scaleLinear()
+							.domain(d3.extent(dat, function(d){return d.Year}))
+							.range([0, width])
+				yScale = d3.scaleLinear()
+							.domain([0, ymax])
+							.range([height, 0])		
+				
+				svg.append('g')
+						.attr('class','xaxis')
+						.attr('transform','translate(0,'+height+')')						
+						.call(d3.axisBottom(xScale))
+				svg.append('g')
+						.attr('class','yaxis')
+						.attr('transform','translate(-20,0)')						
+						.call(d3.axisLeft(yScale).ticks(5))
+				
+				svg.append("text")
+					  .attr("transform", "rotate(-90)")
+					  .attr("y", 0 - margin.left)
+					  .attr("x",0 - (height / 2))
+					  .attr("dy", "1em")
+					  .style("text-anchor", "middle")
+					  .text("Million USD");    
+				
+				
+			})
+			
+			var newDat
+			var dataStack
+		
+		
+		//-------------------------------------------------------------------------------
+		//Radio button functionality
+		
+		function clearFunction() {
+			d3.selectAll('rect').remove()
+			d3.selectAll('.legend').remove()
+			d3.selectAll('.serie').remove()
+			d3.selectAll('.newPath').remove()
+			d3.selectAll('circle').remove()
+			d3.selectAll('.gridLine').remove()
+			
+		}
+		
+		function socialFunction() {
+			clearFunction()
+			lineLegendCounter=0
+			stackGraph(["Social protection expenses","Education expenses","Health expenses","Infrastructure/industrial"], 0)
+			window.setTimeout(function() {
+				addLine("Oil money in budget(SOFAZtransfers+SOCAR+foreigncompanies).",0)
+				
+				window.setTimeout(function() {
+					addLine("Budget expenses total",0)
+				}, 8000);
+			}, 5000);
+		}
+		
+		function budgetFunction() {
+			clearFunction()
+			lineLegendCounter=0
+			stackGraph(["Oil money in budget(SOFAZtransfers+SOCAR+foreigncompanies).","Non-oil revenues of state budget"], 1)
+			window.setTimeout(function() {
+				addLine("Oil revenues of SOFAZ-total",1)
+				
+				window.setTimeout(function() {
+					addLine("SOFAZ transfers to state budget",1)
+				}, 8000);
+			}, 5000);
+		}
+		
+		
+		//////////////////////
+		//FUNCTION stackGraph()
+			function stackGraph(indicators, budget) {
+					newDat = []
+					group = indicators//uniqueInd.slice(0,3)
+					
+					for(var i=0; i<dat.length; i++){
+						temp = {Year:dat[i].Year}
+						for(var j=0; j<group.length; j++){
+							temp[group[j]] = +dat[i][group[j]]							
+						}
+						newDat[i] = temp						
+					}
+					
+					dataStack = d3.stack().keys(Object.keys(newDat[0]).slice(1))(newDat)
+					
+					//ymax = d3.max(dataStack[dataStack.length-1], function(d){return d[1]})
+					//ymax = 20000
+					
+					
+					xScale = d3.scaleLinear()
+							.domain(d3.extent(dat, function(d){return d.Year}))
+							.range([0, width])
+					
+					
+					newYmax = d3.max(dataStack[dataStack.length-1], function(d){return d[1]})
+				
+					if(newYmax>ymax){
+						ymax = newYmax
+					}
+					
+					yScale = d3.scaleLinear()
+							.domain([0, ymax])
+							.range([height, 0])					
+					zScale = d3.scaleOrdinal()
+							.domain(Object.keys(group))
+							.range(["#FF6F4C", "#557288", "#53CAEC", "#DD5061", "#ffa893", "#aab9c4", "#5B5D62"])
+					
+					if(budget>0){
+						zScale.range(["#FF6F4C", "#DD5061","#aab9c4", "#53CAEC"])
+					}
+					
+				//////////////////////////////////////////////
+				//AXIS
+				
+					d3.selectAll('.yaxis')
+						.transition()
+						.duration(1000)
+						.call(d3.axisLeft(yScale).ticks(5))
+						
+					//svg.append('g')
+					//	.attr('class','xaxis')
+					//	.attr('transform','translate(0,'+height+')')						
+					//	.call(d3.axisBottom(xScale))
+					//svg.append('g')
+					//	.attr('class','yaxis')
+					//	.attr('transform','translate(-20,0)')						
+					//	.call(d3.axisLeft(yScale).ticks(5))
+					
+					d3.selectAll(".horizontalGrid")
+						.transition()
+						.duration(1000)
+							.attr('x2', 0)
+							.remove()
+					
+					svg.selectAll('.gridLine')
+						.data(['empty'])
+						.enter()
+						.append('g')
+							.attr('class', 'gridLine')					
+						.selectAll("line .horizontalGrid")
+							.data(yScale.ticks(5))
+							.enter()
+							.append("line")
+								.attr('class', 'horizontalGrid')
+								.attr('x1', 0-20)
+								.attr('x2', -20)
+								.attr('y1', function(d){return yScale(d)})
+								.attr('y2', function(d){return yScale(d)})
+								.attr('stroke','grey')							
+							.transition()
+							.delay(1000)
+							.duration(1000)
+								.attr('x2', width+20)
+							
+					
+					/////////////////////////////////////
+					svg.selectAll('.serie')
+						.data(dataStack, function(d){return d})
+						.enter()
+						.append('g')
+							.attr('class','serie')
+							.attr('name', function(d){return d.key})
+							.attr('fill',function(d){console.log(zScale.range());return zScale(d.key)})
+						.selectAll('rect')
+							.data(function(d){return d})
+							.enter()
+							.append('rect')
+								.attr('x', function(d) {return xScale(d.data.Year)-20})
+								.attr('width', 40)
+								.attr('name',function(d,i){return "ind"+i})
+								//.attr('class', function(d){return d.data.Type})//function(d,i){return i}) //
+								.attr('stroke-width',1)
+								.attr('stroke','black')
+								.attr('y', height)
+								.attr('height', 0)
+							.on('mouseover', function(d){
+								parent = d3.select(this).node().parentNode
+								parentName = d3.select(parent).attr('name')
+																
+								d3.select(parent)
+									.transition()
+									.duration(50)
+										.attr('fill', 'yellow')
+								d3.select('.legend [name="'+parentName+'"]')
+									.transition()
+									.duration(50)
+										.attr('fill', 'yellow')
+										.attr('stroke', 'black')
+								
+								tooltip.transition()
+									.style('visibility','visible')
+								tooltip.html('<b>$'+ Math.round((d[1]-d[0])).toLocaleString() +'</b>')
+											.style('font-size','14px')
+											.style('font-family','sans-serif')
+											.style("left", (+d3.select(this).attr('x')+margin.left+40) + 'px') //tooltip location is dependent on entire page not just svg space
+											.style("top", (+d3.select(this).attr('y')+margin.top+5) + 'px')
+							})
+							.on('mouseout', function(d){
+								parent = d3.select(this).node().parentNode
+								parentName = d3.select(parent).attr('name')
+								
+								d3.select(parent)
+									.transition()
+									.duration(50)
+										.attr('fill',function(d){console.log(zScale.range());return zScale(d.key)})
+								d3.select('.legend [name="'+parentName+'"]')
+									.transition()
+									.duration(50)
+										.attr('fill', function(d){return zScale(d)})
+										.attr('stroke', null)
+								
+								
+								tooltip.transition()
+									.style('visibility', 'hidden')
+								
+							})
+							.transition()
+								.delay(function(d,i){return 2000 +(i*100)})
+								.duration(1000)
+									.attr('y', function(d) {return yScale(d[1])})
+									.attr('height', function(d) {return yScale(d[0])-yScale(d[1])})
+				
+				
+					
+				//LEGEND
+					var legend = svg.selectAll('.legend')
+									.data(group)
+									.enter()
+									.append('g')
+										.attr('name', function(d){return d.replace(/ /g,'')})
+										.attr('class','legend')
+										.attr('transform',function(d,i) {return 'translate(0,'+(i*20)+')'})
+						
+						legend.append('rect')
+								.attr('x',width)
+								.attr('width',18)
+								.attr('height',18)								
+								.attr('fill', function(d){return zScale(d)})
+								.attr('name', function(d){return d})
+								.attr('class','legend')
+								.attr('opacity', 0)
+							.transition()
+							.delay(1000)
+							.duration(1000)
+								.attr('opacity', 1)
+							
+						legend.append('text')
+								.attr('x',width+20)
+								.attr('y',10)
+								.attr('dy','.35em')
+								.attr('class','legend')
+								.attr('text-anchor','start')
+								.text(function(d){return d})
+								
+			}
+			
+
+	//--------------------------------------------------------------------------------------------------------------------------
+			var parent
+			var lineDat = []
+			var lineScale
+			var counter = 1
+			var lineLegendCounter = 0
+	//--------------------------------------------------------------------------------------------------------------------------
+		
+	
+			function addLine(indicator, budget) {
+				lineData = dat.filter(function(d){return d[indicator]})
+				
+				for(var i=0; i<lineData.length; i++){
+							temp = {Year:lineData[i].Year, Indicator:indicator}
+							temp["Value"] = +lineData[i][indicator]
+							lineDat[i] = temp
+						}
+						lineDat = [{key:indicator, values:lineDat}]	
+			//1. Calculate new scales
+				lineScale = d3.line()
+									.curve(d3.curveCardinal)	//curveCardinal
+									.x(function(d){return xScale(d.Year)})
+									.y(function(d){return yScale(eval(d.Value))})
+				
+				newYmax = d3.max(lineDat[0].values, function(d){return d.Value})
+				
+				if(newYmax>ymax){
+					ymax = newYmax
+				}
+				
+				yScale.domain([0, ymax])
+				
+				if(budget>0) {
+					
+					zScale.range(["#FF6F4C", "#DD5061","#aab9c4", "#53CAEC"])
+				}
+			
+			//2. Transition y axis
+				d3.selectAll('.yaxis')
+						.transition()
+						.duration(1000)
+						.call(d3.axisLeft(yScale).ticks(5))
+				
+				d3.selectAll(".horizontalGrid")
+					.transition()
+					.duration(1000)
+						.attr('x2', 0)
+						.remove()
+					
+				
+				svg.select('.gridLine')
+					.selectAll("line .horizontalGrid")
+					.data(yScale.ticks(5)).enter()
+					.append("line")
+						.attr('class', 'horizontalGrid')
+						.attr('x1', 0-20)
+						.attr('x2', 0-20)
+						.attr('y1', function(d){return yScale(d)})
+						.attr('y2', function(d){return yScale(d)})
+						.attr('stroke','grey')
+					.transition()
+					.delay(1000)
+					.duration(1000)
+						.attr('x2', width+20)
+			
+			//3. Transition stacked
+				svg.selectAll('.serie rect')
+					.transition()
+					//.delay()
+					.duration(1000)
+						.attr('y', function(d) {return yScale(d[1])})
+						.attr('height', function(d) {return yScale(d[0])-yScale(d[1])})
+			
+			//4. Transition all existing lines and circles
+				d3.selectAll('.newPath')
+					.transition()
+					.duration(1000)
+						.attr('d',function(d){return lineScale(d.values)})
+				d3.selectAll('circle')
+					.transition()
+					.duration(1000)
+						.attr('cy', function(d){return yScale(d.Value)})
+			
+				counter = counter + 1
+			//5. Add new line
+				svg.selectAll('.path'+counter)
+					.data(lineDat, function(d){return d})
+					.enter()
+						.append('path')
+							.attr('d',function(d){return lineScale(d.values)})
+							.attr('class', 'newPath')
+							.attr('stroke', function(d){return zScale(d.key)})//'black')
+							.attr('stroke-width',3)
+							.attr('fill','none')
+						.each(function(d,i){
+							len = d.values.length - 1
+							var node1 = d3.select(this).node().getTotalLength()
+							d3.select(this)
+								.attr("stroke-dasharray", node1 + " " + node1)
+								.attr("stroke-dashoffset", node1)
+								.transition()
+								.delay(2000)
+								.duration(5000)
+									.attr("stroke-dashoffset", 0);
+						})
+				
+				
+				svg.selectAll('circle')
+					.data(lineDat[0].values, function(d){return d})
+					.enter()
+						.append('circle')
+							.attr('cx', function(d){return xScale(d.Year)})
+							.attr('cy', function(d){return yScale(d.Value)})
+							.attr('r', 5)
+							.attr('fill', 'white')
+							.attr('stroke', 'black')
+							.attr('opacity', 0)
+						.on('mouseover', function(d){
+								d3.select(this)
+									.transition()
+									.duration(50)
+										.attr('r', 10)
+								
+								tooltip.transition()
+									.style('visibility','visible')
+								tooltip.html('<b>$'+ Math.round((d.Value)).toLocaleString() +'</b>')
+											.style('font-size','14px')
+											.style('font-family','sans-serif')
+											.style("left", (+d3.select(this).attr('cx')+margin.left+20) + 'px') //tooltip location is dependent on entire page not just svg space
+											.style("top", (+d3.select(this).attr('cy')+margin.top+0) + 'px')
+							})
+							.on('mouseout', function(d){
+								d3.select(this)
+										.attr('r', 5)
+								
+								
+								tooltip.transition()
+									.style('visibility', 'hidden')
+								
+							})
+						.transition()
+							.delay(function(d,i){return 3000+(i *(250))})
+							.duration(100)
+							.attr('opacity', 1)
+			//Line legends
+				lineLegendCounter = lineLegendCounter + 1	
+			
+				svg.selectAll('.lineLegend')
+					.data(lineDat, function(d){return d})
+					.enter()
+						.append('line')
+							.attr('x1', width)
+							.attr('x2', width+17)
+							.attr('class','legend')
+							.attr('y1', 95 + ((lineLegendCounter-1)*20))
+							.attr('y2', 95 + ((lineLegendCounter-1)*20))
+							.attr('stroke', function(d){return zScale(d.key)})
+							.attr('stroke-width', 4)
+				
+				svg.selectAll('.lineLegend')
+					.data(lineDat, function(d){return d})
+					.enter()
+						.append('text')
+							.attr('x', width +21)
+							.attr('y', 95 + ((lineLegendCounter-1)*20))
+							.attr('dy','.35em')
+							.attr('font-size', 20)
+							.attr('class','legend')
+							.attr('text-anchor','start')
+							.text(function(d){return d.key})
+						.transition()
+						.duration(2000)
+							.attr('font-size', 16)
+							
+				
+						
+			
+				
+			}
+			
+		//------------------------------------------
+		//FUNCTION manipulate stacked graph on/off
+		
+		function stackOff() {
+			x="Education expenses"
+			
+			d3.selectAll('.serie rect')
+				.transition()
+				.duration(1000)
+					.attr('y',height)
+					.attr('height',0)
+		
+		
+		
+		
+		
+		}
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+
+
+</html>

@@ -34,9 +34,10 @@
 		<div id="checks">
 		
 			<form>
-				<input type="radio" name="rad" class="box" value="0">Budget revenues and expenses<br>
-				<input type="radio" name="rad" class="box" value="1">Social spending and SOFAZ funding<br>
-				<input type="radio" name="rad" class="box" value="2">SOFAZ and state budgets and transfers<br>
+				<input type="radio" name="rad" class="box" value="0">Budget volatility<br>
+				<input type="radio" name="rad" class="box" value="1">Life standard vs government revenue growth<br>
+				<input type="radio" name="rad" class="box" value="2">Budget dependence on extractive sector<br>
+				<input type="radio" name="rad" class="box" value="3">Budget priorities vs. extractive revenues<br>
 			</form>
 			
 		</div>
@@ -63,9 +64,16 @@
 			"State budget revenues without SOFAZ transfers",
 			"Total social expenses"]
 		
-			var group = [["Budget expenses of SOFAZ-total","Budget expenses total","Budget revenues total"],
-						 ["Education expenses","Health expenses","Infrastructure-industrial","SOFAZ transfers to state budget", "State budget current expenses"],
-						 ["SOFAZ transfers to state budget","Budget expenses of SOFAZ-total","State budget current expenses", "State budget revenues without SOFAZ transfers"]]
+			var group=[["SOFAZ transfers to state budget","Oil money in budget"],
+					   ["Budget revenues total"],
+					   ["Budget revenues total","Oil revenues of SOFAZ-total","SOFAZ transfers to state budget","Oil money in budget","State budget revenues without SOFAZ transfers","Non-oil revenues of state budget"],
+					   ["Budget revenues total","Budget expenses total","Social protection expenses","Education expenses","Health expenses","Infrastructure-industrial","Oil money in budget","Non-oil revenues of state budget"]]
+		
+		
+		
+			//var group = [["Budget expenses of SOFAZ-total","Budget expenses total","Budget revenues total"],
+			//			 ["Education expenses","Health expenses","Infrastructure-industrial","SOFAZ transfers to state budget", "State budget current expenses"],
+			//			 ["SOFAZ transfers to state budget","Budget expenses of SOFAZ-total","State budget current expenses", "State budget revenues without SOFAZ transfers"]]
 			
 		
 			$(document).ready(function(){
@@ -325,7 +333,7 @@
 		////////////////////////
 				
 				d3.selectAll('[tag=lines]').remove().selectAll('circle').remove()
-				d3.selectAll('.txtLabel').remove()	
+				d3.selectAll('.txtLabel').remove()
 			
 			////////////////////////
 			//ADD paths
@@ -339,7 +347,7 @@
 								.data(datNestTemp, function(d){return d})
 								.enter()
 								.append('path')
-									.attr('d',function(d){return lineScale(d.values)})
+									.attr('d',function(d){console.log(d.values);return lineScale(d.values)})
 									.attr('class',function(d){return d.key.replace(/ /g,'')})
 									.attr('stroke',function(d){return fillScale(d.key)})
 									.attr('name', function(d){return d.key})
