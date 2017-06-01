@@ -94,9 +94,9 @@
 				$('input[type=radio]').prop("checked", false);
 			});
 			
-			var margin = {top:40, bottom:240, left:80, right:540}
-			var width = 1500 - margin.left - margin.right
-			var height = 800 - margin.top - margin.bottom
+			var margin = {top:40, bottom:240, left:80, right:200}
+			var width = 1000 - margin.left - margin.right
+			var height = 600 - margin.top - margin.bottom
 			
 			var svg = d3.select('#plot').append('svg')
 							.attr('width', width + margin.left + margin.right)
