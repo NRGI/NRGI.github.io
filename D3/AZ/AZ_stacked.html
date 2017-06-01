@@ -121,8 +121,11 @@
 										.style('color','white')
 										.style("position", "absolute")
 										.style("z-index", "10")
+										.style('opacity', 0)
 			
 			var flags = [], uniqueInd = [], l, i;
+			
+			
 			
 			function clean(obj) {
 			  for (var propName in obj) { 
@@ -412,6 +415,7 @@
 								.attr('y', height)
 								.attr('height', 0)
 							.on('mouseover', function(d){
+								tooltip.style('opacity', 1)
 								parent = d3.select(this).node().parentNode
 								parentName = d3.select(parent).attr('name')
 								
