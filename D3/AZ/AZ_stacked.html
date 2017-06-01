@@ -29,7 +29,7 @@
 				text-align: center;
 				color: white;
 				width: 60px;					
-				height: 28px;					
+				height: 24px;					
 				padding: 2px;				
 				font: 12px sans-serif;		
 				background: black;	
@@ -94,9 +94,9 @@
 				$('input[type=radio]').prop("checked", false);
 			});
 			
-			var margin = {top:40, bottom:40, left:80, right:540}
+			var margin = {top:40, bottom:240, left:80, right:540}
 			var width = 1500 - margin.left - margin.right
-			var height = 600 - margin.top - margin.bottom
+			var height = 800 - margin.top - margin.bottom
 			
 			var svg = d3.select('#plot').append('svg')
 							.attr('width', width + margin.left + margin.right)
@@ -133,7 +133,7 @@
 			}
 		//////////////////////
 		//CSV
-			d3.csv('az_wide.csv', function(data) {
+			d3.csv('az_wide2.csv', function(data) {
 				
 				for(var i=0; i<data.length; i++){
 					clean(data[i])
@@ -207,32 +207,98 @@
 		}
 		
 		function socialFunction() {
-			lineDat = []
 			clearFunction()
+			lineDat = []
+			d3.selectAll('.scale').remove()
 			ymax = 100
 			lineLegendCounter=0
-			stackGraph(["Social protection expenses","Education expenses","Health expenses","Infrastructure/industrial"], 0)
+			stackGraph(["Social protection expenses","Education expenses","Health expenses","Infrastructure/industrial","Other expenses"], 0)
+			
 			window.setTimeout(function() {
-				addLine("Oil money in budget(SOFAZtransfers+SOCAR+foreigncompanies).",0)
+				addLine("Oil money in budget",0)
 				
 				window.setTimeout(function() {
-					addLine("Budget expenses total",0)
-				}, 8000);
-			}, 5000);
+					//addLine("Budget expenses total",0)
+					svg.append('line')
+						.attr('x1', xScale(2016.5))
+						.attr('x2', xScale(2016.5))
+						.attr('y2', height)
+						.attr('y1', yScale(11000))
+						.attr('class', 'scale')
+						.attr('stroke', 'black')
+						.attr('stroke-width', 2)
+					svg.append('line')
+							.attr('x1', xScale(2016.4))
+							.attr('x2', xScale(2016.5))
+							.attr('y2', height)
+							.attr('class', 'scale')
+							.attr('y1', height)
+							.attr('stroke', 'black')
+							.attr('stroke-width', 2)
+					svg.append('line')
+							.attr('x1', xScale(2016.4))
+							.attr('x2', xScale(2016.5))
+							.attr('y2', yScale(11000))
+							.attr('y1', yScale(11000))
+							.attr('class', 'scale')
+							.attr('stroke', 'black')
+							.attr('stroke-width', 2)
+					svg.append('text')
+						.attr('x', xScale(2016.6))
+						.attr('y', yScale(11000))
+						.attr('class', 'scale')
+						.attr('font-size', 12)
+						.text('Total budget expenses')
+				}, 5500);
+			}, 4000);
 		}
 		
 		function budgetFunction() {
+		d3.selectAll('.scale').remove()
 			lineDat = []
 			clearFunction()
 			lineLegendCounter=0
-			stackGraph(["Oil money in budget(SOFAZtransfers+SOCAR+foreigncompanies).","Non-oil revenues of state budget"], 1)
+			stackGraph(["Oil money in budget","Non-oil revenues of state budget"], 1)
+			
 			window.setTimeout(function() {
 				addLine("Oil revenues of SOFAZ-total",1)
 				
 				window.setTimeout(function() {
 					addLine("SOFAZ transfers to state budget",1)
-				}, 8000);
+					window.setTimeout(function(){
+						svg.append('line')
+						.attr('class', 'scale')
+						.attr('x1', xScale(2015.5))
+						.attr('x2', xScale(2015.5))
+						.attr('y2', height)
+						.attr('y1', yScale(19000))
+						.attr('stroke', 'black')
+						.attr('stroke-width', 2)
+					svg.append('line')
+							.attr('class', 'scale')
+							.attr('x1', xScale(2015.4))
+							.attr('x2', xScale(2015.5))
+							.attr('y2', height)
+							.attr('y1', height)
+							.attr('stroke', 'black')
+							.attr('stroke-width', 2)
+					svg.append('line')
+							.attr('x1', xScale(2015.4))
+							.attr('class', 'scale')
+							.attr('x2', xScale(2015.5))
+							.attr('y2', yScale(19000))
+							.attr('y1', yScale(19000))
+							.attr('stroke', 'black')
+							.attr('stroke-width', 2)
+					svg.append('text')
+						.attr('x', xScale(2015.6))
+						.attr('class', 'scale')
+						.attr('y', yScale(19000))
+						.attr('font-size', 12)
+						.text('Total government revenues')
+					}, 6000);
 			}, 5000);
+			}, 4000);
 		}
 		
 		
@@ -348,16 +414,27 @@
 							.on('mouseover', function(d){
 								parent = d3.select(this).node().parentNode
 								parentName = d3.select(parent).attr('name')
-																
-								d3.select(parent)
-									.transition()
-									.duration(50)
-										.attr('fill', 'yellow')
-								d3.select('.legend [name="'+parentName+'"]')
-									.transition()
-									.duration(50)
-										.attr('fill', 'yellow')
-										.attr('stroke', 'black')
+								
+							
+								d3.selectAll('.serie').style('opacity', .5)
+								d3.select(parent).style('opacity', 1)
+								//d3.selectAll('.serie').style('fill', 'white')
+								//d3.select(parent).style('fill', zScale(d.key))
+								console.log(parentName.replace(/ /g,''))
+								
+								d3.selectAll('.legend').attr('opacity', .5)
+								d3.selectAll('[name="'+parentName.replace(/ /g,'')+'"]').transition().duration(50).attr('opacity', 3)
+								
+								
+								//d3.select(parent)
+								//	.transition()
+								//	.duration(50)
+								//		.attr('fill', '#e2c911')
+								//d3.select('.legend [name="'+parentName+'"]')
+								//	.transition()
+								//	.duration(50)
+								//		.attr('fill', '#e2c911')
+								//		.attr('stroke', 'black')
 								
 								tooltip.transition()
 									.style('visibility','visible')
@@ -365,16 +442,19 @@
 											.style('font-size','14px')
 											.style('font-family','sans-serif')
 											.style("left", (+d3.select(this).attr('x')+margin.left+40) + 'px') //tooltip location is dependent on entire page not just svg space
-											.style("top", (+d3.select(this).attr('y')+margin.top+5) + 'px')
+											.style("top", (+d3.select(this).attr('y')+margin.top+28) + 'px')
 							})
 							.on('mouseout', function(d){
 								parent = d3.select(this).node().parentNode
 								parentName = d3.select(parent).attr('name')
 								
-								d3.select(parent)
-									.transition()
-									.duration(50)
-										.attr('fill',function(d){return zScale(d.key)})
+								
+								d3.selectAll('.serie').style('opacity', 1)
+								d3.selectAll('.legend').attr('opacity', 1)
+								//d3.select(parent)
+								//	.transition()
+								//	.duration(50)
+								//		.attr('fill',function(d){return zScale(d.key)})
 								d3.select('.legend [name="'+parentName+'"]')
 									.transition()
 									.duration(50)
@@ -396,7 +476,7 @@
 					
 				//LEGEND
 					var legend = svg.selectAll('.legend')
-									.data(group)
+									.data(group.reverse())
 									.enter()
 									.append('g')
 										.attr('name', function(d){return d.replace(/ /g,'')})
@@ -404,12 +484,13 @@
 										.attr('transform',function(d,i) {return 'translate(0,'+(i*20)+')'})
 						
 						legend.append('rect')
-								.attr('x',width)
+								.attr('x',width/8)
+								.attr('y', height+30)
 								.attr('width',18)
 								.attr('height',18)								
 								.attr('fill', function(d){return zScale(d)})
 								.attr('name', function(d){return d})
-								.attr('class','legend')
+								//.attr('class','legend')
 								.attr('opacity', 0)
 							.transition()
 							.delay(1000)
@@ -417,10 +498,10 @@
 								.attr('opacity', 1)
 							
 						legend.append('text')
-								.attr('x',width+20)
-								.attr('y',10)
+								.attr('x',20+(width/8))
+								.attr('y', height+39)
 								.attr('dy','.35em')
-								.attr('class','legend')
+								//.attr('class','legend')
 								.attr('text-anchor','start')
 								.text(function(d){return d})
 								
@@ -532,8 +613,8 @@
 								.attr("stroke-dasharray", node1 + " " + node1)
 								.attr("stroke-dashoffset", node1)
 								.transition()
-								.delay(2000)
-								.duration(5000)
+								.delay(400)
+								.duration(4000)
 									.attr("stroke-dashoffset", 0);
 						})
 				
@@ -549,9 +630,10 @@
 							.attr('stroke', 'black')
 							.attr('opacity', 0)
 						.on('mouseover', function(d){
+								d3.selectAll('.serie').style('opacity', .5)
 								d3.select(this)
-									.transition()
-									.duration(50)
+									//.transition()
+									//.duration(50)
 										.attr('r', 10)
 								
 								tooltip.transition()
@@ -560,9 +642,10 @@
 											.style('font-size','14px')
 											.style('font-family','sans-serif')
 											.style("left", (+d3.select(this).attr('cx')+margin.left+20) + 'px') //tooltip location is dependent on entire page not just svg space
-											.style("top", (+d3.select(this).attr('cy')+margin.top+0) + 'px')
+											.style("top", (+d3.select(this).attr('cy')+margin.top+25) + 'px')
 							})
 							.on('mouseout', function(d){
+								d3.selectAll('.serie').style('opacity', 1)
 								d3.select(this)
 										.attr('r', 5)
 								
@@ -572,7 +655,7 @@
 								
 							})
 						.transition()
-							.delay(function(d,i){return 3000+(i *(250))})
+							.delay(function(d,i){return 2000+(i *(250))})
 							.duration(100)
 							.attr('opacity', 1)
 			//Line legends
@@ -582,11 +665,11 @@
 					.data(lineDat, function(d){return d})
 					.enter()
 						.append('line')
-							.attr('x1', width)
-							.attr('x2', width+17)
+							.attr('x1', width/2)
+							.attr('x2', (width/2)+17)
 							.attr('class','legend')
-							.attr('y1', 95 + ((lineLegendCounter-1)*20))
-							.attr('y2', 95 + ((lineLegendCounter-1)*20))
+							.attr('y1', (height+38) + ((lineLegendCounter-1)*20))
+							.attr('y2', (height+38) + ((lineLegendCounter-1)*20))
 							.attr('stroke', function(d){return zScale(d.key)})
 							.attr('stroke-width', 4)
 				
@@ -594,8 +677,8 @@
 					.data(lineDat, function(d){return d})
 					.enter()
 						.append('text')
-							.attr('x', width +21)
-							.attr('y', 95 + ((lineLegendCounter-1)*20))
+							.attr('x', (width/2) +21)
+							.attr('y', (height+38) + ((lineLegendCounter-1)*20))
 							.attr('dy','.35em')
 							.attr('font-size', 20)
 							.attr('class','legend')
