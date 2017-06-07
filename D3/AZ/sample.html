@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="utf-8">
+		<title>The AZ Stack</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<style>
+			html {
+				font-family: "Lucida Sans Unicode"
+			}
+		
+			#plot {
+				height: 600px;
+				width: 1000px;
+				background-color: white
+			}			
+			.grid {
+				stroke: blue;
+				opacity: 0.7;
+			}
+			.grid path {
+				  stroke-width: 0;
+			}
+			div.tooltip {	
+				position: absolute;			
+				text-align: center;
+				color: white;
+				width: 60px;					
+				height: 28px;					
+				padding: 2px;				
+				font: 12px sans-serif;		
+				background: black;	
+				border: 0px;		
+				border-radius: 8px;			
+				pointer-events: none;			
+			}
+
+		</style>
+	</head>
+
+	<body>
+		
+		
+		<form>
+				<input type="radio" name="rad" class="box" value="0" onclick="append1()">Append 1<br>
+				<input type="radio" name="rad" class="box" value="0" onclick="append2()">Append 2<br>				
+		</form>
+		
+		
+		<!-- <button onClick='stackGraph(["Social protection expenses","Education expenses","Health expenses","Infrastructure/industrial"])' type="button">Click</button> -->
+		<!-- <br> -->
+		
+		
+		<!-- <input type="checkbox" id="social">Social spending<br> -->
+		<!-- <input type="checkbox" id="oilRevenue">SOFAZ revenues<br> -->
+		<!-- <input type="checkbox">label<br> -->
+		
+		
+		<div id='plot'></div>
+		
+		
+		<script>
+			
+			["Budget expenses of SOFAZ-total",
+			"Budget expenses total",
+			"Budget revenues total",
+			"Education expenses",
+			"Health expenses",
+			"Infrastructure-industrial",
+			"Non-oil revenues of state budget",
+			"Oil money in budget",
+			"Oil revenues of SOFAZ-total",
+			"SOFAZ transfers to state budget",
+			"Social protection expenses",
+			"State budget current expenses",
+			"State budget revenues without SOFAZ transfers",
+			"Total social expenses"]
+			
+			["Social protection expenses","Education expenses","Health expenses","Infrastructure-industrial"]
+			
+			var group=[["SOFAZ transfers to state budget","Oil money in budget"],
+					   ["Budget revenues total"],
+					   ["Budget revenues total","Oil revenues of SOFAZ-total","SOFAZ transfers to state budget","Oil money in budget","State budget revenues without SOFAZ transfers","Non-oil revenues of state budget"],
+					   ["Budget revenues total","Budget expenses total","Social protection expenses","Education expenses","Health expenses","Infrastructure-industrial","Oil money in budget","Non-oil revenues of state budget"]]
+		
+		
+			$(document).ready(function(){
+				$('input[type=radio]').prop("checked", false);
+			});
+			
+			var margin = {top:40, bottom:40, left:80, right:540}
+			var width = 1500 - margin.left - margin.right
+			var height = 600 - margin.top - margin.bottom
+			
+			var svg = d3.select('#plot').append('svg')
+							.attr('width', width + margin.left + margin.right)
+							.attr('height', height + margin.top + margin.bottom)
+						.append('g')
+							.attr('transform','translate('+margin.left+','+margin.top+')')
+			
+			function append1(){
+				d3.selectAll('circle').remove()
+				svg.append('circle')
+					.attr('cx', 100)
+					.attr('class', 'circ')
+					.attr('cy', 100)
+					.attr('r', 20)
+					.transition()
+						.duration(5000)
+							.attr('cx', 100)
+							.attr('cy', 300)
+				
+				window.setTimeout(function(){
+					svg.append('rect')
+						.attr('x', 100)
+						.attr('y', 100)
+						.attr('height', 50)
+						.attr('width', 50)
+						.attr('fill', 'blue')
+				}, 5000)
+			
+			}
+			
+			function append2(){
+				d3.selectAll('rect').remove()
+				d3.selectAll('circle').remove()
+				svg.append('circle')
+					.attr('cx', 300)
+					.attr('cy', 100)
+					.attr('r', 20)
+					.transition()
+						.duration(5000)
+							.attr('cx', 300)
+							.attr('cy', 300)
+			
+			}
+			
+			
+			
+			
+			
+			
+			
+						
+		</script>
+	</body>
+
+
+</html>

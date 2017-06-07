@@ -24,20 +24,19 @@
 			.grid path {
 				  stroke-width: 0;
 			}
-			div.tooltip {	
-				position: absolute;			
+			div.tooltip {
+				position: absolute;
 				text-align: center;
 				color: white;
-				width: 60px;					
-				height: 24px;					
-				padding: 2px;				
-				font: 12px sans-serif;		
-				background: black;	
-				border: 0px;		
-				border-radius: 8px;			
-				pointer-events: none;			
-			}
-
+				width: 60px;			
+				height: 24px;
+				padding: 2px;
+				font: 12px sans-serif;
+				background: black;
+				border: 0px;
+				border-radius: 8px;
+				pointer-events: none;
+			}			
 		</style>
 	</head>
 
@@ -45,8 +44,8 @@
 		
 		
 		<form>
-				<input type="radio" name="rad" class="box" value="0" onclick="socialFunction()">Budget priorities vs. extractive revenues<br>
-				<input type="radio" name="rad" class="box" value="0" onclick="budgetFunction()">Budget dependence on the extractive sector<br>
+				<input type="radio" name="rad1" id='rad1' class="box" value="0" onclick="socialFunction()">Budget priorities vs. extractive revenues<br>
+				<input type="radio" name="rad2" id='rad2' class="box" value="0" onclick="budgetFunction()">Budget dependence on the extractive sector<br>
 				<!-- <input type="radio" name="rad" class="box" value="1">Life standard vs government revenue growth<br> -->
 				<!-- <input type="radio" name="rad" class="box" value="2">Budget dependence on extractive sector<br> -->
 				<!-- <input type="radio" name="rad" class="box" value="3">Budget priorities vs. extractive revenues<br> -->
@@ -91,7 +90,9 @@
 		
 		
 			$(document).ready(function(){
-				$('input[type=radio]').prop("checked", false);
+				//$('input[type=radio]').prop("checked", false);
+				$("#rad1").prop("checked", true)
+				socialFunction()
 			});
 			
 			var margin = {top:40, bottom:240, left:80, right:200}
@@ -210,6 +211,9 @@
 		}
 		
 		function socialFunction() {
+			$("#rad2").prop("checked", false)
+			d3.selectAll('input').style('visibility', 'hidden')
+			
 			clearFunction()
 			lineDat = []
 			d3.selectAll('.scale').remove()
@@ -218,7 +222,7 @@
 			stackGraph(["Social protection expenses","Education expenses","Health expenses","Infrastructure & industrial expenses","Remaining expenses"], 0)
 			
 			window.setTimeout(function() {
-				addLine("Oil money in budget",0)
+				addLine("Oil revenues in budget",0)
 				
 				window.setTimeout(function() {
 					//addLine("Budget expenses total",0)
@@ -254,54 +258,59 @@
 						.text('Total budget expenses')
 				}, 5500);
 			}, 4000);
+			
+			window.setTimeout(function(){d3.selectAll('input').style('visibility', 'visible')}, 10000)
 		}
 		
 		function budgetFunction() {
-		d3.selectAll('.scale').remove()
-			lineDat = []
-			clearFunction()
-			lineLegendCounter=0
-			stackGraph(["Oil money in budget","Non-oil revenues of state budget"], 1)
-			
-			window.setTimeout(function() {
-				addLine("Oil revenues of SOFAZ",1)
+			$("#rad1").prop("checked", false)
+			d3.selectAll('input').style('visibility', 'hidden')
+			d3.selectAll('.scale').remove()
+				lineDat = []
+				clearFunction()
+				lineLegendCounter=0
+				stackGraph(["Oil revenues in budget","Non-oil revenues of state budget"], 1)
 				
 				window.setTimeout(function() {
-					addLine("SOFAZ transfers to state budget",1)
-					window.setTimeout(function(){
-						svg.append('line')
-						.attr('class', 'scale')
-						.attr('x1', xScale(2015.5))
-						.attr('x2', xScale(2015.5))
-						.attr('y2', height)
-						.attr('y1', yScale(19000))
-						.attr('stroke', 'black')
-						.attr('stroke-width', 2)
-					svg.append('line')
+					addLine("Oil revenues of SOFAZ",1)
+					
+					window.setTimeout(function() {
+						addLine("SOFAZ transfers to state budget",1)
+						window.setTimeout(function(){
+							svg.append('line')
 							.attr('class', 'scale')
-							.attr('x1', xScale(2015.4))
+							.attr('x1', xScale(2015.5))
 							.attr('x2', xScale(2015.5))
 							.attr('y2', height)
-							.attr('y1', height)
-							.attr('stroke', 'black')
-							.attr('stroke-width', 2)
-					svg.append('line')
-							.attr('x1', xScale(2015.4))
-							.attr('class', 'scale')
-							.attr('x2', xScale(2015.5))
-							.attr('y2', yScale(19000))
 							.attr('y1', yScale(19000))
 							.attr('stroke', 'black')
 							.attr('stroke-width', 2)
-					svg.append('text')
-						.attr('x', xScale(2015.6))
-						.attr('class', 'scale')
-						.attr('y', yScale(19000))
-						.attr('font-size', 12)
-						.text('Total government revenues')
-					}, 6000);
-			}, 5000);
-			}, 4000);
+						svg.append('line')
+								.attr('class', 'scale')
+								.attr('x1', xScale(2015.4))
+								.attr('x2', xScale(2015.5))
+								.attr('y2', height)
+								.attr('y1', height)
+								.attr('stroke', 'black')
+								.attr('stroke-width', 2)
+						svg.append('line')
+								.attr('x1', xScale(2015.4))
+								.attr('class', 'scale')
+								.attr('x2', xScale(2015.5))
+								.attr('y2', yScale(19000))
+								.attr('y1', yScale(19000))
+								.attr('stroke', 'black')
+								.attr('stroke-width', 2)
+						svg.append('text')
+							.attr('x', xScale(2015.6))
+							.attr('class', 'scale')
+							.attr('y', yScale(19000))
+							.attr('font-size', 12)
+							.text('Total government revenues')
+						}, 6000);
+				}, 5000);
+				}, 4000);
+			window.setTimeout(function(){d3.selectAll('input').style('visibility', 'visible')}, 12000)
 		}
 		
 		

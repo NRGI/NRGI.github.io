@@ -24,9 +24,14 @@
 		<button id='button' onclick="toRatio()">Raw axes (payments to GDP ratio)</button>
 		
 		<script>
+			
+			
 			var margin = {top:40, bottom:40, left:150, right:40}
 			var width = 1000 - margin.left - margin.right
 			var height = 600 - margin.top - margin.bottom
+			
+			
+			
 			
 			var svg = d3.select('#plot').append('svg')
 							.attr('width', width + margin.left + margin.right)
