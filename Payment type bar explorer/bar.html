@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="utf-8">
+		<title>RP Project Payments</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<style>
+			#plot {
+				height: 800px;
+				width: 1700px;
+				<!-- background-color: aqua -->
+			}
+			
+			
+		</style>
+	</head>
+
+	<body>
+		
+		<div id='plot'></div>
+		
+		
+		<script>
+			var margin = {top:40, bottom:40, left:100, right:40}
+			var width = 1700 - margin.left - margin.right
+			var height = 800 - margin.top - margin.bottom
+			
+			var svg = d3.select('#plot').append('svg')
+							.attr('width', width + margin.left + margin.right)
+							.attr('height', height + margin.top + margin.bottom)
+						.append('g')
+							.attr('transform','translate('+margin.left+','+margin.top+')')
+			
+			var tooltip = d3.select("body")
+										.append("div")
+										.attr('class','tooltip')
+										.style('color','black')
+										.style("position", "absolute")
+										.style("z-index", "10")
+										.style('visibility', 'hidden')
+			
+			var dat, xScale, yScale, dat2, roll, roll2
+			var addName = [], addIso = []
+			
+			
+			d3.json("map.geo.json", function(d) {
+					map = d
+					
+					for(i=0; i<d.features.length; i++){
+						
+						if($.inArray(d.features[i].properties.name, addName)==-1)  {
+							addIso.push(d.features[i].id)
+							addName.push(d.features[i].properties.name)
+						}
+					}
+					
+					projection = d3.geoMercator()
+						   .translate([width/2, height/2])
+						   .scale([230]);
+					path = d3.geoPath()
+					   .projection(projection);
+					
+					svg.selectAll('path')
+					   .data(map.features)
+					   .enter()
+					   .append('path')
+						  .attr('d', path)						
+						  .attr("stroke", "white")
+						  .attr("stroke-width", .5)
+						  .attr('fill','black')
+						  .attr('name', function(d){return d.properties.name})
+						  .attr('opacity', 1)
+						 .on('mouseover', function(d){
+							ctry = d3.select(this).attr('name')
+							
+							d3.selectAll('[name="'+ctry+'"]').attr('fill','red')
+						 
+						 })
+						 .on('mouseout', function(d){
+							ctry = d3.select(this).attr('name')
+							
+							d3.selectAll('[name="'+ctry+'"]').attr('fill','black')
+						 
+						 })
+						
+				});
+			
+			d3.csv('project_data_type.csv', function(data) {
+				data.forEach(function(d){
+					d.V1 = +d.V1
+				})
+				dat2 = data
+				
+				names = d3.map(dat2, function(d){return d.Payment_type}).keys().sort()
+				names.unshift("")
+				
+				var selectType = d3.select('body')
+								.append('select')
+								.attr('class','selectType')
+								.on('change', selectTypeFun)
+
+				var optionsType = selectType
+							  .selectAll('option')
+								//.data(d3.map(dat2, function(d){return d.Payment_type}).keys().sort()).enter()
+								.data(names).enter()
+								.append('option')
+									.text(function (d) { return d; });				
+			})
+			
+			d3.csv('project_data.csv', function(data) {
+				data.forEach(function(d){
+					d.V1 = +d.V1
+				})
+				dat = data
+				yScale= d3.scaleLinear()
+							.domain([0, d3.max(dat, function(d){return d.V1})])
+							.range([height, 0])
+							
+				xScale= d3.scaleLinear()
+							.domain([0, dat.length])
+							.range([0, width])
+							
+				function blah(){console.log('pie')}
+				
+				
+				var selectCountry = d3.select('body')
+								.append('select')
+								.attr('class','selectCountry')
+								.on('change', selectCountryFun)
+
+				var optionsCountry = selectCountry
+							  .selectAll('option')
+								.data(d3.map(dat, function(d){return d.Country}).keys().sort()).enter()
+								.append('option')
+									.text(function (d) { return d; });
+									
+				
+								
+				svg.append('g')
+						.attr('class','xaxis')
+						.attr('transform','translate(0,'+height+')')
+						.call(d3.axisBottom(xScale))
+				svg.append('g')
+						.attr('class','yaxis')
+						.attr('transform','translate(-10,0)')						
+						.call(d3.axisLeft(yScale))
+				
+					
+				svg.selectAll('rect')
+					.data(dat, function(d){return d})
+					.enter()
+					.append('rect')
+						.attr('x', function(d, i){return xScale(i)})
+						.attr('y', function(d){return yScale(d.V1)})
+						.attr('height', function(d){return height-yScale(d.V1)})
+						.attr('project', function(d){return d.Project})
+						.attr('name', function(d){return d.Country})
+						.attr('width', 1)
+						.attr('fill', 'black')
+					.on('mouseover', function(d){
+						proj = d3.select(this).attr('name')
+						ctry = d3.select(this).attr('name')
+						d3.selectAll('[name="'+ctry+'"]').attr('fill','red')
+						
+						
+						tooltip.transition()
+							.style('visibility', 'visible')
+						tooltip.html('<b>'+proj+'<b>')
+								.style('font-size','14px')
+								.style('font-family','sans-serif')
+								.style("left", (+d3.select(this).attr('x')+margin.left+8) + 'px') //tooltip location is dependent on entire page not just svg space
+								.style("top", (+d3.select(this).attr('y')+margin.top+5) + 'px')						
+					})
+					.on('mouseout', function(d){
+						ctry = d3.select(this).attr('name')
+						d3.selectAll('[name="'+ctry+'"]').attr('fill','black')
+						tooltip.transition()
+									.style('visibility', 'hidden')
+					})
+			});
+			
+			var newDat
+			
+			function selectCountryFun(){
+				d3.selectAll('rect').remove()
+				d3.selectAll('.yaxis').remove()
+				d3.selectAll('.xaxis').remove()				
+				d3.select('.selectType').property('value', '')
+				
+				country = d3.select('.selectCountry').property('value')
+				
+				
+				newDat = dat.filter(function(d){
+					return d.Country == country
+				})
+				
+				yScale= d3.scaleLinear()
+							.domain([0, d3.max(newDat, function(d){return d.V1})])
+							.range([height, 0])
+							
+				xScale= d3.scaleLinear()
+							.domain([0, newDat.length])
+							.range([0, width])
+				
+				svg.append('g')
+						.attr('class','xaxis')
+						.attr('transform','translate(0,'+height+')')
+						.call(d3.axisBottom(xScale))
+				svg.append('g')
+						.attr('class','yaxis')
+						.attr('transform','translate(-10,0)')						
+						.call(d3.axisLeft(yScale))
+				
+				svg.selectAll('rect')
+					.data(newDat, function(d){return d})
+					.enter()
+					.append('rect')
+						.attr('x', function(d, i){return xScale(i)})
+						.attr('y', function(d){return yScale(d.V1)})
+						.attr('height', function(d){return height-yScale(d.V1)})
+						.attr('name', function(d){return d.Project})
+						.attr('width', width/newDat.length-5)
+						.attr('fill', 'white')
+						.attr('stroke', 'black')
+					.on('mouseover', function(d){
+						d3.select(this).attr('fill', 'red')
+						proj = d3.select(this).attr('name')
+						ctry = d3.select(this).attr('name')
+						d3.selectAll('[name="'+ctry+'"]').attr('fill','red')
+						
+						tooltip.transition()
+							.style('visibility', 'visible')
+						tooltip.html('<b>'+proj+'<b>')
+								.style('font-size','14px')
+								.style('font-family','sans-serif')
+								.style("left", (+d3.select(this).attr('x')+margin.left+8) + 'px') //tooltip location is dependent on entire page not just svg space
+								.style("top", (+d3.select(this).attr('y')+margin.top-10) + 'px')						
+					})
+					.on('mouseout', function(d){
+						d3.select(this).attr('fill', 'white')
+						//ctry = d3.select(this).attr('name')
+						//d3.selectAll('[name="'+ctry+'"]').attr('fill','red')
+						tooltip.transition()
+									.style('visibility', 'hidden')
+					})
+				
+				
+			}
+			
+			function selectTypeFun(){
+				d3.selectAll('rect').remove()
+				d3.selectAll('.yaxis').remove()
+				d3.selectAll('.xaxis').remove()
+				d3.select('.selectCountry').property('value', '')
+				
+				type = d3.select('.selectType').property('value')
+				console.log(type)
+				
+				newDat = dat2.filter(function(d){
+					return d.Payment_type == type
+				})
+				
+				newDat.sort(function(a, b){
+					return b["V1"]-a["V1"];
+				});
+				
+				yScale= d3.scaleLinear()
+							.domain([0, d3.max(newDat, function(d){return d.V1})])
+							.range([height, 0])
+							
+				xScale= d3.scaleLinear()
+							.domain([0, newDat.length])
+							.range([0, width])
+				
+				svg.append('g')
+						.attr('class','xaxis')
+						.attr('transform','translate(0,'+height+')')
+						.call(d3.axisBottom(xScale))
+				svg.append('g')
+						.attr('class','yaxis')
+						.attr('transform','translate(-10,0)')						
+						.call(d3.axisLeft(yScale))
+				
+				svg.selectAll('rect')
+					.data(newDat, function(d){return d})
+					.enter()
+					.append('rect')
+						.attr('x', function(d, i){return xScale(i)})
+						.attr('y', function(d){return yScale(d.V1)})
+						.attr('height', function(d){return height-yScale(d.V1)})
+						.attr('name', function(d){return d.Country})
+						.attr('project', function(d){return d.Project})
+						.attr('width', width/newDat.length)
+						.attr('fill', 'black')
+						.attr('stroke', 'black')
+					.on('mouseover', function(d){
+						d3.select(this).attr('fill', 'red')
+						proj = d3.select(this).attr('project')
+						
+						ctry = d3.select(this).attr('name')
+						
+						tooltip.transition()
+							.style('visibility', 'visible')
+						tooltip.html('<b>'+proj+'<b>')
+								.style('font-size','14px')
+								.style('font-family','sans-serif')
+								.style("left", (+d3.select(this).attr('x')+margin.left+8) + 'px') //tooltip location is dependent on entire page not just svg space
+								.style("top", (+d3.select(this).attr('y')+margin.top-10) + 'px')
+						
+						d3.selectAll('[name="'+ctry+'"]').attr('fill','red')
+						
+					})
+					.on('mouseout', function(d){
+						d3.selectAll('[name="'+ctry+'"]').attr('fill','black')
+						//d3.select(this).attr('fill', 'white')
+						tooltip.transition()
+									.style('visibility', 'hidden')
+					})
+				
+				
+			}
+			
+			function addMap(delay){
+				svg.selectAll('path')
+					   .data(map.features)
+					   .enter()
+					   .append('path')
+						  .attr('d', path)
+						  .attr('class', function(d){
+							return d.properties.Sig + ' ' + d.id
+						  })
+						  .style("stroke", "black")
+						  .style("stroke-width", ".5")
+						  .attr('fill','white')
+						  .attr('name', function(d){return d.properties.name})
+						  .attr('opacity', 0)
+						.transition()
+							.delay(delay)
+							.duration(2000)
+								.attr('opacity', 1)
+			}
+			
+		
+		
+		</script>
+	</body>
+
+
+</html>

@@ -1,0 +1,1252 @@
+"","Company","Country","Project","Payment_type","V1"
+"1","Total Sa","Angola","Block 17","Production Entitlements",1535173000
+"2","Total Sa","Indonesia","Mahakam PSC","Production Entitlements",841410000
+"3","Total Sa","Norway","Non-attributable","Tax",837188000
+"4","Total Sa","Angola","Block 17","Tax",660639000
+"5","Vedanta Resources","India","CIL-RJ-ON-90/1","Tax",571140000
+"6","Total Sa","Qatar","Dolphin","Production Entitlements",541120000
+"7","Total Sa","Thailand","Bongkot","Tax",360417000
+"8","Vedanta Resources","India","Hindustan Zinc Ltd","Tax",355010000
+"9","Total Sa","Oman","Block 6","Tax",250033000
+"10","Total Sa","Gabon","Concession Fields (Non-attributable)","Tax",115754000
+"11","Vedanta Resources","India","HZL-RA Mines","Royalties",112450000
+"12","Total Sa","Nigeria","OML130 PSA (Akpo & Egina)","Tax",108594000
+"13","Total Sa","Congo","CPP Pointe Noire Grands Fonds (PNGF)","Tax",101602000
+"14","Total Sa","Algeria","Tin Fouyé Tabenkort","Tax",96226000
+"15","Total Sa","Congo","CPP Haute Mer - Zone A","Tax",95539000
+"16","Total Sa","Congo","Kombi, Likalala & Libondo","Tax",77287000
+"17","Total Sa","Gabon","Concession Fields (Non-attributable)","Infrastructure",62688000
+"18","Randgold Resources","Mali","Société des Mines de Gounkoto SA","Tax",46299978
+"19","Total Sa","Nigeria","Joint ventures with NNPC, operated - non-attributable","Infrastructure",46122000
+"20","Total Sa","Argentina","Tierra del Fuego","Tax",45704000
+"21","Total Sa","United Kingdom of Great Britain and Northern Ireland","Central Graben Area","Tax",44778000
+"22","Total Sa","United Arab Emirates","Abu Al Bukhoosh","Tax",44240000
+"23","Total Sa","Bolivia, Plurinational State of","Itau","Tax",43005000
+"24","Total Sa","Myanmar","Blocks M5 and M6","Tax",39037000
+"25","Premier Oil Plc","Indonesia","Corporate","Tax",34616000
+"26","Total Sa","Angola","Block 14","Production Entitlements",112476000
+"27","Total Sa","Gabon","Rabi CEPP","Tax",33253000
+"28","Total Sa","United Kingdom of Great Britain and Northern Ireland","Alwyn North","Tax",31902000
+"29","Vedanta Resources","Zambia","KCM","Royalties",53280000
+"30","Gem Diamonds Ltd","Lesotho","Letšeng Diamonds (Proprietary) Limited","Tax",30735000
+"31","Total Sa","Russian Federation","Kharyaga","Production Entitlements",70973000
+"32","Total Sa","Nigeria","OML102 (joint venture with NNPC, operated)","Tax",29361000
+"33","Total Sa","Congo","Madingo","Tax",28914000
+"34","Total Sa","Bolivia, Plurinational State of","San Antonio","Production Entitlements",63698000
+"35","Vedanta Resources","India","VEDL-AL-JS","Royalties",28020000
+"36","Total Sa","Angola","Block 14","Tax",27100000
+"37","Polymetal Intl Plc","Russian Federation","Dukat","Tax",52896000
+"38","Total Sa","Argentina","Neuquen","Tax",25310000
+"39","Total Sa","Qatar","Dolphin","Tax",58996000
+"40","Genel Energy Plc","Iraq","Bina Bawi","Fees",2.5e+07
+"41","Total Sa","Bolivia, Plurinational State of","Non-attributable","Tax",24464000
+"42","Total Sa","Nigeria","OML100 (joint venture with NNPC, operated)","Tax",23770000
+"43","Petropavlovsk Plc","Russian Federation","JSC Pokrovskiy Rudnik","Tax",23060000
+"44","Ophir Energy Plc","Thailand","Bualuang","Royalties",22131000
+"45","Total Sa","Kazakhstan","Kashagan","Bonuses",20172000
+"46","Acacia Mining","Tanzania, United Republic of","Bulyanhulu gold mine","Tax",31234000
+"47","Total Sa","Qatar","Qatargas 1","Production Entitlements",62245000
+"48","Total Sa","United States of America","Tahiti","Royalties",20037000
+"49","Vedanta Resources","India","CIL-CB-OS/2","Production Entitlements",62200000
+"50","Total Sa","Angola","Block 17","Fees",19476000
+"51","Gem Diamonds Ltd","Lesotho","Letšeng Diamonds (Proprietary) Limited","Royalties",19273000
+"52","Polymetal Intl Plc","Russian Federation","Omolon","Tax",18250000
+"53","Randgold Resources","Mali","Société des Mines de Gounkoto SA","Royalties",18223166
+"54","Total Sa","Gabon","Baudroie Mérou CEPP","Tax",18009000
+"55","Premier Oil Plc","United Kingdom of Great Britain and Northern Ireland","Wytch Farm","Tax",17363000
+"56","Petropavlovsk Plc","Russian Federation","Albyn","Tax",17135000
+"57","Acacia Mining","Tanzania, United Republic of","North Mara gold mine","Royalties",16956000
+"58","Total Sa","China","Sulige","Production Entitlements",16833000
+"59","Total Sa","Gabon","Avocette CEPP","Tax",16593000
+"60","Polymetal Intl Plc","Russian Federation","Albazino","Royalties",16498000
+"61","Total Sa","Indonesia","Tengah PSC","Production Entitlements",16201000
+"62","Total Sa","Nigeria","Joint ventures with NNPC, operated - non-attributable","Tax",16158000
+"63","Total Sa","Nigeria","OML102 Ekanga (joint venture with NNPC, non operated)","Tax",15429000
+"64","Total Sa","Congo","Litanzi & Tchibeli","Tax",14990000
+"65","Jardine Matheson Holdings Ltd","Indonesia","Kapuas, Central Kalimantan Project","Royalties",13776103
+"66","Total Sa","Oman","Block 53","Production Entitlements",13437000
+"67","Polymetal Intl Plc","Russian Federation","Omolon","Royalties",13304000
+"68","Premier Oil Plc","Viet Nam","Corporate","Royalties",10955000
+"69","Randgold Resources","Mali","Société des Mines de Gounkoto SA","Dividends",10256728
+"70","Total Sa","Netherlands","Non-attributable","Tax",10172000
+"71","Total Sa","Cyprus","Block 10","Fees",8614000
+"72","Total Sa","United Kingdom of Great Britain and Northern Ireland","Non-attributable","Tax",8179000
+"73","Acacia Mining","Tanzania, United Republic of","Buzwagi gold mine","Tax",19647000
+"74","Randgold Resources","Cote d'Ivoire","Société des Mines de Tongon SA","Royalties",7583572
+"75","Total Sa","China","Sulige","Tax",7313000
+"76","Vedanta Resources","India","VEDL-IO-Gadia Sodo","Royalties",7110000
+"77","Seplat Petroleum","Nigeria","OML 4, 38 and 41","Fees",5950095
+"78","Polymetal Intl Plc","Russian Federation","Voro","Tax",25648000
+"79","Total Sa","Gabon","Mboga CEPP","Tax",5795000
+"80","Total Sa","Angola","Block 40","Infrastructure",5714000
+"81","Total Sa","Nigeria","OML118 (Bonga)","Tax",92383000
+"82","Premier Oil Plc","Viet Nam","Corporate","Tax",36685000
+"83","Total Sa","Yemen","Block 10","Tax",5147000
+"84","Total Sa","Congo","CPP Haute Mer - Zone D","Tax",92369000
+"85","Total Sa","Angola","Block 25","Infrastructure",5e+06
+"86","Exillon Energy Plc","Russian Federation","Kayumovskoe oil field","Royalties",26262000
+"87","Exillon Energy Plc","Russian Federation","Kayumneft JSC","Tax",4946000
+"88","Polymetal Intl Plc","Russian Federation","Dukat","Royalties",25676000
+"89","Gem Diamonds Ltd","Australia","Gem Diamonds Australia Holdings (Proprietary) Limited","Other",4934000
+"90","Total Sa","Nigeria","OML138 (Usan)","Tax",32028000
+"91","Polymetal Intl Plc","Russian Federation","Okhotsk","Tax",4552000
+"92","Petropavlovsk Plc","Russian Federation","Malomyr","Tax",4360000
+"93","Ophir Energy Plc","Thailand","Bualuang","Tax",81659000
+"94","Acacia Mining","United Kingdom of Great Britain and Northern Ireland","London corporate office","Tax",4049000
+"95","Total Sa","Bolivia, Plurinational State of","San Alberto","Tax",35401000
+"96","Total Sa","Congo","CPP Haute Mer - Zone D","Fees",4344000
+"97","Total Sa","Gabon","Concession Torpille","Tax",38446000
+"98","Total Sa","United Kingdom of Great Britain and Northern Ireland","Greater Laggan Area","Fees",4259000
+"99","Total Sa","United States of America","Barnett Shale","Royalties",4089000
+"100","Total Sa","United States of America","Utica","Tax",4070000
+"101","Total Sa","Nigeria","Joint ventures with NNPC, non operated - non-attributable","Tax",132899000
+"102","Petropavlovsk Plc","Russian Federation","Pokrovskiy","Tax",3898000
+"103","Total Sa","Iraq","Halfaya","Tax",3892000
+"104","Vedanta Resources","India","VED-IO-A Narayan","Royalties",3860000
+"105","Total Sa","Morocco","Anzarane","Fees",3859000
+"106","Total Sa","Nigeria","Joint ventures with NNPC, operated - non-attributable","Fees",3749000
+"107","Exillon Energy Plc","Russian Federation","Zapadno-Khatayakhskoye II oil field","Tax",3555000
+"108","Jardine Matheson Holdings Ltd","Indonesia","Kapuas, Central Kalimantan Project","Fees",3410005
+"109","Total Sa","Egypt","Block 4 East El Burullus","Fees",3275000
+"110","Total Sa","Yemen","Block 10","Production Entitlements",18833000
+"111","Total Sa","Congo","CPP Pointe Noire Grands Fonds (PNGF)","Fees",3257000
+"112","Jardine Matheson Holdings Ltd","Indonesia","Pamapersada Nusantara","Tax",136107977
+"113","Polymetal Intl Plc","Kazakhstan","Varvara","Tax",3232000
+"114","Acacia Mining","Tanzania, United Republic of","Bulyanhulu gold mine","Other",3889000
+"115","Polymetal Intl Plc","Russian Federation","Omolon","Fees",3358000
+"116","Seplat Petroleum","Nigeria","OML 4, 38 and 41","Royalties",106372787
+"117","Jardine Matheson Holdings Ltd","Indonesia","Kapuas, Central Kalimantan Project","Tax",3031079
+"118","Total Sa","Egypt","North El Mahala Onshore","Bonuses",3e+06
+"119","Premier Oil Plc","Pakistan","Kadanwari","Royalties",2997000
+"120","Total Sa","Angola","Block 0","Tax",116489000
+"121","Total Sa","Angola","Block 39","Infrastructure",2872000
+"122","Total Sa","Myanmar","Blocks M5 and M6","Production Entitlements",133478000
+"123","Vedanta Resources","Ireland","Lisheen","Royalties",2830000
+"124","Exillon Energy Plc","Russian Federation","Lumutinskoe oil field","Tax",2730000
+"125","Total Sa","Brunei Darussalam","Block B","Tax",152862000
+"126","Total Sa","Oman","Block 53","Tax",2687000
+"127","Petrofac","Tunisia","Chergui","Royalties",2947000
+"128","Vedanta Resources","India","CIL-KG-OSN","Production Entitlements",117580000
+"129","Premier Oil Plc","Pakistan","Bhit/Badhra","Royalties",2637000
+"130","Petropavlovsk Plc","Russian Federation","Pioneer","Tax",15006000
+"131","Acacia Mining","Tanzania, United Republic of","North Mara gold mine","Tax",21031000
+"132","Total Sa","Netherlands","Offshore blocks","Fees",2229000
+"133","Total Sa","Indonesia","Tengah PSC","Tax",2074000
+"134","Vedanta Resources","India","HZL-Zawar Mine","Royalties",13730000
+"135","Vedanta Resources","South Africa","BMM","Tax",2e+06
+"136","Total Sa","Congo","CPP Haute Mer - Zone B","Tax",12708000
+"137","Acacia Mining","Tanzania, United Republic of","Bulyanhulu gold mine","Royalties",12700000
+"138","Vedanta Resources","Namibia","SZ","Tax",1930000
+"139","Total Sa","South Africa","Forzando and Dorstfontein","Royalties",1823000
+"140","Great Eastern Energy Group","India","Raniganj (South) block","Royalties",1751555
+"141","Total Sa","Cote d'Ivoire","CI-514","Fees",1624000
+"142","Total Sa","Azerbaijan","Shah Deniz","Tax",1619000
+"143","Total Sa","Norway","Alve North","Fees",1580000
+"144","Petrofac","Malaysia","Berantai","Tax",1555000
+"145","Total Sa","Nigeria","OML130","Fees",1517000
+"146","Acacia Mining","Tanzania, United Republic of","Buzwagi gold mine","Other",1944000
+"147","Gem Diamonds Ltd","Botswana","Gem Diamonds Botswana (Proprietary) Limited","Royalties",1506000
+"148","Premier Oil Plc","Pakistan","Zamzama","Royalties",1438000
+"149","Total Sa","Yemen","Block 5","Production Entitlements",8969000
+"150","Jardine Matheson Holdings Ltd","Indonesia","Banjar, South Kalimantan Project","Royalties",1397378
+"151","Total Sa","Bolivia, Plurinational State of","Azero","Fees",1330000
+"152","Polymetal Intl Plc","Russian Federation","Voro","Royalties",9996000
+"153","Total Sa","United Kingdom of Great Britain and Northern Ireland","Central Graben Area","Fees",1327000
+"154","Vedanta Resources","India","VGCB","Royalties",9910000
+"155","Total Sa","Norway","Victoria","Fees",1308000
+"156","Total Sa","Congo","CPP Tchendo 2","Tax",16433000
+"157","Total Sa","Argentina","Neuquen","Fees",1290000
+"158","Acacia Mining","Tanzania, United Republic of","North Mara gold mine","Other",2297000
+"159","Petrofac","Malaysia","PM304","Fees",1253000
+"160","Total Sa","Congo","Madingo","Fees",1154000
+"161","Vedanta Resources","India","HZL-RD Mine","Royalties",7660000
+"162","Polymetal Intl Plc","Kazakhstan","Varvara","Royalties",1092000
+"163","Petrofac","Tunisia","Chergui","Tax",9910000
+"164","Acacia Mining","South Africa","Johannesburg corporate office","Tax",1013000
+"165","Total Sa","Congo, the Democratic Republic of the","Block 3","Fees",910000
+"166","Total Sa","Colombia","Non-attributable","Tax",907000
+"167","Total Sa","Gabon","Hylia II CEPP","Fees",893000
+"168","Acacia Mining","Tanzania, United Republic of","Exploration administrative","Tax",806000
+"169","Vedanta Resources","Namibia","SZ","Royalties",720000
+"170","Vedanta Resources","India","CIL-KG-OSN","Fees",7e+05
+"171","Total Sa","Gabon","Baudroie Mérou CEPP","Fees",648000
+"172","Total Sa","Angola","Block 32","Fees",616000
+"173","Vedanta Resources","India","SMCL-IO-Mandoorbaga","Royalties",530000
+"174","Ophir Energy Plc","Gabon","Nkawa","Fees",522000
+"175","Ophir Energy Plc","Gabon","Nkouere","Fees",510000
+"176","Total Sa","Cyprus","Block 11","Fees",509000
+"177","Premier Oil Plc","Viet Nam","Chim Sao","Bonuses",450000
+"178","Great Eastern Energy Group","India","Raniganj (South) block","Production Entitlements",437889
+"179","Acacia Mining","Tanzania, United Republic of","Bulyanhulu gold mine","Fees",434000
+"180","Vedanta Resources","India","VEDL-IO-Mareta Sodo","Royalties",410000
+"181","Ophir Energy Plc","Indonesia","Bangkanai (Kerendan)","Infrastructure",395000
+"182","Total Sa","Colombia","Non-attributable","Fees",379000
+"183","Vedanta Resources","South Africa","BMM","Royalties",370000
+"184","Goldbridges Global Resources Plc","Kazakhstan","TOO Goronorudnoe Predpriatie Sekisovskoye","Infrastructure",349983
+"185","Petropavlovsk Plc","Russian Federation","Malomyr","Fees",341000
+"186","Total Sa","Bulgaria","Khan Asparuh","Fees",323000
+"187","Vedanta Resources","India","CIL-CB-OS/2","Tax",310000
+"188","Total Sa","Congo","CPP Haute Mer - Zone B","Fees",282000
+"189","Genel Energy Plc","Iraq","Taq Taq","Infrastructure",280000
+"190","Total Sa","Canada","Joslyn","Fees",249000
+"191","Green Dragon Gas Ltd","China","Shizhuang South (GSS)","Fees",247000
+"192","Premier Oil Plc","United Kingdom of Great Britain and Northern Ireland","Brenda","Fees",236000
+"193","Jardine Matheson Holdings Ltd","Indonesia","North Barito, Central Kalimantan Project","Fees",233231
+"194","Great Eastern Energy Group","India","Raniganj (South) block","Tax",232346
+"195","Ophir Energy Plc","Kenya","L9","Fees",232000
+"196","Exillon Energy Plc","Russian Federation","Ucatex Ugra LLC","Tax",232000
+"197","Total Sa","Egypt","North El Mahala Onshore","Fees",230000
+"198","Hunting Plc","United States of America","Ship Shoal 170","Royalties",228537
+"199","Total Sa","Kenya","Block L22","Fees",228000
+"200","Randgold Resources","Cote d'Ivoire","Boundiali exploration permit","Fees",220827
+"201","Acacia Mining","Tanzania, United Republic of","North Mara gold mine","Fees",217000
+"202","Total Sa","Angola","Block 39","Fees",214000
+"203","Ophir Energy Plc","Gabon","Ntsina","Fees",209000
+"204","Total Sa","Angola","Block 40","Fees",207000
+"205","Ophir Energy Plc","Gabon","Gnondo","Fees",207000
+"206","Exillon Energy Plc","Russian Federation","North-Kenyunskoye oil field","Tax",204000
+"207","Polymetal Intl Plc","Kazakhstan","Kyzyl","Other",230000
+"208","Total Sa","Uganda","Block EA-1A","Fees",201000
+"209","Vedanta Resources","India","SMCL-IO-Lamgao","Royalties",2e+05
+"210","Exillon Energy Plc","Russian Federation","Nem Oil CJSC","Tax",198000
+"211","Premier Oil Plc","Pakistan","Zarghun South","Royalties",195000
+"212","Polymetal Intl Plc","Russian Federation","Albazino","Fees",280000
+"213","Total Sa","Brazil","Ceara (CE-M-661)","Fees",192000
+"214","Total Sa","Norway","PL006 Tor","Fees",188000
+"215","Acacia Mining","Kenya","Kenya administrative","Tax",578000
+"216","Total Sa","Nigeria","Joint ventures with NNPC, non operated - non-attributable","Fees",182000
+"217","Vedanta Resources","India","CIL-MB-DWN","Fees",180000
+"218","Acacia Mining","Tanzania, United Republic of","Buzwagi gold mine","Fees",176000
+"219","Total Sa","Mauritania","Block TA29","Fees",175000
+"220","Polymetal Intl Plc","Russian Federation","Okhotsk","Fees",599000
+"221","Total Sa","Nigeria","OPL285","Fees",173000
+"222","Randgold Resources","Cote d'Ivoire","Société des Mines de Tongon SA","Infrastructure",172000
+"223","Total Sa","Angola","Block 25","Fees",171000
+"224","Total Sa","Mauritania","Block C9","Fees",170000
+"225","Goldbridges Global Resources Plc","Kazakhstan","TOO Goronorudnoe Predpriatie Sekisovskoye","Fees",167387
+"226","Randgold Resources","Mali","Société des Mines de Gounkoto SA","Infrastructure",167000
+"227","Total Sa","Norway","PL026 Rind","Fees",149000
+"228","Green Dragon Gas Ltd","China","Boatian-Qingshan (GGZ)","Fees",146000
+"229","Petropavlovsk Plc","Russian Federation","Albyn","Fees",142000
+"230","Premier Oil Plc","United Kingdom of Great Britain and Northern Ireland","P354","Fees",140000
+"231","Total Sa","Italy","Gorgoglione Unified License","Fees",139000
+"232","Premier Oil Plc","Brazil","CE-M-665-R11","Fees",135000
+"233","Total Sa","Congo","Kombi, Likalala & Libondo","Fees",125000
+"234","Total Sa","Uruguay","Blocks 1 & 2 (Onshore)","Fees",123000
+"235","Acacia Mining","Tanzania, United Republic of","Non-core exploration projects","Fees",114000
+"236","Green Dragon Gas Ltd","China","Fengcheng (GFC)","Fees",110000
+"237","Total Sa","Canada","Other oil sands projects","Fees",102000
+"238","Green Dragon Gas Ltd","China","Panxie East (GPX)","Fees",95000
+"239","Vedanta Resources","India","SRL-IO-Onvalienchi Math","Royalties",90000
+"240","Total Sa","Canada","Northern Lights","Fees",83000
+"241","Green Dragon Gas Ltd","China","Chengzhuang (GCZ)","Tax",82000
+"242","Polymetal Intl Plc","Kazakhstan","Kyzyl","Tax",77000
+"243","Hunting Plc","United States of America","Ship Shoal 109","Royalties",67375
+"244","Acacia Mining","Kenya","Kenya administrative","Fees",66000
+"245","Randgold Resources","Cote d'Ivoire","Société des Mines de Tongon SA","Fees",62628
+"246","Total Sa","Yemen","Block 70","Fees",57000
+"247","Total Sa","Norway","Islay","Fees",51000
+"248","Hunting Plc","United States of America","South Timbalier 34","Royalties",50974
+"249","Total Sa","Brazil","Xerelete (BC-2)","Fees",49000
+"250","Hunting Plc","United States of America","Bay Marchand Blk 2/5","Royalties",45402
+"251","Total Sa","Gabon","Nziembou CEPP","Bonuses",45000
+"252","Hunting Plc","United States of America","South Timbalier 19/30","Royalties",44216
+"253","Total Sa","Bolivia, Plurinational State of","Itau","Production Entitlements",43000
+"254","Randgold Resources","Senegal","Randgold Resources (Senegal) Limited","Fees",42294
+"255","Hunting Plc","United States of America","South Pelto 5 & 5A","Royalties",42090
+"256","Total Sa","Gabon","Mboga CEPP","Fees",41000
+"257","Total Sa","Angola","Block 33","Fees",38000
+"258","Polymetal Intl Plc","Russian Federation","Voro","Fees",37000
+"259","Green Dragon Gas Ltd","China","Chengzhuang (GCZ)","Fees",35000
+"260","Hunting Plc","United States of America","South Timbalier 16","Royalties",29181
+"261","Hunting Plc","United States of America","Ship Shoal 67","Royalties",27280
+"262","Hunting Plc","United States of America","Fisher","Tax",19396
+"263","Petropavlovsk Plc","Russian Federation","Alluvial operations","Fees",16000
+"264","Vedanta Resources","India","MVPL","Tax",290000
+"265","Hunting Plc","United States of America","Adair San Andres Unit","Tax",13899
+"266","Total Sa","Gabon","Atora CEPP","Fees",320000
+"267","Total Sa","Brunei Darussalam","Block B","Fees",13000
+"268","Total Sa","Bolivia, Plurinational State of","Aquio","Fees",281000
+"269","Randgold Resources","Mali","Société des Mines de Gounkoto SA","Fees",12681
+"270","Hunting Plc","United States of America","Abbeville/Crystal","Tax",10612
+"271","Exillon Energy Plc","Russian Federation","Aslador Oil CJSC","Fees",9000
+"272","Hunting Plc","United States of America","Dorcheat-Macedonia","Tax",7176
+"273","Hunting Plc","United States of America","Little Wall Creek","Tax",6624
+"274","Exillon Energy Plc","Russian Federation","Komi Resources CJSC","Fees",5000
+"275","Hunting Plc","United States of America","Agua Dulce","Tax",4337
+"276","Randgold Resources","Mali","Randgold Resources Mali SARL","Fees",2877
+"277","Hunting Plc","United States of America","Lucky","Tax",2306
+"278","Polymetal Intl Plc","Russian Federation","Dukat","Fees",440000
+"279","Hunting Plc","United States of America","East Dickenson","Tax",1206
+"280","Hunting Plc","United States of America","South Pelto 5 & 5A","Tax",1169
+"281","Polymetal Intl Plc","Kazakhstan","Kyzyl","Royalties",1000
+"282","Glencore plc","Equatorial Guinea","Block I - Aseng Project","Production Entitlements",105632000
+"283","Rio Tinto PLC","Australia","GOVE","Tax",13350942
+"284","Rio Tinto PLC","Australia","PILBARA","Tax",1980216391
+"285","JKX Oil & Gas plc","Slovakia","Exploration","Fees",173000
+"286","JKX Oil & Gas plc","Ukraine","Payment at an entity level","Tax",696000
+"287","JKX Oil & Gas plc","Hungary","Appraisal and exploration","Fees",52000
+"288","JKX Oil & Gas plc","Hungary","Appraisal and exploration","Royalties",1000
+"289","JKX Oil & Gas plc","Russian Federation","Koshekhablskoye field","Royalties",1445000
+"290","JKX Oil & Gas plc","Ukraine","Elizavetovskoye field","Royalties",9932000
+"291","EQUION ENERGIA LIMITED","Colombia","Tauramena","Royalties",35378586
+"292","Perenco Overseas Holdings Limited","Viet Nam","Perenco Cuu Long Ltd","Royalties",29116040
+"293","Perenco Overseas Holdings Limited","Viet Nam","Perenco Vietnam AS","Tax",3556862
+"294","Exillon Energy Plc","Russian Federation","Kayumovskoe oil field","Tax",51869000
+"295","Perenco (Oil & Gas) International Limited","Turkey","Corporate","Tax",29747399
+"296","Perenco (Oil & Gas) International Limited","Turkey","3341","Royalties",673951
+"297","Perenco (Oil & Gas) International Limited","Turkey","2553","Royalties",19801
+"298","Perenco (Oil & Gas) International Limited","Turkey","840","Royalties",151978
+"299","Perenco Oil & Gas Colombia Limited","Colombia","Manatus","Production Entitlements",203760
+"300","Perenco Oil & Gas Colombia Limited","Colombia","Tiple","Production Entitlements",317376
+"301","Perenco Oil & Gas Colombia Limited","Colombia","Yalea","Royalties",899
+"302","Perenco Oil & Gas Colombia Limited","Colombia","Yalea","Production Entitlements",941952
+"303","Perenco Oil & Gas Colombia Limited","Colombia","San Jacinto & Rio Paez LCN","Production Entitlements",437520
+"304","Total Sa","Congo","Litanzi & Tchibeli","Fees",11000
+"305","Perenco Oil & Gas Colombia Limited","Colombia","Cerrero Chacharo","Royalties",58916
+"306","Total Sa","United Arab Emirates","Abu Dhabi Company for Onshore Oil Operation (ADCO)","Tax",2602274000
+"307","Hunting Plc","United States of America","Bishop, West","Tax",9100
+"308","Perenco Oil & Gas Colombia Limited","Colombia","Espinal","Royalties",560815
+"309","Total Sa","United Arab Emirates","Abu Dhabi Company for Onshore Oil Operation (ADCO)","Bonuses",2.22e+09
+"310","Hunting Plc","United States of America","Little Wall Creek","Royalties",1889
+"311","Perenco Oil & Gas Colombia Limited","Colombia","Boquerón","Royalties",3962
+"312","Tethys Petroleum Limited","Tajikistan","Bokhtar PSC","Tax",130287
+"313","Tethys Petroleum Limited","Kazakhstan","Kul-Bas","Infrastructure",21711
+"314","Total Sa","United Kingdom of Great Britain and Northern Ireland","Non-attributable","Fees",580000
+"315","Tethys Petroleum Limited","Kazakhstan","Kyzloi Gas","Tax",25333
+"316","Total Sa","Congo","CPP Tchendo 2","Fees",425000
+"317","Tethys Petroleum Limited","Kazakhstan","Akulka Oil","Tax",718038
+"318","Tethys Petroleum Limited","Kazakhstan","Akulka Gas","Tax",58457
+"319","Hunting Plc","United States of America","Fairway","Tax",1016
+"320","Nostrum Oil & Gas PLC","Kazakhstan","Rostoshinkoye","Infrastructure",3e+05
+"321","Nostrum Oil & Gas PLC","Kazakhstan","Chinarevskoye","Infrastructure",3e+05
+"322","Nostrum Oil & Gas PLC","Kazakhstan","Chinarevskoye","Royalties",17142173
+"323","Nostrum Oil & Gas PLC","Kazakhstan","Chinarevskoye","Tax",40695269
+"324","Nostrum Oil & Gas PLC","Kazakhstan","Chinarevskoye","Production Entitlements",6985642
+"325","Cairn Energy PLC","Senegal","Sangomar-Rufisque","Fees",107055
+"326","Cairn Energy PLC","Morocco","Juby Maritime","Tax",70297
+"327","Cairn Energy PLC","Norway","New Opportunities - Norway","Fees",97707
+"328","Cairn Energy PLC","Ireland","Corporate - Republic of Ireland","Tax",343
+"329","Cairn Energy PLC","Ireland","FEL 1/14","Fees",45368
+"330","Cairn Energy PLC","Greenland","2008/11 ( Eqqua)","Fees",63483
+"331","Petropavlovsk Plc","Russian Federation","Other","Fees",79000
+"332","EnQuest PLC","Malaysia","Corporate","Tax",7766461
+"333","Vedanta Resources","India","VEDL-C-Tuti","Fees",90000
+"334","Total Sa","Yemen","Block 72","Fees",93000
+"335","EnQuest PLC","United Kingdom of Great Britain and Northern Ireland","Corporate","Fees",1849352
+"336","Petropavlovsk Plc","Russian Federation","JSC Pokrovskiy Rudnik","Fees",502000
+"337","EnQuest PLC","United Kingdom of Great Britain and Northern Ireland","Kildrummy","Fees",149202
+"338","Nord Gold SE","Burkina Faso","Jilbey Burkina SARL","Tax",142747
+"339","Randgold Resources","Cote d'Ivoire","Société des Mines de Tongon SA","Tax",579868
+"340","Tethys Petroleum Limited","Kazakhstan","Kyzloi Gas","Infrastructure",54276
+"341","Anglo American plc","Brazil","Corporate-Anglo American Niobio Ltda","Fees",17850
+"342","BG Group Ltd","Tunisia","Miskar","Tax",33408000
+"343","Glencore plc","Chad","Mangara Field Project","Fees",823000
+"344","Glencore plc","Kazakhstan","North-East Kazakhstan Project - Kazzinc","Royalties",65890000
+"345","Glencore plc","Tanzania, United Republic of","Kagera Region Project - Kabanga","Fees",206000
+"346","Anglo American plc","South Africa","Corporate-Sishen Iron Ore Company (Pty) Ltd","Royalties",19911762
+"347","Antofagasta plc","","Los Pelambres","Tax",226454000
+"348","Tullow Oil PLC","Kenya","Block 10BA","Fees",158100
+"349","Glencore plc","South Africa","Mpumalanga Province Project - Thermal Coal","Infrastructure",743988
+"350","Total Sa","Algeria","Tin Fouyé Tabenkort","Production Entitlements",209142000
+"351","Glencore plc","Peru","Huarochiri Project - Minera Los Quenuales","Fees",439000
+"352","Antofagasta plc","","Centinela","Tax",61994000
+"353","Glencore plc","Peru","Antapaccay","Fees",4716000
+"354","Tullow Oil PLC","Mozambique","Tullow Mozambique Limited","Tax",830
+"355","BG Group Ltd","Tanzania, United Republic of","Block 4","Fees",226000
+"356","Glencore plc","Peru","Antapaccay","Royalties",26728000
+"357","Glencore plc","Equatorial Guinea","Block V Project","Fees",279000
+"358","Glencore plc","Congo, the Democratic Republic of the","DRC Copperbelt Region Project","Fees",29426000
+"359","Total Sa","United Kingdom of Great Britain and Northern Ireland","Markham Area","Fees",194000
+"360","Glencore plc","Peru","Huarochiri Project - Minera Los Quenuales","Royalties",894000
+"361","ROYAL DUTCH SHELL PLC","Gabon","GABON SOUTH","Infrastructure",16791230
+"362","ROYAL DUTCH SHELL PLC","Argentina","ACAMBUCO","Royalties",5338345
+"363","BP P.L.C.","United Kingdom of Great Britain and Northern Ireland","Andrew","Fees",209265
+"364","BG Group Ltd","Trinidad and Tobago","NCMA","Fees",1343000
+"365","Glencore plc","Colombia","Cesar Department Project - Prodeco","Tax",23832000
+"366","ROYAL DUTCH SHELL PLC","Malaysia","SABAH SHELL PETROLEUM COMPANY LIMITED","Tax",368210
+"367","Total Sa","Bolivia, Plurinational State of","Ipati","Fees",464000
+"368","EnQuest PLC","United Kingdom of Great Britain and Northern Ireland","Kraken","Fees",498491
+"369","Glencore plc","Canada","Quebec Project - Raglan","Tax",13620000
+"370","Cadogan Petroleum PLC","Ukraine","Monastyretska licence area","Tax",241227
+"371","ROYAL DUTCH SHELL PLC","Canada","INSITU","Royalties",10959461
+"372","Avocet Mining PLC","Burkina Faso","Inata","Tax",2494000
+"373","Glencore plc","Canada","Quebec Project - Matagami","Fees",35000
+"374","Total Sa","Bulgaria","Silistar","Fees",6000
+"375","Perenco Oil & Gas Colombia Limited","Colombia","Espinal","Production Entitlements",3798672
+"376","Avocet Mining PLC","Burkina Faso","Inata","Royalties",2094000
+"377","ROYAL DUTCH SHELL PLC","Brazil","Shell Brasil Petroleo Ltda","Fees",1077972
+"378","BP P.L.C.","Oman","Khazzan","Fees",4e+05
+"379","Total Sa","United Arab Emirates","Abu Dhabi Marine Areas Ltd (ADMA)","Tax",1433960000
+"380","Polymetal Intl Plc","Kazakhstan","Kyzyl","Fees",86000
+"381","PetroLatina Energy Ltd. (consolidated group)","Colombia","Midas Block","Infrastructure",218945
+"382","Glencore plc","Canada","Ontario Project - Sudbury","Tax",5656000
+"383","Glencore plc","Canada","Ontario Project - Kidd","Fees",7000
+"384","Glencore plc","Australia","New South Wales Project - Cobar Copper","Royalties",6026034
+"385","Glencore plc","Canada","British Columbia Project - Coking Coal","Fees",819000
+"386","BP P.L.C.","Canada","Legacy Retained Conventional","Royalties",387232
+"387","Glencore plc","Bolivia, Plurinational State of","Potosi Project - Sinchi Wayra","Royalties",16966000
+"388","FRESNILLO PLC","Mexico","San Julian","Infrastructure",1299425
+"389","ROYAL DUTCH SHELL PLC","Canada","ATHABASCA OIL SANDS","Fees",10487291
+"390","Glencore plc","Australia","Western Australian Project - Murrin Murrin Nickel","Fees",2261311
+"391","Glencore plc","Australia","Western Australian Project - Murrin Murrin Nickel","Tax",766645
+"392","ROYAL DUTCH SHELL PLC","Australia","AUSTRALIA EXPLORATION PROJECTS","Fees",208637
+"393","Premier Oil Plc","United Kingdom of Great Britain and Northern Ireland","Catcher","Fees",655000
+"394","EnQuest PLC","United Kingdom of Great Britain and Northern Ireland","Corporate","Tax",719088
+"395","Anglo American plc","Brazil","Corporate-Anglo American Minerio de Ferro Brasil S.A","Fees",918545
+"396","Goldbridges Global Resources Plc","Kazakhstan","TOO Goronorudnoe Predpriatie Sekisovskoye","Tax",2963
+"397","Glencore plc","Australia","Queensland Project - Mount Isa Mines Zinc","Fees",1854669
+"398","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Horne","Fees",89587
+"399","Hunting Plc","United States of America","Vermilion 51","Royalties",4756
+"400","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Horne & Wren","Fees",89587
+"401","Glencore plc","Australia","Queensland Project - Coking Coal","Fees",2173861
+"402","Glencore plc","Australia","New South Wales Project - Thermal Coal","Tax",69471738
+"403","EVRAZ PLC","South Africa","Evraz Vametco Alloys (PTY) Ltd","Tax",1113768
+"404","Nostrum Oil & Gas PLC","Kazakhstan","Chinarevskoye","Fees",1030928
+"405","Glencore plc","Chad","Badila Field Project","Production Entitlements",45857000
+"406","Glencore plc","Argentina","San Juan Project - Minera Pachon","Fees",147000
+"407","Glencore plc","Equatorial Guinea","Block EG-05 Project","Fees",393000
+"408","Glencore plc","Canada","Quebec Project - Raglan","Fees",98000
+"409","Glencore plc","Argentina","Jujuy Province Project - Minera Aguilar / AR Zinc","Royalties",1075000
+"410","Glencore plc","Argentina","Jujuy Province Project - Minera Aguilar / AR Zinc","Tax",5030000
+"411","EVRAZ PLC","Russian Federation","Shakhta Osinnikovskaya","Fees",787031
+"412","Anglo American plc","Australia","Callide","Fees",524213
+"413","BP P.L.C.","Trinidad and Tobago","BPTT Blocks","Tax",407641510
+"414","Glencore plc","Australia","New South Wales Project - Coking Coal","Royalties",20093824
+"415","Glencore plc","Argentina","Catamarca Province Project - Minera Alumbrera","Tax",1982000
+"416","BP P.L.C.","Trinidad and Tobago","BPTT Blocks","Royalties",129649631
+"417","EVRAZ PLC","Russian Federation","United Coal Company Yuzhkuzbasugol","Fees",1667992
+"418","EnQuest PLC","Malaysia","PM8","Royalties",1299597
+"419","Glencore plc","Equatorial Guinea","Block O - Alen Project","Production Entitlements",153075000
+"420","EVRAZ PLC","Russian Federation","Shakhta Uskovskaya","Fees",59925
+"421","EVRAZ PLC","Russian Federation","Shakhta Uskovskaya","Tax",9210641
+"422","EVRAZ PLC","Russian Federation","Shakhta Abashevskaya","Fees",365441
+"423","Rio Tinto PLC","Mongolia","OYU TOLGOI","Fees",8291136
+"424","EVRAZ PLC","Russian Federation","Razrez Raspadskiy","Fees",773960
+"425","EVRAZ PLC","Russian Federation","Raspadskaya-Koksovaya","Tax",461970
+"426","BG Group Ltd","Bolivia, Plurinational State of","La Vertiente","Royalties",13344000
+"427","Hunting Plc","United States of America","Chicolete","Tax",6933
+"428","Glencore plc","Australia","Northern Territory Project - McArthur River Zinc","Fees",811828
+"429","BP P.L.C.","Egypt","North Alexandria / West Mediterranean Deep Water","Fees",160000
+"430","Polymetal Intl Plc","Russian Federation","Albazino","Tax",12939000
+"431","BP P.L.C.","Azerbaijan","Shah Deniz","Production Entitlements",825367758
+"432","Anglo American plc","South Africa","Corporate-Anglo American Inyosi Coal (Pty) Limited","Tax",265367
+"433","BG Group Ltd","Trinidad and Tobago","NCMA","Tax",6428000
+"434","Hunting Plc","United States of America","Vermilion 51","Tax",10834
+"435","Glencore plc","Australia","Queensland Project - Ernest Henry Mine Copper","Royalties",16606026
+"436","ROYAL DUTCH SHELL PLC","Nigeria","PSC 1993 (OPL212/OML118, OPL219/OML135)","Production Entitlements",799332160
+"437","Randgold Resources","Cote d'Ivoire","Randgold Resources (Côte d'Ivoire) SARL","Fees",24734
+"438","BP P.L.C.","Egypt","East Ras Shukier Marine","Tax",391101
+"439","Anglo American plc","South Africa","Corporate-Kumba Iron Ore Limited","Tax",363689
+"440","Perenco Oil & Gas Colombia Limited","Colombia","San Jacinto & Rio Paez LCN","Royalties",12040
+"441","EVRAZ PLC","Russian Federation","Shakhta Kusheyakovskaya","Tax",209970
+"442","Anglo American plc","South Africa","Corporate-Sishen Iron Ore Company (Pty) Ltd","Tax",38486730
+"443","Glencore plc","Chad","Badila Field Project","Fees",823000
+"444","Anglo American plc","South Africa","Corporate-Rustenburg Platinum Mines Ltd","Tax",124618911
+"445","Anglo American plc","Peru","Corporate-Anglo American Michiquillay S.A.","Tax",253850
+"446","Cairn Energy PLC","Greenland","2002/15 (Atammik)","Fees",27061
+"447","Anglo American plc","Peru","Corporate-Anglo American Perú S.A.","Tax",818922
+"448","Anglo American plc","Peru","Corporate-Asociación Quellaveco","Tax",4246
+"449","Anglo American plc","Australia","Capcoal","Tax",3571127
+"450","Total Sa","Argentina","Non-attributable","Tax",188508000
+"451","Rio Tinto PLC","United States of America","KENNECOTT UTAH COPPER","Royalties",6024609
+"452","Anglo American plc","Canada","Victor","Royalties",11310290
+"453","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Katy","Fees",115442
+"454","BP P.L.C.","Egypt","North October","Bonuses",2200000
+"455","Anglo American plc","Zimbabwe","Unki","Royalties",2489139
+"456","Premier Oil Plc","Pakistan","Corporate","Tax",12266000
+"457","Anglo American plc","Australia","Drayton","Royalties",12630585
+"458","ROYAL DUTCH SHELL PLC","United States of America","PERMIAN","Tax",16054906
+"459","Anglo American plc","Australia","Dawson","Royalties",44508804
+"460","EVRAZ PLC","Russian Federation","Raspadskaya","Fees",5506942
+"461","Total Sa","Bolivia, Plurinational State of","San Alberto","Production Entitlements",11442000
+"462","Anglo American plc","South Africa","Corporate-Anglo Operations Proprietary Limited (Corporate)","Royalties",5409840
+"463","Tethys Petroleum Limited","Kazakhstan","Akulka Gas","Fees",103776
+"464","BP P.L.C.","Egypt","El Burg Offshore","Bonuses",8e+05
+"465","Anglo American plc","South Africa","Corporate-Anglo American Inyosi Coal (Pty) Limited","Royalties",1700610
+"466","Anglo American plc","South Africa","Corporate-Mafube Coal Mining (Proprietary) Limited","Royalties",7253059
+"467","Anglo American plc","South Africa","Corporate-De Beers Consolidated Mines (Pty) Ltd","Royalties",6280658
+"468","KAZ Minerals PLC","Kazakhstan","Irtyshsky","Royalties",7436
+"469","Anglo American plc","Brazil","Corporate-Anglo American Minerio de Ferro Brasil S.A","Royalties",6906305
+"470","KAZ Minerals PLC","Kazakhstan","Artemyevsky","Fees",427
+"471","Hochschild Mining plc","Peru","Compañía Minera Ares S.A.C.","Tax",3944634
+"472","Anglo American plc","Brazil","Corporate-Anglo American Fosfatos Ltda","Royalties",504492
+"473","Anglo American plc","Brazil","Corporate-Anglo American Niobio Ltda","Royalties",432941
+"474","Rio Tinto PLC","Australia","GOVE","Royalties",29622808
+"475","Glencore plc","Namibia","Karas Project - Rosh Pinah Mine","Tax",6659000
+"476","Anglo American plc","Australia","Capcoal","Royalties",90436442
+"477","Tullow Oil PLC","Netherlands","E18a","Fees",24408
+"478","Anglo American plc","Brazil","Boa Vista","Royalties",160046
+"479","EVRAZ PLC","Russian Federation","Shakhta Alardinskaya","Tax",409834
+"480","Anglo American plc","Brazil","Barro Alto","Royalties",1065794
+"481","EVRAZ PLC","Russian Federation","Razrez Raspadskiy","Tax",5676799
+"482","Total Sa","Gabon","Diaba CEPP","Fees",873000
+"483","Anglo American plc","South Africa","Kumba Iron Ore - Thabazimbi Mine","Royalties",202938
+"484","Anglo American plc","Zambia","Western Zambia - MDML","Fees",148000
+"485","Abu Dhabi Marine Areas Limited","United Arab Emirates","Abu Dhabi Marine Areas","Royalties",1220299291
+"486","BP P.L.C.","Angola","Block 19","Tax",3e+05
+"487","Anglo American plc","Zambia","Western Zambia - AEZL","Fees",57000
+"488","Tullow Oil PLC","Kenya","Block 12B","Fees",124000
+"489","EVRAZ PLC","Russian Federation","Shakhta Abashevskaya","Tax",13669
+"490","Total Sa","France","Meillon","Tax",754000
+"491","Anglo American plc","Brazil","Forests","Royalties",250162
+"492","EVRAZ PLC","Russian Federation","Raspadskaya","Tax",1913217
+"493","Anglo American plc","Australia","Theodore South Exploration JV","Fees",13051
+"494","EVRAZ PLC","Russian Federation","Raspadskaya-Koksovaya","Fees",122603
+"495","Anglo American plc","Canada","Snap Lake","Fees",1228507
+"496","Antofagasta plc","","Inversiones Los Pelambres Ltda.","Tax",6499000
+"497","ROYAL DUTCH SHELL PLC","Gabon","GABON SOUTH","Fees",427322
+"498","Anglo American plc","Peru","Puca Urku","Fees",428
+"499","Antofagasta plc","","Antucoya","Tax",5000
+"500","Anglo American plc","South Africa","Mototolo JV","Fees",4
+"501","Polymetal Intl Plc","Russian Federation","Okhotsk","Royalties",7638000
+"502","Tullow Oil PLC","Madagascar","Berenty (Block 3111)","Fees",3e+05
+"503","Acacia Mining","Tanzania, United Republic of","Nyanzaga project","Fees",55000
+"504","Antofagasta plc","","Antucoya","Fees",35000
+"505","Anglo American plc","South Africa","Modikwa","Fees",760
+"506","Anglo American plc","Australia","Grosvenor","Fees",125464
+"507","BP P.L.C.","United States of America","Wyoming","Royalties",1808812
+"508","BP P.L.C.","United States of America","Oklahoma","Royalties",1593768
+"509","Anglo American plc","Australia","Dawson","Fees",913202
+"510","EVRAZ PLC","Russian Federation","Shakhta Esaulskaya","Tax",8054552
+"511","Vedanta Resources","India","VGCB","Fees",490000
+"512","BP P.L.C.","Trinidad and Tobago","Block 5B","Fees",2483422
+"513","Anglo American plc","South Africa","Corporate-Rustenburg Platinum Mines Ltd","Fees",37223
+"514","FRESNILLO PLC","Mexico","Servicios de Exploracion Fresnillo S.A. De C.V.","Tax",267462
+"515","Premier Oil Plc","Indonesia","Natuna Sea Block A","Production Entitlements",55589000
+"516","Polymetal Intl Plc","Russian Federation","Mayskoye","Royalties",10668000
+"517","Randgold Resources","Mali","Société des Mines de Loulo SA","Fees",29781
+"518","Tethys Petroleum Limited","Kazakhstan","Akulka Gas","Infrastructure",32566
+"519","Anglo American plc","Australia","Moranbah North","Royalties",41909116
+"520","BP P.L.C.","Brazil","BM-POT-17 (POT-M-853)","Fees",1044673
+"521","Tullow Oil PLC","Uganda","Tullow Uganda Limited","Tax",33683871
+"522","ROYAL DUTCH SHELL PLC","Brazil","BC-10","Fees",877222
+"523","JX Nippon Exploration and Production (U.K.) Limited","United Kingdom of Great Britain and Northern Ireland","Licence P2016 Project","Fees",10773
+"524","Glencore plc","Argentina","San Juan Project - Minera Pachon","Tax",147000
+"525","PetroLatina Energy Ltd. (consolidated group)","Colombia","Paloma Block","Infrastructure",96364
+"526","ROYAL DUTCH SHELL PLC","Malaysia","SABAH SHELL PETROLEUM COMPANY LIMITED","Royalties",268185
+"527","Tullow Oil PLC","Gabon","Ezanga","Bonuses",2e+07
+"528","Tullow Oil PLC","Norway","PL 405B","Fees",263007
+"529","Total Sa","Kazakhstan","Nurmunaï","Fees",120000
+"530","KAZ Minerals PLC","Kazakhstan","Orlovsky","Royalties",23836
+"531","Antofagasta plc","","Encuentro","Tax",65000
+"532","BP P.L.C.","Brazil","BM-POT-17 (POT-M-855)","Fees",22140160
+"533","Tullow Oil PLC","Suriname","Block 47","Infrastructure",257689
+"534","Abu Dhabi Marine Areas Limited","United Arab Emirates","Abu Dhabi Marine Areas","Tax",2960318035
+"535","BP P.L.C.","Angola","Block 20","Bonuses",32142857
+"536","BP P.L.C.","Egypt","North Tennin","Bonuses",250000
+"537","KAZ Minerals PLC","Kazakhstan","Aktogay","Fees",535
+"538","Glencore plc","Bolivia, Plurinational State of","Oruro Project - Minera Illapa","Royalties",5076000
+"539","BP P.L.C.","Brazil","BM-C-34 (C-M-473)","Fees",590650
+"540","Tullow Oil PLC","Mauritania","Block C-3","Fees",19650
+"541","Glencore plc","Zambia","Lusaka Region Project - Limeco Resources","Fees",4000
+"542","ROYAL DUTCH SHELL PLC","Nigeria","EA","Production Entitlements",1592115125
+"543","Glencore plc","Canada","Ontario Project - Kidd","Tax",1275000
+"544","Glencore plc","Peru","Oyon Project - Minera Los Quenuales","Royalties",1203000
+"545","ROYAL DUTCH SHELL PLC","New Zealand","MAUI","Royalties",8454316
+"546","Glencore plc","Australia","Queensland Project - Thermal Coal","Royalties",30461750
+"547","Perenco (Oil & Gas) International Limited","Turkey","2652","Royalties",870772
+"548","BG Group Ltd","Thailand","Bongkot","Tax",160577000
+"549","ROYAL DUTCH SHELL PLC","Brazil","BASIN EXPLORATION PROJECTS","Fees",582284
+"550","BP P.L.C.","United Kingdom of Great Britain and Northern Ireland","ETAP","Fees",182208
+"551","Glencore plc","Colombia","Cesar Department Project - Prodeco","Royalties",112969000
+"552","Tullow Oil PLC","Madagascar","Tullow Madagascar Limited","Tax",105
+"553","Anglo American plc","Australia","Moranbah North","Fees",478135
+"554","Total Sa","Gabon","Atora CEPP","Tax",10820000
+"555","BP P.L.C.","Angola","Block 17","Tax",242187190
+"556","Anglo American plc","Brazil","Codemin","Royalties",401478
+"557","Rio Tinto PLC","Peru","EXPLORATION - PERU","Fees",208435
+"558","ROYAL DUTCH SHELL PLC","Gabon","GABON NORTH EAST","Fees",10896697
+"559","BP P.L.C.","United Arab Emirates","ADMA Concession","Tax",1059269409
+"560","Hunting Plc","United States of America","Crews","Tax",59
+"561","Perenco (Oil & Gas) International Limited","Turkey","1050","Royalties",10647390
+"562","ROYAL DUTCH SHELL PLC","United Kingdom of Great Britain and Northern Ireland","Northern North Sea","Fees",668744
+"563","Genel Energy Plc","Iraq","Taq Taq","Production Entitlements",1151960000
+"564","Exillon Energy Plc","Russian Federation","Nem Oil CJSC","Fees",163000
+"565","Tullow Oil PLC","Pakistan","Kalchas","Fees",6008
+"566","PetroLatina Energy Ltd. (consolidated group)","Colombia","Tisquirama A Block","Royalties",732690
+"567","Rio Tinto PLC","United States of America","US BORAX","Tax",35817238
+"568","JX Nippon Exploration and Production (U.K.) Limited","United Kingdom of Great Britain and Northern Ireland","Licence P312 Project","Fees",109663
+"569","Glencore plc","Peru","Oyon Project - Minera Los Quenuales","Fees",1441000
+"570","Acacia Mining","Tanzania, United Republic of","Dar es Salaam corporate office","Tax",6516000
+"571","Tullow Oil PLC","Madagascar","Mandabe (Block 3109)","Fees",3e+05
+"572","Total Sa","United Kingdom of Great Britain and Northern Ireland","Bruce","Tax",38948000
+"573","Total Sa","Gabon","Concession Fields (Non-attributable)","Fees",4262000
+"574","JX Nippon Exploration and Production (U.K.) Limited","United Kingdom of Great Britain and Northern Ireland","Magnus Project","Tax",15156689
+"575","Nord Gold SE","Burkina Faso","Bissa Gold SA","Dividends",1914657
+"576","EVRAZ PLC","Russian Federation","Mezhegeyugol Coal Company","Tax",136090
+"577","Tullow Oil PLC","Equatorial Guinea","Okume Complex","Production Entitlements",23185210
+"578","Anglo American plc","Peru","Corporate-Asociación Michiquillay","Tax",9017
+"579","Glencore plc","Congo, the Democratic Republic of the","DRC Copperbelt Region Project","Infrastructure",53712000
+"580","Rio Tinto PLC","Australia","NEW SOUTH WALES COAL","Royalties",145160507
+"581","Anglo American plc","Brazil","Corporate-Anglo American Niobio Ltda","Tax",76731319
+"582","Anglo American plc","South Africa","Voorspoed Mine","Infrastructure",424000
+"583","Glencore plc","Namibia","Karas Project - Rosh Pinah Mine","Royalties",1043000
+"584","Anglo American plc","Peru","Corporate-Anglo American Perú S.A.","Fees",461600
+"585","Total Sa","United Kingdom of Great Britain and Northern Ireland","Northern North Sea","Fees",760000
+"586","Anglo American plc","Australia","Foxleigh","Royalties",16828436
+"587","Ophir Energy Plc","Seychelles","Block 5B/1, 5B/2 & 5B/3","Fees",144000
+"588","Tullow Oil PLC","Pakistan","Bannu West","Infrastructure",4000
+"589","Hochschild Mining plc","Peru","Inmaculada","Fees",167319
+"590","Anglo American plc","South Africa","Corporate-Anglo Operations Proprietary Limited (Corporate)","Tax",3411273
+"591","Hunting Plc","United States of America","South Timbalier 16","Tax",668
+"592","ROYAL DUTCH SHELL PLC","Malaysia","SABAH INBOARD AND DEEPWATER OIL","Production Entitlements",580669210
+"593","Glencore plc","Congo, the Democratic Republic of the","DRC Copperbelt Region Project","Royalties",104180000
+"594","Tullow Oil PLC","Mauritania","PSC B (Chinguetti EEA)","Fees",257749
+"595","ROYAL DUTCH SHELL PLC","Argentina","O & G DEVELOPMENTS LTD S.A.","Tax",1114712
+"596","Hunting Plc","United States of America","Heyser","Tax",727
+"597","ROYAL DUTCH SHELL PLC","China","CHANGBEI","Production Entitlements",431541584
+"598","Anglo American plc","Australia","Dawson","Tax",735922
+"599","Hunting Plc","United States of America","SW Weesatche","Tax",560
+"600","BP P.L.C.","Norway","Skarv","Fees",7411968
+"601","Rio Tinto PLC","Guinea","SIMANDOU","Royalties",52995
+"602","Glencore plc","South Africa","North West Province Project - Ferroalloys Assets","Infrastructure",1355064
+"603","Total Sa","Gabon","Concession Anguille","Tax",50186000
+"604","BG Group Ltd","India","Panna-Mukhta","Production Entitlements",81145000
+"605","Cadogan Petroleum PLC","Ukraine","Cheremkhivska Production licence area","Tax",193346
+"606","Total Sa","South Africa","Forzando and Dorstfontein","Tax",469000
+"607","Anglo American plc","Canada","Victor","Infrastructure",3511447
+"608","Hunting Plc","United States of America","Chapel Hill","Tax",501
+"609","Hunting Plc","United States of America","East Texas","Tax",63
+"610","Exillon Energy Plc","Russian Federation","Badyuskoye oil field","Tax",812000
+"611","Anglo American plc","South Africa","Kumba Iron Ore - Sishen Mine","Royalties",2492250
+"612","Total Sa","Angola","Block 17 / 06","Fees",163000
+"613","Tullow Oil PLC","Pakistan","Kalchas","Infrastructure",3000
+"614","Hunting Plc","United States of America","North Shongaloo","Tax",111
+"615","ROYAL DUTCH SHELL PLC","Malaysia","SABAH INBOARD AND DEEPWATER OIL","Royalties",215776997
+"616","Hunting Plc","United States of America","South Timbalier 19/30","Tax",2026
+"617","Glencore plc","Australia","Queensland Project - Mount Isa Mines Copper","Tax",135548
+"618","Polymetal Intl Plc","Kazakhstan","Varvara","Fees",21000
+"619","BP P.L.C.","Egypt","East Tanka","Tax",6027297
+"620","Anglo American plc","Chile","Corporate-Anglo American Norte S.A.","Tax",5326119
+"621","Total Sa","Nigeria","OML118 (Bonga)","Production Entitlements",58961000
+"622","Randgold Resources","Mali","Société des Mines de Loulo SA","Royalties",24620902
+"623","KAZ Minerals PLC","Kazakhstan","Bozshakol","Infrastructure",2629
+"624","Randgold Resources","Mali","Société des Mines de Loulo SA","Infrastructure",161163
+"625","KAZ Minerals PLC","Kazakhstan","Legal entity - East Region","Tax",31094
+"626","Hunting Plc","United States of America","Hastings","Tax",117
+"627","Hunting Plc","United States of America","New Hope","Tax",191
+"628","ROYAL DUTCH SHELL PLC","Malaysia","SARAWAK OIL AND GAS","Fees",3.5e+07
+"629","Anglo American plc","Australia","Foxleigh","Tax",226045
+"630","Tullow Oil PLC","Norway","PL 519","Fees",186014
+"631","JX Nippon Exploration and Production (U.K.) Limited","United Kingdom of Great Britain and Northern Ireland","Licence P2024 Project","Fees",114041
+"632","ROYAL DUTCH SHELL PLC","Canada","FOOTHILLS","Fees",694278
+"633","Glencore plc","Canada","Quebec Project - Matagami","Tax",1238000
+"634","EVRAZ PLC","Ukraine","Evraz Sukha Balka","Tax",13814238
+"635","Tullow Oil PLC","Mauritania","Block C-18","Fees",26450
+"636","ROYAL DUTCH SHELL PLC","Denmark","SHELL OLIE - OG GASUDVINDING DANMARK B.V.","Tax",576148422
+"637","Hunting Plc","United States of America","Pachuta Creek","Tax",79
+"638","Hochschild Mining plc","Peru","Compañía Minera Ares S.A.C.","Fees",620955
+"639","Hunting Plc","United States of America","Wickizer Extension","Tax",208
+"640","Anglo American plc","Australia","Grosvenor","Royalties",1041621
+"641","BP P.L.C.","Iraq","Rumaila","Tax",58959727
+"642","BP P.L.C.","United States of America","Texas","Tax",26653534
+"643","PetroLatina Energy Ltd. (consolidated group)","Colombia","Paloma Block","Royalties",443773
+"644","Glencore plc","South Africa","North West Province Project - Ferroalloys Assets","Royalties",108975
+"645","Tullow Oil PLC","Gabon","Turnix","Royalties",1087775
+"646","BG Group Ltd","Trinidad and Tobago","Central Block","Fees",2013000
+"647","Anglo American plc","South Africa","Kumba Iron Ore - Kolomela Mine","Royalties",5170106
+"648","Goldbridges Global Resources Plc","Kazakhstan","TOO Altai Ken-Bayitu","Bonuses",263
+"649","ROYAL DUTCH SHELL PLC","Canada","BLACKROCK VENTURES INC.","Tax",2811449
+"650","Rio Tinto PLC","South Africa","RICHARDS BAY MINERALS","Tax",75070420
+"651","Total Sa","Uruguay","Block 14 (Offshore)","Fees",1e+05
+"652","KAZ Minerals PLC","Kazakhstan","Yubileyno-Snegirikhinsky","Royalties",5126
+"653","Anglo American plc","Zimbabwe","Unki","Fees",283004
+"654","ROYAL DUTCH SHELL PLC","United States of America","GULF OF MEXICO (CENTRAL)","Royalties",315649017
+"655","Hunting Plc","United States of America","N Morales/Alley","Tax",313
+"656","Hunting Plc","United States of America","Shepherd","Tax",357
+"657","Glencore plc","Chile","Sierra Gorda - II Region Antofagosta Project - Minera Lomas Bayas","Fees",1184000
+"658","BG Group Ltd","United Kingdom of Great Britain and Northern Ireland","Armada","Fees",1547000
+"659","Nord Gold SE","Russian Federation","Neryungri-Metallic LLC","Tax",4544280
+"660","Glencore plc","Bolivia, Plurinational State of","Potosi Project -  Minera Illapa","Royalties",3786000
+"661","Tullow Oil PLC","Netherlands","E10","Fees",64796
+"662","Anglo American plc","South Africa","Mafube","Tax",1567757
+"663","Anglo American plc","Brazil","Corporate-Anglo American Niquel Brasil Ltda","Royalties",935416
+"664","Rio Tinto PLC","Peru","EXPLORATION - PERU","Tax",5989027
+"665","Hunting Plc","United States of America","North Thompson","Tax",35
+"666","ROYAL DUTCH SHELL PLC","Gabon","GABON NORTH EAST","Bonuses",1200000
+"667","EVRAZ PLC","Russian Federation","EVRAZ KGOK","Tax",102076520
+"668","ROYAL DUTCH SHELL PLC","Canada","GREATER DEEP BASIN","Fees",10067710
+"669","BP P.L.C.","United States of America","Alaska","Fees",1079214
+"670","Premier Oil Plc","Viet Nam","Chim Sao","Production Entitlements",31437000
+"671","ROYAL DUTCH SHELL PLC","Gabon","GABON NORTH EAST","Production Entitlements",131464575
+"672","Tullow Oil PLC","Uganda","Tullow Uganda Operation Pty Limited","Tax",2374650
+"673","Glencore plc","Kazakhstan","North-East Kazakhstan Project - Kazzinc","Tax",79986000
+"674","ROYAL DUTCH SHELL PLC","Canada","FOOTHILLS","Royalties",17768857
+"675","Total Sa","Brazil","Foz de Amazonas","Fees",95000
+"676","KAZ Minerals PLC","Kazakhstan","Irtyshsky","Fees",149
+"677","ROYAL DUTCH SHELL PLC","Brazil","BC-10","Tax",1144389
+"678","Hunting Plc","United States of America","South Timbalier 34","Tax",5115
+"679","BP P.L.C.","Angola","Block 18","Production Entitlements",633804230
+"680","BP P.L.C.","Egypt","North El Burg","Bonuses",625000
+"681","Rio Tinto PLC","United States of America","US BORAX","Royalties",240187
+"682","Exillon Energy Plc","Russian Federation","Zapadno-Khatayakhskoye oil field","Tax",7555000
+"683","Tullow Oil PLC","Kenya","Block 12A","Fees",92340
+"684","Total Sa","Russian Federation","Kharyaga","Tax",76582000
+"685","Total Sa","Thailand","Bongkot","Bonuses",37352000
+"686","Total Sa","United States of America","Gulf of Mexico","Fees",4600000
+"687","JX Nippon Exploration and Production (U.K.) Limited","United Kingdom of Great Britain and Northern Ireland","Brae Project","Tax",363435
+"688","Hunting Plc","United States of America","Big Ceasar","Tax",745
+"689","Glencore plc","Burkina Faso","Koudougou Project - Perkoa Mine","Royalties",1696000
+"690","Tullow Oil PLC","Netherlands","E18b","Fees",31024
+"691","Tullow Oil PLC","Mauritania","Block C-10","Fees",24150
+"692","Glencore plc","Canada","Nunavut Project - Hackett","Fees",44000
+"693","Hochschild Mining plc","Peru","Selene","Fees",371161
+"694","ROYAL DUTCH SHELL PLC","Canada","FOOTHILLS","Tax",580528
+"695","Trans-Siberian Gold plc","Russian Federation","Asacha Mine","Fees",618234
+"696","BP P.L.C.","Norway","Ula","Fees",1146913
+"697","Total Sa","Congo","Lianzi","Production Entitlements",419000
+"698","BP P.L.C.","Angola","Block 18","Infrastructure",505000
+"699","Nord Gold SE","Guinea","Societe Miniere de Dinguiraye","Tax",12399031
+"700","Hochschild Mining plc","Peru","Arcata","Fees",181475
+"701","ROYAL DUTCH SHELL PLC","Gabon","GABON EXPLORATION","Fees",258560
+"702","KAZ Minerals PLC","Kazakhstan","Artemyevsky","Royalties",15720
+"703","ROYAL DUTCH SHELL PLC","Gabon","SHELL GABON SA","Tax",69633947
+"704","ROYAL DUTCH SHELL PLC","Oman","Block 6","Tax",2089920954
+"705","Gulf Keystone Petroleum Ltd","Iraq","Shaikan","Production Entitlements",89030029
+"706","BP P.L.C.","Oman","Khazzan","Infrastructure",25147602
+"707","Tullow Oil PLC","Netherlands","F16E","Fees",1438
+"708","BP P.L.C.","United States of America","Oklahoma","Tax",10388060
+"709","EVRAZ PLC","Russian Federation","MUK-96","Fees",109640
+"710","PetroLatina Energy Ltd. (consolidated group)","Colombia","Tisquirama B Block","Royalties",2077107
+"711","Glencore plc","Equatorial Guinea","Block I - Aseng Project","Fees",172000
+"712","Glencore plc","Australia","New South Wales Project - Cobar Copper","Fees",150123
+"713","Trans-Siberian Gold plc","Russian Federation","Asacha Mine","Royalties",2679904
+"714","Tullow Oil PLC","South Africa","Tullow SA (Pty) Limited","Tax",505034
+"715","Rio Tinto PLC","Australia","DAMPIER SALT","Royalties",2413222
+"716","Anglo American plc","Peru","Corporate-Anglo American Quellaveco S.A.","Fees",183047
+"717","BP P.L.C.","United States of America","New Mexico","Tax",18759748
+"718","Rio Tinto PLC","Zimbabwe","MUROWA","Royalties",3859594
+"719","Tullow Oil PLC","Netherlands","E15c","Fees",36949
+"720","BP P.L.C.","United States of America","Gulf of Mexico - Western","Royalties",4515768
+"721","Total Sa","Gabon","Hylia II CEPP","Tax",7169000
+"722","EVRAZ PLC","Russian Federation","Mining Metallurgical Company «Timir»","Fees",5329
+"723","ROYAL DUTCH SHELL PLC","Canada","GREATER DEEP BASIN","Royalties",324513
+"724","BP P.L.C.","United States of America","Arkansas","Tax",2362718
+"725","Hunting Plc","United States of America","Big Creek","Tax",5
+"726","BP P.L.C.","Norway","Valhall","Fees",1024330
+"727","Hunting Plc","United States of America","Bodcaw","Tax",7
+"728","Perenco (Oil & Gas) International Limited","Turkey","880","Royalties",6407278
+"729","ROYAL DUTCH SHELL PLC","Brunei Darussalam","BRUNEI OFFSHORE BLOCKS","Tax",100243458
+"730","Hunting Plc","United States of America","Stamps","Tax",10
+"731","BP P.L.C.","Qatar","Bunduq Concession","Tax",827211
+"732","BP P.L.C.","United States of America","Texas","Royalties",533445
+"733","EVRAZ PLC","Russian Federation","MUK-96","Tax",131530
+"734","Total Sa","Russian Federation","Kharyaga","Fees",356000
+"735","ROYAL DUTCH SHELL PLC","United Kingdom of Great Britain and Northern Ireland","WEST OF SHETLAND NON OPERATED","Fees",158910
+"736","Hunting Plc","United States of America","Seven Oaks","Tax",10
+"737","ROYAL DUTCH SHELL PLC","Brunei Darussalam","BRUNEI OFFSHORE BLOCKS","Fees",1710416
+"738","Cadogan Petroleum PLC","Ukraine","Slobodo-Rungurska licence area","Tax",5000
+"739","Hunting Plc","United States of America","Port Neches","Tax",11
+"740","Glencore plc","Canada","Ontario Project - Corporate","Tax",22980000
+"741","Antofagasta plc","","CCM Leonor","Tax",596000
+"742","Tullow Oil PLC","Pakistan","Kohlu","Infrastructure",3000
+"743","Total Sa","United Arab Emirates","Abu Dhabi Gas Industries Ltd (GASCO)","Tax",363274000
+"744","Total Sa","Argentina","Tierra del Fuego","Fees",5964000
+"745","BP P.L.C.","Iraq","Rumaila","Fees",2080694
+"746","Tullow Oil PLC","Kenya","Block 10BB","Fees",92580
+"747","Hunting Plc","United States of America","Hibank","Tax",18
+"748","Tullow Oil PLC","Pakistan","Kohat","Infrastructure",4000
+"749","BP P.L.C.","United States of America","Colorado","Royalties",23507588
+"750","Glencore plc","Congo, the Democratic Republic of the","DRC Copperbelt Region Project","Tax",176646000
+"751","Tullow Oil PLC","Mauritania","PSC B (Chinguetti EEA)","Production Entitlements",3142335
+"752","EnQuest PLC","United Kingdom of Great Britain and Northern Ireland","Alma & Galia","Fees",149663
+"753","Rio Tinto PLC","Australia","GOVE","Fees",2757307
+"754","ROYAL DUTCH SHELL PLC","Gabon","GABON CENTRAL","Fees",683055
+"755","Glencore plc","Chile","IV Region Coquimbo Project - Minera Punitaqui","Royalties",9000
+"756","EVRAZ PLC","Russian Federation","Mezhegeyugol Coal Company","Fees",105536
+"757","Tullow Oil PLC","Norway","PL 406","Fees",390701
+"758","FRESNILLO PLC","Mexico","San Julian","Fees",1732203
+"759","Hunting Plc","United States of America","Benedum Plant Field","Tax",27
+"760","Hunting Plc","United States of America","Hidalgo/Noser Gas Unit","Tax",28
+"761","Rio Tinto PLC","Colombia","EXPLORATION - COLUMBIA","Tax",341011
+"762","Glencore plc","Canada","Quebec Project - various exploration projects","Fees",108000
+"763","ROYAL DUTCH SHELL PLC","Italy","SHELL ITALIA E&P SpA","Tax",102686074
+"764","Glencore plc","Chad","DOH Project","Fees",250000
+"765","Anglo American plc","South Africa","Kumba Iron Ore - Kolomela Mine","Tax",3874232
+"766","Tullow Oil PLC","Namibia","Production Licence 37","Fees",126660
+"767","Hunting Plc","United States of America","Hortense","Tax",30
+"768","Total Sa","Norway","Skirne & Bygve","Fees",408000
+"769","ROYAL DUTCH SHELL PLC","United States of America","SHELL EXPLORATION & PRODUCTION COMPANY","Tax",1217700
+"770","Hunting Plc","United States of America","Rayne","Tax",33
+"771","Rio Tinto PLC","Chile","EXPLORATION - CHILE","Fees",555753
+"772","Gulf Keystone Petroleum Ltd","Iraq","Shaikan","Royalties",23552918
+"773","BP P.L.C.","Russian Federation","Rosneft","Tax",31795751
+"774","Cadogan Petroleum PLC","Ukraine","Debeslavetska Production licence area","Tax",765099
+"775","Vedanta Resources","India","CIL-KG-OSN","Royalties",10210000
+"776","Anglo American plc","Brazil","Corporate-Anglo American Minerio de Ferro Brasil S.A","Tax",3319776
+"777","Seplat Petroleum","Nigeria","OML 4, 38 and 41","Production Entitlements",573690618
+"778","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Horne & Wren","Infrastructure",101620
+"779","ROYAL DUTCH SHELL PLC","Brazil","BC-10","Royalties",40551350
+"780","Anglo American plc","Canada","Victor","Fees",3382841
+"781","KAZ Minerals PLC","Kazakhstan","Aktogay","Tax",3505
+"782","Avocet Mining PLC","Guinea","Tri-K","Tax",288000
+"783","Ophir Energy Plc","Gabon","Mbeli","Fees",497000
+"784","ROYAL DUTCH SHELL PLC","Ireland","CORRIB PROJECT","Fees",4313103
+"785","ROYAL DUTCH SHELL PLC","Egypt","BADR EL-DIN (BED)","Tax",37921247
+"786","Ophir Energy Plc","Equatorial Guinea","Block R","Fees",555000
+"787","Rio Tinto PLC","Australia","WEIPA INCLUDING AMRUN","Royalties",83506091
+"788","KAZ Minerals PLC","Kazakhstan","Bozshakol","Tax",285
+"789","Hunting Plc","United States of America","Wood River Ranch","Tax",2707
+"790","Glencore plc","Australia","Queensland Project - Mount Isa Mines Zinc","Royalties",41630573
+"791","ROYAL DUTCH SHELL PLC","Norway","ORMEN LANGE AND DRAUGEN","Fees",2946998
+"792","Tullow Oil PLC","Netherlands","E11","Fees",32333
+"793","Glencore plc","Chad","Doseo / Borogop Project","Fees",708000
+"794","EVRAZ PLC","Russian Federation","EVRAZ KGOK","Fees",1015351
+"795","Genel Energy Plc","Iraq","Taq Taq","Royalties",181680000
+"796","ROYAL DUTCH SHELL PLC","Gabon","GABON CENTRAL","Production Entitlements",55488726
+"797","Anglo American plc","South Africa","Corporate-Anglo American Inyosi Coal (Pty) Limited","Fees",5039
+"798","EnQuest PLC","Malaysia","PM8","Production Entitlements",47492425
+"799","Glencore plc","Australia","Queensland Project - Thermal Coal","Fees",2751760
+"800","BP P.L.C.","Viet Nam","Divested Assets","Tax",75476621
+"801","Anglo American plc","South Africa","Kimberley Mines","Infrastructure",403000
+"802","EVRAZ PLC","Russian Federation","Shakhta Alardinskaya","Fees",200140
+"803","KAZ Minerals PLC","Kazakhstan","Koksay","Tax",11389
+"804","Perenco Oil & Gas Colombia Limited","Colombia","Cerrero Katmandu Norte-1","Royalties",10
+"805","EVRAZ PLC","Russian Federation","Shakhta Esaulskaya","Fees",95924
+"806","PetroLatina Energy Ltd. (consolidated group)","Colombia","Unallocated","Tax",11946476
+"807","BG Group Ltd","Trinidad and Tobago","Central Block","Royalties",6405000
+"808","Anglo American plc","Chile","Corporate-Anglo American Norte S.A.","Fees",1706258
+"809","Hunting Plc","United States of America","South Pelto 25","Tax",5510
+"810","PetroLatina Energy Ltd. (consolidated group)","Colombia","Midas Block","Royalties",5178598
+"811","Anglo American plc","South Africa","Corporate-De Beers Consolidated Mines (Pty) Ltd","Fees",744942
+"812","FRESNILLO PLC","Mexico","Servicios Administrativos Fresnillo, S.A. de C.V.","Tax",313429
+"813","Perenco Oil & Gas Colombia Limited","Colombia","Boquerón","Production Entitlements",1883952
+"814","PetroLatina Energy Ltd. (consolidated group)","Colombia","Midas Block","Fees",189097
+"815","EVRAZ PLC","Russian Federation","Shakhta Osinnikovskaya","Tax",371876
+"816","Glencore plc","Argentina","Catamarca Province Project - Minera Alumbrera","Royalties",16586000
+"817","KAZ Minerals PLC","Kazakhstan","Bozshakol","Royalties",1532
+"818","FRESNILLO PLC","Mexico","Cienega","Fees",1886858
+"819","BG Group Ltd","Bolivia, Plurinational State of","Haucareta","Fees",1121000
+"820","Rio Tinto PLC","Madagascar","QIT MADAGASCAR MINERALS","Royalties",569615
+"821","Tullow Oil PLC","Uganda","Tullow Uganda Operation Pty Limited","Fees",11453
+"822","Rio Tinto PLC","Australia","DAMPIER SALT","Fees",515834
+"823","Anglo American plc","South Africa","Corporate-Rustenburg Platinum Mines Ltd","Royalties",33455094
+"824","Anglo American plc","South Africa","Twickenham","Infrastructure",126084
+"825","Rio Tinto PLC","Mongolia","OYU TOLGOI","Tax",65951340
+"826","ROYAL DUTCH SHELL PLC","Nigeria","THE SHELL PETROLEUM DEVELOPMENT COMPANY OF NIGERIA LIMITED","Fees",247875666
+"827","Anglo American plc","United States of America","Lararmides Generative","Fees",162495
+"828","Total Sa","France","Lacq","Tax",3951000
+"829","JX Nippon Exploration and Production (U.K.) Limited","United Kingdom of Great Britain and Northern Ireland","Licence P1850 Project","Fees",96551
+"830","Cairn Energy PLC","United Kingdom of Great Britain and Northern Ireland","P2149 (Block 1)","Fees",41039
+"831","Glencore plc","Australia","New South Wales Project - Thermal Coal","Infrastructure",31078273
+"832","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Wissey","Infrastructure",40113
+"833","Glencore plc","Chad","Kibea EXA","Bonuses",2e+06
+"834","Tullow Oil PLC","Gabon","Ingongo","Royalties",94142
+"835","Hunting Plc","United States of America","Garden Island Bay","Tax",1398
+"836","Glencore plc","Australia","Queensland Project - Ernest Henry Mine Copper","Fees",518870
+"837","ROYAL DUTCH SHELL PLC","Nigeria","PSC 1993 (OPL209)","Tax",88954570
+"838","Cairn Energy PLC","Greenland","2011/13 (Pitu)","Fees",63910
+"839","Anglo American plc","Brazil","Corporate-Anglo American Fosfatos Ltda","Tax",24516670
+"840","Cairn Energy PLC","Greenland","2005/06 (Lady Franklin)","Fees",50842
+"841","Anglo American plc","Peru","Corporate-Anglo American Quellaveco S.A.","Tax",495278
+"842","Total Sa","Nigeria","OML130 PSA (Akpo & Egina)","Infrastructure",53385000
+"843","Vedanta Resources","India","Cairn India Ltd","Tax",30770000
+"844","KAZ Minerals PLC","Hong Kong","Legal entity","Tax",145
+"845","BG Group Ltd","Bolivia, Plurinational State of","La Vertiente","Fees",7369000
+"846","FRESNILLO PLC","Mexico","Cienega","Tax",2083391
+"847","Anglo American plc","Brazil","Corporate-Anglo American Niquel Brasil Ltda","Fees",310936
+"848","Nord Gold SE","Kazakhstan","FIC Alel JSC","Tax",9828257
+"849","Rio Tinto PLC","Peru","La Granja","Fees",8900000
+"850","ROYAL DUTCH SHELL PLC","Malaysia","SHELL SABAH  SELATAN SDN. BHD.","Tax",536297
+"851","Tullow Oil PLC","Kenya","Tullow Kenya BV","Tax",8577
+"852","Nord Gold SE","Burkina Faso","Societe des Mines de Taparko","Tax",6724535
+"853","Total Sa","Nigeria","OML58 (joint venture with NNPC, operated)","Tax",30805000
+"854","KAZ Minerals PLC","United Kingdom of Great Britain and Northern Ireland","Legal entity","Tax",6364
+"855","Rio Tinto PLC","Australia","QUEENSLAND COAL","Fees",3863400
+"856","Rio Tinto PLC","Canada","DIAVIK","Tax",63188312
+"857","Total Sa","Qatar","Al Khalij","Tax",115485000
+"858","BG Group Ltd","Trinidad and Tobago","ECMA","Production Entitlements",109467000
+"859","Anglo American plc","Australia","Callide","Royalties",15697131
+"860","Anglo American plc","South Africa","Polokwane Smelter","Infrastructure",120247
+"861","EVRAZ PLC","Russian Federation","United Coal Company Yuzhkuzbasugol","Tax",1114849
+"862","EnQuest PLC","Malaysia","PM8","Tax",8175125
+"863","BG Group Ltd","Tunisia","Hasdrubal","Tax",33098000
+"864","Anglo American plc","Peru","Corporate-Anglo American Michiquillay S.A.","Fees",3709025
+"865","ROYAL DUTCH SHELL PLC","Iraq","MAJNOON","Production Entitlements",1335946438
+"866","EVRAZ PLC","Russian Federation","Shakhta Kusheyakovskaya","Fees",131779
+"867","BG Group Ltd","Bolivia, Plurinational State of","Corporate","Tax",61788000
+"868","Rio Tinto PLC","Madagascar","QIT MADAGASCAR MINERALS","Fees",109825
+"869","Total Sa","Cote d'Ivoire","CI-100","Fees",157000
+"870","Tullow Oil PLC","Pakistan","Bannu West","Fees",3842
+"871","Glencore plc","Chad","Mangara Field Project","Production Entitlements",27419000
+"872","Tullow Oil PLC","Norway","PL 407","Fees",70973
+"873","Anglo American plc","Chile","Corporate-Anglo American Chile","Infrastructure",5690401
+"874","ROYAL DUTCH SHELL PLC","Canada","GROUNDBIRCH","Fees",3898403
+"875","Petrofac","Tunisia","Chergui","Fees",6000
+"876","Glencore plc","Australia","Queensland Project - Coking Coal","Royalties",25592243
+"877","Anglo American plc","South Africa","Corporate","Infrastructure",836708
+"878","Anglo American plc","South Africa","Corporate-Anglo Operations Proprietary Limited (Corporate)","Infrastructure",20477627
+"879","Perenco Oil & Gas Colombia Limited","Colombia","Corporate","Tax",1811000
+"880","Total Sa","Madagascar","Bemolanga","Fees",425000
+"881","BP P.L.C.","Egypt","North Damietta Offshore","Bonuses",1175000
+"882","Hunting Plc","United States of America","Whiskey Joe","Tax",493
+"883","Anglo American plc","Australia","Dartbrook","Tax",937133
+"884","ROYAL DUTCH SHELL PLC","Malaysia","SARAWAK OIL AND GAS","Royalties",561308475
+"885","Anglo American plc","Canada","Gahcho Kué","Infrastructure",747429
+"886","Cairn Energy PLC","Morocco","Foum  Draa","Tax",262452
+"887","Glencore plc","Australia","New South Wales Project - Thermal Coal","Fees",3629175
+"888","Total Sa","Indonesia","Mahakam PSC","Tax",400729000
+"889","Tullow Oil PLC","Ghana","Jubilee","Production Entitlements",44466150
+"890","Anglo American plc","South Africa","Kumba Iron Ore - Sishen Mine","Infrastructure",3677000
+"891","Glencore plc","Australia","New South Wales Project - Thermal Coal","Royalties",207725815
+"892","Anglo American plc","Brazil","Minas Rio","Infrastructure",16832673
+"893","Total Sa","Nigeria","Non-attributable","Tax",331077000
+"894","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","49/24F1 (Gawain) 49/29a (part)","Infrastructure",96271
+"895","ROYAL DUTCH SHELL PLC","New Zealand","SHELL NEW ZEALAND (2011) LIMITED","Tax",58845962
+"896","Anglo American plc","Brazil","Chapadao","Royalties",7556
+"897","Anglo American plc","South Africa","Mogalakwena","Infrastructure",166045
+"898","Glencore plc","Equatorial Guinea","Block O - Alen Project","Fees",136000
+"899","Cairn Energy PLC","Malta","Area 3 (Block 1)","Fees",550500
+"900","Glencore plc","Australia","New South Wales Project - Coking Coal","Fees",185103
+"901","Rio Tinto PLC","Australia","DAMPIER SALT","Tax",13516130
+"902","Anglo American plc","South Africa","Rustenburg Base Metal Refinery","Infrastructure",243093
+"903","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Munro (44/17B)","Fees",60201
+"904","ROYAL DUTCH SHELL PLC","Egypt","NORTH EAST ABU GHARADIG (NEAG)","Tax",13223246
+"905","Glencore plc","Equatorial Guinea","Block I - Aseng Project","Tax",36363000
+"906","Rio Tinto PLC","Australia","QUEENSLAND COAL","Royalties",66769590
+"907","ROYAL DUTCH SHELL PLC","China","JINQIU+FUSHUN+ZITONG","Production Entitlements",18842305
+"908","Rio Tinto PLC","Brazil","EXPLORATION - BRAZIL","Tax",354611
+"909","Rio Tinto PLC","South Africa","RICHARDS BAY MINERALS","Royalties",15512451
+"910","Anglo American plc","Canada","Snap Lake","Infrastructure",1092701
+"911","ROYAL DUTCH SHELL PLC","Norway","NORWAY  EXPLORATION PROJECTS","Fees",7999522
+"912","Anglo American plc","South Africa","Venetia Mine","Infrastructure",750000
+"913","Rio Tinto PLC","Namibia","ROSSING","Royalties",5033528
+"914","Vedanta Resources","India","CIL-RJ-ON-90/1","Royalties",350260000
+"915","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Deben Wensum","Fees",1965
+"916","ROYAL DUTCH SHELL PLC","Nigeria","THE SHELL PETROLEUM DEVELOPMENT COMPANY OF NIGERIA LIMITED","Tax",260095760
+"917","Total Sa","Bolivia, Plurinational State of","San Antonio","Tax",113375000
+"918","BG Group Ltd","Trinidad and Tobago","ECMA","Fees",3384000
+"919","Nord Gold SE","Burkina Faso","Bissa Gold SA","Tax",31392421
+"920","ROYAL DUTCH SHELL PLC","Malaysia","SARAWAK OIL AND GAS","Tax",172351709
+"921","Rio Tinto PLC","Australia","ARGYLE","Fees",764295
+"922","BG Group Ltd","Trinidad and Tobago","Central Block","Tax",5333000
+"923","Vedanta Resources","India","SMCL-IO-Totichomor Dongor","Royalties",480000
+"924","Anglo American plc","Australia","Capcoal","Fees",1093337
+"925","Hunting Plc","United States of America","Garden Island Bay","Royalties",3686
+"926","Glencore plc","Australia","Queensland Project - Mount Isa Mines Copper","Fees",1853940
+"927","ROYAL DUTCH SHELL PLC","Qatar","PEARL GTL","Production Entitlements",452582830
+"928","KAZ Minerals PLC","Kazakhstan","Aktogay","Infrastructure",620
+"929","Anglo American plc","Brazil","Chapadao","Fees",159728
+"930","Hunting Plc","United States of America","Foss Brown","Tax",1055
+"931","Glencore plc","Australia","Queensland Project - Mount Isa Mines Copper","Royalties",28974371
+"932","ROYAL DUTCH SHELL PLC","United States of America","PERMIAN","Fees",1692047
+"933","Total Sa","Iraq","Baranan Block","Fees",565000
+"934","Anglo American plc","Australia","Corporate","Fees",13071
+"935","Polymetal Intl Plc","Russian Federation","Lunnoye","Royalties",6560000
+"936","Nord Gold SE","Guinea","Societe Miniere de Dinguiraye","Infrastructure",1200863
+"937","Cairn Energy PLC","Ireland","FEL 2/04","Fees",23092
+"938","Glencore plc","Canada","Ontario Project - Sudbury","Fees",98000
+"939","Anglo American plc","Chile","Corporate-Anglo American Sur S.A.","Tax",94056637
+"940","Goldbridges Global Resources Plc","Kazakhstan","TOO Goronorudnoe Predpriatie Sekisovskoye","Royalties",558492
+"941","Anglo American plc","Brazil","Corporate-Anglo American Fosfatos Ltda","Fees",55426
+"942","ROYAL DUTCH SHELL PLC","Gabon","GABON SOUTH","Royalties",8609635
+"943","Anglo American plc","South Africa","Corporate-De Beers Consolidated Mines (Pty) Ltd","Tax",95134
+"944","BP P.L.C.","Trinidad and Tobago","BPTT Blocks","Fees",165721
+"945","Petrofac","Malaysia","PM304","Royalties",9825000
+"946","Anglo American plc","Chile","Corporate-Anglo American Sur S.A.","Fees",3032655
+"947","Glencore plc","Peru","Antapaccay","Tax",54204000
+"948","Glencore plc","Bolivia, Plurinational State of","Oruro Project - Sinchi Wayra","Royalties",1488000
+"949","BP P.L.C.","United States of America","Gulf of Mexico - Central","Bonuses",4850014
+"950","Nord Gold SE","Russian Federation","Buryatzoloto JSC","Tax",20239845
+"951","Nord Gold SE","Russian Federation","Berezitovy rudnik LLC","Tax",26427865
+"952","Antofagasta plc","","Centinela","Fees",189000
+"953","ROYAL DUTCH SHELL PLC","China","JINQIU+FUSHUN+ZITONG","Royalties",922004
+"954","Antofagasta plc","","Exploration activities (within Antofagasta Minerals S.A.)","Fees",3996000
+"955","BG Group Ltd","Brazil","Corporate","Tax",70975000
+"956","BP P.L.C.","United Kingdom of Great Britain and Northern Ireland","Decommissioning","Fees",367597
+"957","ROYAL DUTCH SHELL PLC","Qatar","PEARL GTL","Fees",16475980
+"958","Antofagasta plc","","Michilla","Fees",736000
+"959","Vedanta Resources","India","CIL-RJ-ON-90/1","Production Entitlements",372050000
+"960","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Wissey","Fees",12328
+"961","Antofagasta plc","","Twin Metals","Fees",263000
+"962","Ophir Energy Plc","Gabon","Manga","Fees",334000
+"963","Tullow Oil PLC","Cote d'Ivoire","CI-26 Espoir","Production Entitlements",273751
+"964","Rio Tinto PLC","Australia","NEW SOUTH WALES COAL","Fees",2961791
+"965","Tullow Oil PLC","Ethiopia","South Omo","Fees",440680
+"966","Tullow Oil PLC","Ethiopia","South Omo","Infrastructure",196729
+"967","Rio Tinto PLC","Australia","NEW SOUTH WALES COAL","Tax",98131730
+"968","Tullow Oil PLC","Gabon","Echira","Royalties",1303643
+"969","Tullow Oil PLC","Gabon","Etame","Royalties",3123930
+"970","Glencore plc","Zambia","Copperbelt Region Project - Mopani","Tax",270000
+"971","Tullow Oil PLC","Gabon","Ezanga","Royalties",706470
+"972","Tullow Oil PLC","Gabon","Limande","Royalties",3235887
+"973","Total Sa","Libya","Areas 15, 16 & 32 (Al Jurf)","Production Entitlements",203176000
+"974","Rio Tinto PLC","Australia","PILBARA","Royalties",1061871911
+"975","ROYAL DUTCH SHELL PLC","Malaysia","Shell Energy Asia Limited","Tax",181807
+"976","Tullow Oil PLC","Gabon","Niungo","Royalties",3013410
+"977","BP P.L.C.","Algeria","In Amenas","Tax",49466918
+"978","Tullow Oil PLC","Gabon","Oba","Royalties",1105736
+"979","ROYAL DUTCH SHELL PLC","Australia","NORTH WEST SHELF","Royalties",120230627
+"980","Total Sa","Gabon","Non-attributable","Dividends",11250000
+"981","BP P.L.C.","Algeria","In Salah","Tax",84492164
+"982","Randgold Resources","Mali","Société des Mines de Loulo SA","Tax",12395231
+"983","BP P.L.C.","Canada","Terre de Grace","Fees",396131
+"984","Tullow Oil PLC","Gabon","Tulipe Oil SA","Tax",2121853
+"985","Rio Tinto PLC","Australia","PILBARA","Fees",1140210
+"986","Tullow Oil PLC","Gabon","Tullow Oil Gabon SA","Tax",15775329
+"987","ROYAL DUTCH SHELL PLC","New Zealand","SHELL NEW ZEALAND (2011) LIMITED","Fees",139534
+"988","ROYAL DUTCH SHELL PLC","Norway","ORMEN LANGE AND DRAUGEN","Production Entitlements",3008589121
+"989","Rio Tinto PLC","Mongolia","OYU TOLGOI","Royalties",111117141
+"990","ROYAL DUTCH SHELL PLC","Nigeria","THE SHELL PETROLEUM DEVELOPMENT COMPANY OF NIGERIA LIMITED","Royalties",341126943
+"991","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Boulton B & F","Fees",64465
+"992","ROYAL DUTCH SHELL PLC","United States of America","PERMIAN","Royalties",13941794
+"993","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Gawain","Fees",10615
+"994","ROYAL DUTCH SHELL PLC","Egypt","OBAIYED","Tax",34422390
+"995","Total Sa","Gabon","Coucal CEPP","Fees",533000
+"996","Rio Tinto PLC","Argentina","EXPLORATION - ARGENTINA","Tax",399739
+"997","EnQuest PLC","United Kingdom of Great Britain and Northern Ireland","Kittiwake","Fees",884459
+"998","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Murdoch K","Fees",259624
+"999","BP P.L.C.","Egypt","North October","Tax",855682
+"1000","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Schooner","Fees",434488
+"1001","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Thames","Fees",17083
+"1002","Total Sa","Qatar","Al Khalij","Infrastructure",21136000
+"1003","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Thurne","Fees",42941
+"1004","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Tullow Group Services Limited","Tax",7712109
+"1005","Tullow Oil PLC","Ghana","Jubilee","Infrastructure",915219
+"1006","Tullow Oil PLC","Ghana","TEN","Infrastructure",237263
+"1007","Tullow Oil PLC","Congo, the Democratic Republic of the","M'boundi","Production Entitlements",15127543
+"1008","Tullow Oil PLC","Ghana","Tullow Ghana Limited","Fees",60472
+"1009","Tullow Oil PLC","Ghana","Tullow Ghana Limited","Infrastructure",3190490
+"1010","Tullow Oil PLC","Guinea","Offshore Guinea (Deepwater)","Fees",75087
+"1011","BP P.L.C.","Indonesia","Tangguh","Production Entitlements",550847289
+"1012","Tullow Oil PLC","Guinea","Tullow Guinea Limited","Infrastructure",59572
+"1013","BG Group Ltd","Brazil","BM-S-9","Royalties",196113000
+"1014","BG Group Ltd","Thailand","Bongkot","Royalties",102723000
+"1015","EVRAZ PLC","Russian Federation","Evrazruda","Fees",1952047
+"1016","Tullow Oil PLC","Equatorial Guinea","Ceiba","Production Entitlements",10006583
+"1017","Nord Gold SE","Burkina Faso","Societe des Mines de Taparko","Dividends",315114
+"1018","Tullow Oil PLC","Equatorial Guinea","Tullow Equatorial Guinea Limited","Tax",37380751
+"1019","BG Group Ltd","Egypt","Rosetta","Tax",14315000
+"1020","Glencore plc","Chile","IV Region Coquimbo Project - Minera Punitaqui","Fees",221000
+"1021","Total Sa","Gabon","Concession Grondin","Tax",48452000
+"1022","BG Group Ltd","India","Panna-Mukhta","Royalties",52106000
+"1023","KAZ Minerals PLC","Kazakhstan","Aktogay","Royalties",2945
+"1024","Tullow Oil PLC","Jamaica","Walton Morant","Fees",128261
+"1025","ROYAL DUTCH SHELL PLC","United States of America","ALASKA EXPLORATION","Fees",6882404
+"1026","ROYAL DUTCH SHELL PLC","United States of America","APPALACHIA","Fees",13164884
+"1027","ROYAL DUTCH SHELL PLC","Argentina","ARGENTINA UNCONVENTIONAL PROJECTS","Fees",375684
+"1028","ROYAL DUTCH SHELL PLC","Argentina","ARGENTINA UNCONVENTIONAL PROJECTS","Royalties",4239029
+"1029","ROYAL DUTCH SHELL PLC","Brunei Darussalam","SHELL DEEPWATER BORNEO LIMITED","Tax",1983978
+"1030","ROYAL DUTCH SHELL PLC","Canada","ATHABASCA OIL SANDS","Royalties",62808847
+"1031","ROYAL DUTCH SHELL PLC","Australia","Shell Australia Pty Ltd","Tax",757694007
+"1032","Tullow Oil PLC","Suriname","Block 54","Infrastructure",257689
+"1033","BP P.L.C.","Brazil","BM-POT-16 (POT-M-760)","Fees",85996688
+"1034","BP P.L.C.","United States of America","Alaska","Royalties",254908256
+"1035","ROYAL DUTCH SHELL PLC","Egypt","BADR EL-DIN (BED)","Bonuses",1e+08
+"1036","KAZ Minerals PLC","Kazakhstan","Legal entity - East Region","Infrastructure",11072
+"1037","BP P.L.C.","Brazil","BM-POT-16 (POT-M-663)","Fees",734260
+"1038","ROYAL DUTCH SHELL PLC","Brazil","BIJUPIRA & SALEMA","Fees",393972
+"1039","ROYAL DUTCH SHELL PLC","Brazil","BIJUPIRA & SALEMA","Royalties",24850409
+"1040","Perenco Overseas Holdings Limited","Viet Nam","Perenco Cuu Long Ltd","Tax",98407194
+"1041","ROYAL DUTCH SHELL PLC","China","CHANGBEI","Royalties",7686464
+"1042","ROYAL DUTCH SHELL PLC","Ireland","CORRIB PROJECT","Infrastructure",564653
+"1043","ROYAL DUTCH SHELL PLC","Gabon","GABON CENTRAL","Royalties",16583412
+"1044","ROYAL DUTCH SHELL PLC","Gabon","GABON NORTH EAST","Royalties",38400345
+"1045","ROYAL DUTCH SHELL PLC","Argentina","ARGENTINA UNCONVENTIONAL PROJECTS","Bonuses",1.2e+07
+"1046","ROYAL DUTCH SHELL PLC","Gabon","GABON SOUTH","Production Entitlements",2595760
+"1047","Glencore plc","South Africa","Mpumalanga Province Project - Thermal Coal","Royalties",11864971
+"1048","ROYAL DUTCH SHELL PLC","Malaysia","SARAWAK SHELL BERHAD","Tax",421287
+"1049","JKX Oil & Gas plc","Ukraine","Novo-Nikolaevskoye Complex","Fees",114000
+"1050","Tullow Oil PLC","Norway","PL 438","Fees",1002241
+"1051","ROYAL DUTCH SHELL PLC","Germany","SHELL EXPLORATION ET PRODUCTION DU MAROC GMBH","Tax",2278214
+"1052","BP P.L.C.","United States of America","Colorado","Tax",14806262
+"1053","ROYAL DUTCH SHELL PLC","Canada","GROUNDBIRCH","Royalties",594864
+"1054","ROYAL DUTCH SHELL PLC","Canada","INSITU","Fees",22244721
+"1055","ROYAL DUTCH SHELL PLC","Italy","ITALY UPSTREAM ASSET","Royalties",104352782
+"1056","Anglo American plc","Brazil","Boa Vista (Fresh Rock)","Royalties",271683
+"1057","ROYAL DUTCH SHELL PLC","Jordan","JORDAN FIELD EXPERIMENT","Bonuses",3e+06
+"1058","BG Group Ltd","Tunisia","Hasdrubal","Royalties",13680000
+"1059","ROYAL DUTCH SHELL PLC","New Zealand","KAPUNI","Royalties",742945
+"1060","ROYAL DUTCH SHELL PLC","Iraq","MAJNOON","Tax",15689830
+"1061","Rio Tinto PLC","Canada","IRON ORE COMPANY OF CANADA","Tax",937576
+"1062","ROYAL DUTCH SHELL PLC","Malaysia","SHELL SABAH  SELATAN SDN. BHD.","Royalties",268078
+"1063","Tullow Oil PLC","Gabon","Tchatamba","Royalties",9413126
+"1064","ROYAL DUTCH SHELL PLC","Malaysia","SHELL OIL & GAS (MALAYSIA) LLC","Tax",587157
+"1065","Total Sa","Libya","Areas 15, 16 & 32 (Al Jurf)","Tax",160461000
+"1066","ROYAL DUTCH SHELL PLC","Oman","MUKHAIZNA PSC","Tax",23003630
+"1067","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Ketch","Fees",299158
+"1068","ROYAL DUTCH SHELL PLC","United States of America","Non Core Assets","Tax",22852354
+"1069","ROYAL DUTCH SHELL PLC","Norway","A/S NORSKE SHELL","Tax",1137352447
+"1070","Seplat Petroleum","Nigeria","OML 56","Royalties",527310
+"1071","Rio Tinto PLC","Australia","WEIPA INCLUDING AMRUN","Fees",1111735
+"1072","Anglo American plc","Brazil","Corporate","Infrastructure",4200453
+"1073","ROYAL DUTCH SHELL PLC","United Kingdom of Great Britain and Northern Ireland","ONEGAS WEST","Fees",1239639
+"1074","Total Sa","Kazakhstan","Kashagan","Infrastructure",11612000
+"1075","BP P.L.C.","Canada","Nova Scotia Exploration","Fees",298693
+"1076","Tullow Oil PLC","United Kingdom of Great Britain and Northern Ireland","Kelvin","Fees",129854
+"1077","ROYAL DUTCH SHELL PLC","United Kingdom of Great Britain and Northern Ireland","ONEGAS WEST","Tax",52759167
+"1078","Antofagasta plc","","Los Pelambres","Fees",964000
+"1079","ROYAL DUTCH SHELL PLC","Qatar","PEARL GTL","Tax",520599000
+"1080","ROYAL DUTCH SHELL PLC","New Zealand","POHOKURA","Royalties",55711110
+"1081","BP P.L.C.","Egypt","East Morgan","Tax",11755360
+"1082","Total Sa","France","Pécorade","Tax",397000
+"1083","ROYAL DUTCH SHELL PLC","Nigeria","PSC 1993 (OPL212/OML118, OPL219/OML135)","Tax",368870290
+"1084","BP P.L.C.","Libya","EPSA","Fees",584575
+"1085","Premier Oil Plc","Falkland Islands (Malvinas)","Sea Lion","Fees",390000
+"1086","ROYAL DUTCH SHELL PLC","Indonesia","PULAU MOA SELATAN","Bonuses",1e+06
+"1087","Petropavlovsk Plc","Russian Federation","Alluvial operations","Tax",374000
+"1088","ROYAL DUTCH SHELL PLC","China","YINGGEHAI","Bonuses",250000
+"1089","ROYAL DUTCH SHELL PLC","Canada","SABLE DEEPWATER","Royalties",7047820
+"1090","Jardine Matheson Holdings Ltd","Indonesia","North Barito, Central Kalimantan Project","Royalties",370129
+"1091","ROYAL DUTCH SHELL PLC","Malaysia","SARAWAK OIL AND GAS","Production Entitlements",2842812182
+"1092","Rio Tinto PLC","Canada","DIAVIK","Fees",381740
+"1093","BP P.L.C.","United Kingdom of Great Britain and Northern Ireland","Bruce","Fees",486862
+"1094","ROYAL DUTCH SHELL PLC","Philippines","SC 38 MALAMPAYA GAS","Production Entitlements",408295106
+"1095","ROYAL DUTCH SHELL PLC","Philippines","SC 38 MALAMPAYA GAS","Tax",78622555
+"1096","Tullow Oil PLC","Gabon","M'Oba","Royalties",157462
+"1097","Glencore plc","Zambia","Copperbelt Region Project - Mopani","Royalties",41885000
+"1098","Rio Tinto PLC","Australia","ARGYLE","Royalties",11366316
+"1099","ROYAL DUTCH SHELL PLC","Nigeria","SPDC SHALLOW WATER","Production Entitlements",417866579
+"1100","BP P.L.C.","Egypt","South Gharib","Tax",11316399
+"1101","ROYAL DUTCH SHELL PLC","Nigeria","SPDC WEST","Production Entitlements",798332523
+"1102","BG Group Ltd","Uruguay","Block 8","Fees",1e+05
+"1103","ROYAL DUTCH SHELL PLC","United Kingdom of Great Britain and Northern Ireland","SHELL U.K. LIMITED","Fees",941782
+"1104","Exillon Energy Plc","Russian Federation","Kayumneft JSC","Fees",140000
+"1105","BG Group Ltd","United Kingdom of Great Britain and Northern Ireland","J Block / Jade","Tax",11462000
+"1106","ROYAL DUTCH SHELL PLC","United Kingdom of Great Britain and Northern Ireland","UK EXPLORATIONS PROJECTS","Fees",631198
+"1107","Total Sa","Uganda","Block EA-1","Fees",378000
+"1108","ROYAL DUTCH SHELL PLC","United Kingdom of Great Britain and Northern Ireland","UK OFFSHORE NON OPERATED","Fees",909622
+"1109","BP P.L.C.","United Kingdom of Great Britain and Northern Ireland","Pipelines","Fees",1862764
+"1110","BP P.L.C.","Uruguay","Block 12","Fees",1e+05
+"1111","ROYAL DUTCH SHELL PLC","United Kingdom of Great Britain and Northern Ireland","UK OFFSHORE NON OPERATED","Tax",596370
+"1112","BG Group Ltd","Brazil","BM-S-11","Royalties",341644000
+"1113","Total Sa","Nigeria","OPL223","Infrastructure",390000
+"1114","ROYAL DUTCH SHELL PLC","Nigeria","PSC 1993 (OPL212/OML118, OPL219/OML135)","Royalties",37424320
+"1115","ROYAL DUTCH SHELL PLC","United Kingdom of Great Britain and Northern Ireland","UK OFFSHORE OPERATED","Fees",910161
+"1116","Tullow Oil PLC","Norway","PL 550","Fees",1369984
+"1117","FRESNILLO PLC","Mexico","Herradura / Nochebuena","Tax",8739477
+"1118","ROYAL DUTCH SHELL PLC","United Kingdom of Great Britain and Northern Ireland","UK OFFSHORE OPERATED","Tax",1385824
+"1119","ROYAL DUTCH SHELL PLC","Iraq","WEST QURNA","Tax",7613250
+"1120","BP P.L.C.","United States of America","Colorado","Production Entitlements",33229413
+"1121","ROYAL DUTCH SHELL PLC","United States of America","GULF OF MEXICO (WEST)","Royalties",163352599
+"1122","ROYAL DUTCH SHELL PLC","United States of America","GULF OF MEXICO EXPLORATION","Fees",53429642
+"1123","BP P.L.C.","Egypt","Gulf of Suez","Tax",136147645
+"1124","BP P.L.C.","Angola","Block 15","Tax",118558137
+"1125","BP P.L.C.","Angola","Block 19","Bonuses",4e+06
+"1126","BP P.L.C.","Angola","Block 24","Tax",3e+05
+"1127","Total Sa","United States of America","Barnett Shale","Tax",5877000
+"1128","Tullow Oil PLC","Kenya","Block 13T","Fees",18876
+"1129","BP P.L.C.","Iraq","Rumaila","Infrastructure",6612850
+"1130","JKX Oil & Gas plc","Ukraine","Novo-Nikolaevskoye Complex","Royalties",20117000
+"1131","FRESNILLO PLC","Mexico","Saucito","Fees",5236547
+"1132","Exillon Energy Plc","Russian Federation","Vostochno-Vozeiskoye oil field","Tax",5938000
+"1133","BP P.L.C.","Angola","Block 31","Tax",134779684
+"1134","Total Sa","Norway","Garantiana","Fees",1424000
+"1135","BP P.L.C.","United Arab Emirates","Bunduq Concession","Tax",827211
+"1136","Total Sa","Gabon","Avocette CEPP","Fees",1873000
+"1137","BP P.L.C.","Australia","NORTH WEST SHELF","Royalties",129922977
+"1138","Premier Oil Plc","Pakistan","Qadipur","Royalties",1834000
+"1139","EQUION ENERGIA LIMITED","Colombia","Piedemonte","Royalties",139022049
+"1140","BP P.L.C.","Australia","NORTH WEST SHELF","Tax",46729953
+"1141","EQUION ENERGIA LIMITED","Colombia","Recetor","Royalties",14892296
+"1142","BP P.L.C.","Angola","Block 24","Bonuses",1e+07
+"1143","BP P.L.C.","Indonesia","Sanga - Sanga","Tax",38938903
+"1144","BP P.L.C.","Azerbaijan","Azeri-Chirag-Deepwater Guneshli - PSA","Production Entitlements",7193742624
+"1145","BP P.L.C.","Angola","Block 31","Production Entitlements",1352101305
+"1146","FRESNILLO PLC","Mexico","Comercializadora de Metales Fresnillo, S.A. de C.V.","Tax",1322321
+"1147","Total Sa","Canada","Surmont","Royalties",2450000
+"1148","BP P.L.C.","Azerbaijan","Shafag-Asiman PSA","Fees",2118000
+"1149","Vedanta Resources","India","TSPL","Royalties",2480000
+"1150","BG Group Ltd","Kenya","L10A","Fees",275000
+"1151","Total Sa","United Arab Emirates","Abu Dhabi Gas Industries Ltd (GASCO)","Fees",2344000
+"1152","BP P.L.C.","Azerbaijan","Shah Deniz","Tax",78837706
+"1153","Vedanta Resources","India","CIL-KG-OSN","Tax",14340000
+"1154","Total Sa","Norway","Atla","Fees",2276000
+"1155","BP P.L.C.","Brazil","BM-C-32 (C-M-61/ Itaipu)","Fees",404530
+"1156","Vedanta Resources","United States of America","VEDL-Corp","Tax",1420000
+"1157","BP P.L.C.","Brazil","BM-C-34 (C-M-471)","Fees",281579
+"1158","BP P.L.C.","Brazil","BM-POT-17 (POT-M-665)","Fees",76458643
+"1159","Acacia Mining","Tanzania, United Republic of","Buzwagi gold mine","Royalties",8403000
+"1160","Total Sa","Gabon","Baudroie Mérou CEPP","Bonuses",1e+06
+"1161","BP P.L.C.","Egypt","Baltim","Tax",25923426
+"1162","Tethys Petroleum Limited","Kazakhstan","Akulka Oil","Infrastructure",54276
+"1163","BP P.L.C.","Egypt","El Matareya","Bonuses",375000
+"1164","Total Sa","Angola","Block 14k","Production Entitlements",420000
+"1165","Tethys Petroleum Limited","Kazakhstan","Kyzloi Gas","Bonuses",306171
+"1166","BP P.L.C.","Angola","Block 18","Tax",145123842
+"1167","BP P.L.C.","Egypt","North El-max","Bonuses",250000
+"1168","BP P.L.C.","Egypt","Ras El Bar","Tax",61560617
+"1169","BG Group Ltd","Trinidad and Tobago","NCMA","Production Entitlements",95818000
+"1170","EQUION ENERGIA LIMITED","Colombia","Río Chitamena","Royalties",754803
+"1171","BP P.L.C.","Egypt","South Belayim","Tax",18822456
+"1172","Ferrexpo PLC","Ukraine","FXPO UKR","Royalties",13713878
+"1173","BP P.L.C.","Egypt","Temsah","Tax",75307176
+"1174","BP P.L.C.","United Kingdom of Great Britain and Northern Ireland","Shetland","Fees",4218090
+"1175","BP P.L.C.","Angola","Block 25","Bonuses",2142857
+"1176","BP P.L.C.","Indonesia","Tangguh","Tax",294910595
+"1177","BP P.L.C.","Indonesia","Tanjung CBM","Fees",1200000
+"1178","BP P.L.C.","Angola","Block 31","Fees",448078
+"1179","BP P.L.C.","India","KG D6  KG-DWN-98/3","Production Entitlements",2100677
+"1180","BP P.L.C.","India","KG D6  KG-DWN-98/3","Tax",20995449
+"1181","Total Sa","Venezuela, Bolivarian Republic of","Yucal Placer","Tax",491000
+"1182","FRESNILLO PLC","Mexico","Fresnillo","Tax",49989
+"1183","BP P.L.C.","Uruguay","Block 11","Fees",1e+05
+"1184","FRESNILLO PLC","Mexico","Fresnillo","Fees",6958611
+"1185","ROYAL DUTCH SHELL PLC","Germany","SHELL ERDGAS BETEILIGUNGSGESELLSCHAFT mbH","Tax",2125909
+"1186","BP P.L.C.","Uruguay","Block 6","Fees",1e+05
+"1187","FRESNILLO PLC","Mexico","Herradura / Nochebuena","Fees",7890079
+"1188","BP P.L.C.","United States of America","Arkansas","Royalties",288694
+"1189","ROYAL DUTCH SHELL PLC","Canada","GREATER DEEP BASIN","Infrastructure",359982
+"1190","FRESNILLO PLC","Mexico","Fresnillo plc","Tax",2270438
+"1191","EnQuest PLC","Malaysia","Tanjong Baram","Infrastructure",1e+05
+"1192","FRESNILLO PLC","Mexico","Operaciones Fresnillo, S.A. de C.V.","Tax",1073672
+"1193","Tullow Oil PLC","Netherlands","E14","Fees",65119
+"1194","Glencore plc","Australia","Western Australian Project - Murrin Murrin Nickel","Royalties",12547618
+"1195","BP P.L.C.","United States of America","Delaware","Royalties",252535
+"1196","Nord Gold SE","Russian Federation","Mine Aprelkovo CJSC","Tax",1137945
+"1197","EVRAZ PLC","Russian Federation","Evrazruda","Tax",1149187
+"1198","BP P.L.C.","United States of America","Gulf of Mexico - Central","Fees",10906560
+"1199","Tullow Oil PLC","Netherlands","E15b","Fees",3108
+"1200","FRESNILLO PLC","Peru","Fresnillo Perú, S.A.C.","Fees",1417328
+"1201","Anglo American plc","South Africa","Masa Chrome Company (Pty) Ltd","Tax",3615977
+"1202","BP P.L.C.","United States of America","Gulf of Mexico - Central","Royalties",442028324
+"1203","BP P.L.C.","United States of America","Gulf of Mexico - Western","Fees",10786525
+"1204","Anglo American plc","Australia","Moranbah North","Tax",4401609
+"1205","Anglo American plc","South Africa","Corporate-Mafube Coal Mining (Proprietary) Limited","Tax",19272677
+"1206","BP P.L.C.","United States of America","Louisiana","Tax",5602639
+"1207","Glencore plc","Chad","Krim EXA","Bonuses",2e+06
+"1208","BP P.L.C.","United States of America","New Mexico","Royalties",1857048
+"1209","BP P.L.C.","United Kingdom of Great Britain and Northern Ireland","Exploration","Fees",490995
+"1210","BP P.L.C.","United States of America","Wyoming","Tax",17649564
+"1211","BG Group Ltd","Australia","Corporate","Fees",793000
+"1212","BG Group Ltd","Australia","QCLNG","Royalties",2936000
+"1213","BG Group Ltd","Australia","QCLNG","Fees",12801000
+"1214","BG Group Ltd","Australia","QCLNG","Infrastructure",24195000
+"1215","BP P.L.C.","United Kingdom of Great Britain and Northern Ireland","Bruce","Tax",15309463
+"1216","BG Group Ltd","Brazil","Barreirinhas Basin","Fees",771000
+"1217","BG Group Ltd","Egypt","WDDM","Production Entitlements",440795000
+"1218","Total Sa","Nigeria","OML99 (joint venture with NNPC, operated)","Tax",41401000
+"1219","BG Group Ltd","Egypt","Rosetta","Production Entitlements",36224000
+"1220","Total Sa","Qatar","Qatargas 1","Tax",39650000
+"1221","BG Group Ltd","India","Corporate","Tax",23502000
+"1222","Hunting Plc","United States of America","South Pelto 25","Royalties",43233
+"1223","Antofagasta plc","","Encuentro","Fees",629000
+"1224","BG Group Ltd","Uruguay","Block 9","Fees",1e+05
+"1225","Vedanta Resources","India","HZL-SK Mine","Royalties",40890000
+"1226","BG Group Ltd","India","Tapti","Royalties",2662000
+"1227","Ophir Energy Plc","Equatorial Guinea","Block R","Infrastructure",76000
+"1228","BG Group Ltd","Uruguay","Block 13","Fees",1e+05
+"1229","BG Group Ltd","Kazakhstan","Karachaganak","Tax",194629000
+"1230","BG Group Ltd","Kenya","L10B","Fees",253000
+"1231","Total Sa","United States of America","Gulf of Mexico","Bonuses",3600000
+"1232","Green Dragon Gas Ltd","China","Qinyan (GQY)","Fees",85000
+"1233","Total Sa","Yemen","Block 5","Tax",3426000
+"1234","BG Group Ltd","Norway","PL373S","Fees",768000
+"1235","JX Nippon Exploration and Production (U.K.) Limited","United Kingdom of Great Britain and Northern Ireland","East Brae Project","Tax",435043
+"1236","BG Group Ltd","Tanzania, United Republic of","Block 1","Fees",311000
+"1237","Anglo American plc","Brazil","Cubatao","Fees",959
+"1238","Ferrexpo PLC","Ukraine","FXPO UKR","Tax",12293992
+"1239","BG Group Ltd","Tunisia","Miskar","Royalties",21179000
+"1240","Anglo American plc","Australia","Foxleigh","Fees",256682
+"1241","Anglo American plc","Canada","Gahcho Kué","Fees",749720
+"1242","BG Group Ltd","United Kingdom of Great Britain and Northern Ireland","Corporate","Tax",3.95e+08
+"1243","BG Group Ltd","United Kingdom of Great Britain and Northern Ireland","Central North Sea","Fees",339000
+"1244","Hochschild Mining plc","Peru","Compañía Minera Ares S.A.C.","Royalties",2279027
+"1245","Hochschild Mining plc","Peru","Ares","Fees",196765
+"1246","Hochschild Mining plc","Argentina","Minera Santa Cruz S.A.","Tax",9881828
+"1247","Hochschild Mining plc","Argentina","Minera Santa Cruz S.A.","Royalties",4793480
+"1248","Total Sa","Gabon","Coucal CEPP","Tax",1728000
+"1249","Hochschild Mining plc","Argentina","Minera Santa Cruz S.A.","Fees",1333728
+"1250","BP P.L.C.","Azerbaijan","Azeri-Chirag-Deepwater Guneshli - PSA","Tax",158699481
+"1251","Hochschild Mining plc","Chile","Andina Minerals Chile Ltd","Fees",235204
