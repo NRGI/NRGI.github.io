@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="utf-8">
+		<title>Andean DB</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+		
+		<style>
+			html {
+				font-family: "Lucida Sans Unicode"
+			}
+			text {
+				font-family: "Lucida Sans Unicode"
+			}
+			
+			
+			
+			
+			.yaxis { font: 14px sans-sarif; }
+			
+			.xaxis { font: 14px sans-serif; }
+			
+		</style>
+	</head>
+
+	<body>
+		
+		<button id='button' onclick="switchGraph()">Switch Y Axis</button>
+		
+		<div id='plot1'></div>
+		
+		
+		<script>
+			
+			var plotHeight = 550
+			var plotWidth = 900
+			
+			var margin = {top:40, bottom:40, left:100, right:40}
+			var width = plotWidth - margin.left - margin.right
+			var height = plotHeight - margin.top - margin.bottom
+			
+			d3.select('#plot').style('height', plotHeight).style('width', 3 * plotWidth)
+			
+		
+			var svg = d3.select('#plot1').append('svg')
+							.attr('width', width + margin.left + margin.right)
+							.attr('height', height + margin.top + margin.bottom)
+						.append('g')
+							.attr('transform','translate('+margin.left+','+margin.top+')')
+			
+			
+			var tooltip = d3.select("body")
+										.append("div")
+										.attr('class','tooltip')
+										.style('color','black')
+										.style("position", "absolute")
+										.style("z-index", "10")
+						
+			var dat
+			
+			//var jdat = [{"Year":"2004.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":504.3557,"totalValue":1793.2067,"Percent":0.2813},{"Year":"2004.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":2115.4,"totalValue":1622,"Percent":1.3042},{"Year":"2004.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":1128.135,"totalValue":9264.6184,"Percent":0.1218},{"Year":"2005.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":924.2705,"totalValue":2419.7542,"Percent":0.382},{"Year":"2005.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":2211.598,"totalValue":2300,"Percent":0.9616},{"Year":"2005.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":2099.6016,"totalValue":12520.2069,"Percent":0.1677},{"Year":"2006.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":1605.7171,"totalValue":3484.7992,"Percent":0.4608},{"Year":"2006.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":3235.007,"totalValue":3773,"Percent":0.8574},{"Year":"2006.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":3767.4477,"totalValue":18661.4408,"Percent":0.2019},{"Year":"2007.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":2050.1553,"totalValue":4137.581,"Percent":0.4955},{"Year":"2007.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":3318.06,"totalValue":4012,"Percent":0.827},{"Year":"2007.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":4192.5156,"totalValue":21824.896,"Percent":0.1921},{"Year":"2008.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":2849.7179,"totalValue":6004.4781,"Percent":0.4746},{"Year":"2008.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":8675.272,"totalValue":6463,"Percent":1.3423},{"Year":"2008.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":4046.4139,"totalValue":23513.5267,"Percent":0.1721},{"Year":"2009.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":2751.3778,"totalValue":4667.4792,"Percent":0.5895},{"Year":"2009.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":5211.501,"totalValue":4460,"Percent":1.1685},{"Year":"2009.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":3285.3254,"totalValue":19844.3933,"Percent":0.1656},{"Year":"2010.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":2908.6627,"totalValue":6290.2828,"Percent":0.4624},{"Year":"2010.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":7845.02,"totalValue":6728,"Percent":1.166},{"Year":"2010.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":4939.4771,"totalValue":26567.966,"Percent":0.1859},{"Year":"2011.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":3697.3589,"totalValue":8540.6074,"Percent":0.4329},{"Year":"2011.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":12934.602,"totalValue":11762,"Percent":1.0997},{"Year":"2011.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":6816.3201,"totalValue":34489.2534,"Percent":0.1976},{"Year":"2012.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":4899.3079,"totalValue":10486.4125,"Percent":0.4672},{"Year":"2012.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":12219.706,"totalValue":12711,"Percent":0.9613},{"Year":"2012.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":6521.9281,"totalValue":32821.1892,"Percent":0.1987},{"Year":"2013.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":5782.8644,"totalValue":11063.1333,"Percent":0.5227},{"Year":"2013.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":11433.388,"totalValue":13412,"Percent":0.8525},{"Year":"2013.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":5580.3545,"totalValue":29591.4218,"Percent":0.1886},{"Year":"2014.0","Country":"Bolivia","Indicator":"Government take","Sector":"Macro","value":5960.6,"totalValue":11461.765,"Percent":0.52},{"Year":"2014.0","Country":"Ecuador","Indicator":"Government take","Sector":"Macro","value":10905.823,"totalValue":13016,"Percent":0.8379},{"Year":"2014.0","Country":"Peru","Indicator":"Government take","Sector":"Macro","value":4712.8469,"totalValue":26286.5874,"Percent":0.1793}]
+			
+			var xScale							
+			var yScaleGov
+			var yScaleTotal
+			var colorScale
+			
+			var xAxis
+			var yAxisGov
+			var yAxisTotal
+			
+			var active1 = 'yes'
+			var active2 = 'yes'
+			var flags=[]
+			var samp, datNest
+			var uniqueCountry = []
+			var selector
+			
+			d3.csv('govtTake3.csv', function(data) {
+				dat = data
+				
+				datNest = d3.nest()
+							.key(function(d){return d.Country})
+							.entries(dat)
+				
+				for( i=0; i<datNest.length; i++) {
+					if( flags[datNest[i].key]) continue;
+					flags[datNest[i].key] = true;
+					uniqueCountry.push(datNest[i].key);
+				}
+				
+				
+				
+				xScale = d3.scaleLinear()
+							.domain([d3.min(dat, function(d){return +d.Year}), d3.max(dat, function(d){return +d.Year})])
+							.range([0 , width])
+							
+				//Use w/ `value`
+				yScaleGov =d3.scaleLinear()
+								.domain([0, d3.max(dat, function(d){return +d.value})])
+								.range([height, 0])
+				
+				//Use w/ `totalValue`
+				yScale =d3.scaleLinear()
+								.domain([0, d3.max(dat, function(d){return +d.totalValue})])
+								.range([height, 0])
+				
+				fillScale = d3.scaleOrdinal()
+								.range(["#FF6F4C","#557288","#53CAEC"])
+								.domain([uniqueCountry])
+				
+				
+				xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d")).ticks(5);
+				yAxisGov = d3.axisLeft(yScale).ticks(5);
+				yAxisTotal = d3.axisLeft(yScale)
+				
+				
+				lineScaleGov = d3.line()
+								.curve(d3.curveCatmullRom)
+								.x(function(d){return xScale(d.Year)})
+								.y(function(d){return yScale(d.value)})
+				lineScaleTotal = d3.line()
+								.curve(d3.curveCatmullRom)
+								.x(function(d){return xScale(d.Year)})
+								.y(function(d){return yScale(d.totalValue)})
+				
+				d3.selectAll('svg').append('g')
+					.attr('class', 'xaxis')
+					.attr('transform', 'translate('+ margin.left +','+ (height+margin.top) +')')
+					.call(xAxis)
+				d3.selectAll('svg').append('g')
+					.attr('class', 'yaxis')
+					.attr('transform', 'translate('+ (margin.left) +','+ margin.top +')')
+					.call(yAxisGov)
+				
+				svg.selectAll('path')
+					.data(datNest, function(d){return d})
+					.enter()
+					.append('path')
+						.attr('type', 'line')
+						.attr('class', function(d){return d.key})
+						.attr('name', function(d){return d.key})
+						.attr('d',function(d){return lineScaleGov(d.values)})
+						.attr('stroke',function(d){return fillScale(d.key)})
+						.attr('stroke-width',3)
+						.attr('fill','none')
+					.on('mouseover', function(d){
+						nm = d3.select(this).attr('name')
+						d3.selectAll('rect').attr('opacity', .20)
+						d3.selectAll('[type=line]').attr('opacity', .2)
+						
+						d3.selectAll('[name='+nm+']').attr('opacity', 1)
+					})
+					.on('mouseout', function(d){
+						d3.selectAll('rect').attr('opacity', 1)
+						d3.selectAll('[type=line]').attr('opacity', 1)
+					})
+					
+				selector = 1
+				
+			//LEGENDS
+				var legend = svg.selectAll('.legend')
+									.data(["Bolivia","Ecuador","Peru"])//Object.keys(datNest[0]).slice(2).reverse())
+									.enter()
+									.append('g')
+										//.attr('name', function(d){return d.replace(/ /g,'')})
+										.attr('class','legend')
+										.attr('transform',function(d,i) {return 'translate(0,'+(i*20)+')'})
+						
+				legend.append('rect')
+						.attr('x',50)
+						.attr('y', 60)
+						.attr('width',18)
+						.attr('height',18)
+						.attr('fill', fillScale)
+						.attr('name', function(d){return d})
+						.attr('class','legend_rect')
+				legend.append('text')
+						.attr('x',70)
+						.attr('y',70)
+						.attr('dy','.35em')
+						.attr('text-anchor','start')
+						.text(function(d){return d})
+				
+				svg.append("text")
+					  .attr("transform", "rotate(-90)")
+					  .attr("y", 0 - margin.left)
+					  .attr("x",0 - (height / 2))
+					  .attr("dy", "1em")
+					  .style("text-anchor", "middle")
+					  .text("Million USD");    
+				
+				svg.append("text")
+					  .attr("y", -30)
+					  .attr("x", width/2)
+					  .attr("dy", "1em")
+					  .attr('class', 'title')
+					  .style("text-anchor", "middle")
+					  .text("Government revenues from extractives");   
+				
+		})
+		
+		
+		
+		function switchGraph(){
+			if(selector==1){
+				selector = 0
+				d3.select('.Bolivia').transition().duration(1000)
+					.attr('d', lineScaleTotal(datNest[0].values))
+					
+				d3.select('.Ecuador').transition().duration(1000)
+					.attr('d', lineScaleTotal(datNest[1].values))
+				
+				d3.select('.Peru').transition().duration(1000)
+					.attr('d', lineScaleTotal(datNest[2].values))
+				
+				d3.select('.title').remove()
+				svg.append("text")
+					  .attr("y", -30)
+					  .attr("x", width/2)
+					  .attr("dy", "1em")
+					  .attr('class', 'title')
+					  .style("text-anchor", "middle")
+					  .text("Total production value of extractives");   
+				
+			}	else {
+				selector = 1
+				d3.select('.Bolivia').transition().duration(1000)
+					.attr('d', lineScaleGov(datNest[0].values))
+					
+				d3.select('.Ecuador').transition().duration(1000)
+					.attr('d', lineScaleGov(datNest[1].values))
+				
+				d3.select('.Peru').transition().duration(1000)
+					.attr('d', lineScaleGov(datNest[2].values))
+				
+				d3.select('.title').remove()				
+				svg.append("text")
+					  .attr("y", -30)
+					  .attr("x", width/2)
+					  .attr("dy", "1em")
+					  .attr('class', 'title')
+					  .style("text-anchor", "middle")
+					  .text("Government revenues from extractives");   
+			}
+		
+		}
+		
+		function switchGraphGov(){
+			//d3.selectAll('path')
+			//	.transition()
+			//	.duration(1000)
+			//		.attr('d', function(datNest){return lineScaleTotal(datNest.values)})
+					
+			d3.select('.Bolivia').transition().duration(1000)
+				.attr('d', lineScaleGov(datNest[0].values))
+				
+			d3.select('.Ecuador').transition().duration(1000)
+				.attr('d', lineScaleGov(datNest[1].values))
+			
+			d3.select('.Peru').transition().duration(1000)
+				.attr('d', lineScaleGov(datNest[2].values))
+			
+		
+		}
+
+
+		
+		
+		</script>
+	</body>
+
+
+</html>
