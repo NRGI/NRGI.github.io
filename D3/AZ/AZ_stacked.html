@@ -13,8 +13,8 @@
 			}
 		
 			#plot {
-				height: 500px;
-				width: 1000px;
+				height: 480px;
+				width: 800px;
 				background-color: rgba(255,255,255,.5);
 			}			
 			.grid {
@@ -103,8 +103,8 @@
 
 			});
 			
-			var margin = {top:40, bottom:130, left:80, right:200}
-			var width = 1000 - margin.left - margin.right
+			var margin = {top:40, bottom:130, left:80, right:70}
+			var width = 800 - margin.left - margin.right
 			var height = 480 - margin.top - margin.bottom
 			
 			var svg = d3.select('#plot').append('svg')
@@ -312,7 +312,7 @@
 						svg.append('text')
 							.attr('x', xScale(2014.6))
 							.attr('class', 'scale')
-							.attr('y', yScale(23400))
+							.attr('y', yScale(23380))
 							.attr('font-size', 12)
 							.text('Total government revenues')
 						}, 6000);
@@ -686,8 +686,8 @@
 					.data(lineDat, function(d){return d})
 					.enter()
 						.append('line')
-							.attr('x1', width/2)
-							.attr('x2', (width/2)+17)
+							.attr('x1', width/2+25)
+							.attr('x2', (width/2)+17+25)
 							.attr('class','legend')
 							.attr('y1', (height+38) + ((lineLegendCounter-1)*20))
 							.attr('y2', (height+38) + ((lineLegendCounter-1)*20))
@@ -698,7 +698,7 @@
 					.data(lineDat, function(d){return d})
 					.enter()
 						.append('text')
-							.attr('x', (width/2) +21)
+							.attr('x', (width/2) +21+25)
 							.attr('y', (height+38) + ((lineLegendCounter-1)*20))
 							.attr('dy','.35em')
 							.attr('font-size', 20)
