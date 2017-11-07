@@ -145,7 +145,7 @@
 			}
 		//////////////////////
 		//CSV
-			d3.csv('az_wide2.csv', function(data) {
+			d3.csv('az_wide3.csv', function(data) {
 				
 				for(var i=0; i<data.length; i++){
 					clean(data[i])
@@ -171,7 +171,7 @@
 				uniqueInd = Object.keys(dat[0]).slice(0)
 				uniqueInd = uniqueInd.slice(1,uniqueInd.length)
 				
-				ymax = 100
+				ymax = 25//100
 				xScale = d3.scaleLinear()
 							.domain(d3.extent(dat, function(d){return d.Year}))
 							.range([0, width])
@@ -196,7 +196,7 @@
 					  .attr("x",0 - (height / 2))
 					  .attr("dy", "1em")
 					  .style("text-anchor", "middle")
-					  .text("Million USD");    
+					  .text("Billion USD");    
 				
 				
 			})
@@ -225,7 +225,7 @@
 			clearFunction()
 			lineDat = []
 			d3.selectAll('.scale').remove()
-			ymax = 100
+			ymax = 25//100
 			lineLegendCounter=0
 			stackGraph(["Social protection expenses","Education expenses","Health expenses","Infrastructure & industrial expenses","Other expenses"], 0)
 			
@@ -238,7 +238,7 @@
 						.attr('x1', xScale(2014.5))
 						.attr('x2', xScale(2014.5))
 						.attr('y2', height)
-						.attr('y1', yScale(23400))
+						.attr('y1', yScale(23.400))
 						.attr('class', 'scale')
 						.attr('stroke', 'black')
 						.attr('stroke-width', 2)
@@ -253,14 +253,14 @@
 					svg.append('line') //left right-top
 							.attr('x1', xScale(2014.4))
 							.attr('x2', xScale(2014.5))
-							.attr('y2', yScale(23400))
-							.attr('y1', yScale(23400))
+							.attr('y2', yScale(23.400))
+							.attr('y1', yScale(23.400))
 							.attr('class', 'scale')
 							.attr('stroke', 'black')
 							.attr('stroke-width', 2)
 					svg.append('text') //TEXT
 						.attr('x', xScale(2014.6))
-						.attr('y', yScale(23400))
+						.attr('y', yScale(23.400))
 						.attr('class', 'scale')
 						.attr('font-size', 12)
 						.text('Total budget expenses')
@@ -290,7 +290,7 @@
 							.attr('x1', xScale(2014.5))
 							.attr('x2', xScale(2014.5))
 							.attr('y2', height)
-							.attr('y1', yScale(23400))
+							.attr('y1', yScale(23.400))
 							.attr('stroke', 'black')
 							.attr('stroke-width', 2)
 						svg.append('line')
@@ -305,14 +305,14 @@
 								.attr('x1', xScale(2014.4))
 								.attr('class', 'scale')
 								.attr('x2', xScale(2014.5))
-								.attr('y2', yScale(23400))
-								.attr('y1', yScale(23400))
+								.attr('y2', yScale(23.400))
+								.attr('y1', yScale(23.400))
 								.attr('stroke', 'black')
 								.attr('stroke-width', 2)
 						svg.append('text')
 							.attr('x', xScale(2014.6))
 							.attr('class', 'scale')
-							.attr('y', yScale(23380))
+							.attr('y', yScale(23.380))
 							.attr('font-size', 12)
 							.text('Total government revenues')
 						}, 6000);
@@ -348,8 +348,8 @@
 					
 					oldMax = ymax
 					newYmax = d3.max(dataStack[dataStack.length-1], function(d){return d[1]})
-				
-					if(newYmax>ymax){
+					
+					//if(newYmax>ymax){
 						ymax = newYmax
 						yScale = d3.scaleLinear()
 							.domain([0, ymax])
@@ -373,14 +373,14 @@
 									.attr('class', 'horizontalGrid')
 									.attr('x1', 0-20)
 									.attr('x2', -20)
-									.attr('y1', function(d){return yScale(d)})
-									.attr('y2', function(d){return yScale(d)})
+									.attr('y1', function(d){return yScale(d)+.5})
+									.attr('y2', function(d){return yScale(d)+.5})
 									.attr('stroke','grey')							
 								.transition()
 								.delay(1000)
 								.duration(1000)
 									.attr('x2', width+20)
-					}
+					//}
 					
 									
 					zScale = d3.scaleOrdinal()
@@ -441,7 +441,7 @@
 								d3.select(parent).style('opacity', 1)
 								//d3.selectAll('.serie').style('fill', 'white')
 								//d3.select(parent).style('fill', zScale(d.key))
-								console.log(parentName.replace(/ /g,''))
+								
 								
 								d3.selectAll('.legend').attr('opacity', .5)
 								d3.selectAll('[name="'+parentName.replace(/ /g,'')+'"]').transition().duration(50).attr('opacity', 3)
@@ -459,7 +459,7 @@
 								
 								tooltip.transition()
 									.style('visibility','visible')
-								tooltip.html('<b>$'+ Math.round((d[1]-d[0])).toLocaleString() +'</b>')
+								tooltip.html('<b>$'+ (Math.round(((d[1]-d[0]) + 0.00001) * 100) / 100).toLocaleString()+'</b>')//Math.round((d[1]-d[0])).toLocaleString() +'</b>')
 											.style('font-size','14px')
 											.style('font-family','sans-serif')
 											.style("left", (+d3.select(this).attr('x')+margin.left+40) + 'px') //tooltip location is dependent on entire page not just svg space
@@ -659,7 +659,7 @@
 								
 								tooltip.transition()
 									.style('visibility','visible')
-								tooltip.html('<b>$'+ Math.round((d.Value)).toLocaleString() +'</b>')
+								tooltip.html('<b>$'+ (Math.round((d.Value + 0.00001) * 100) / 100).toLocaleString() +'</b>') //Math.round((d.Value)).toLocaleString() +'</b>')
 											.style('font-size','14px')
 											.style('font-family','sans-serif')
 											.style("left", (+d3.select(this).attr('cx')+margin.left+20) + 'px') //tooltip location is dependent on entire page not just svg space
