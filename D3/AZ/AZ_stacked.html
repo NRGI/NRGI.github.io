@@ -40,7 +40,7 @@
 		</style>
 	</head>
 
-	<body>
+	<body onload="fireViz()">
 		
 		
 		<form>
@@ -96,12 +96,12 @@
 				//socialFunction()
 			//});
 			
-			$(document).ready(function() {
-			  
-
-			  $("#rad1").prop("checked", true).trigger("click");
-
-			});
+			//$(document).ready(function() {			
+			//  $("#rad1").prop("checked", true).trigger("click");
+			//});
+			
+			fireViz = function(){$("#rad1").prop("checked", true).trigger("click")}
+			
 			
 			var margin = {top:40, bottom:130, left:80, right:70}
 			var width = 805 - margin.left - margin.right
