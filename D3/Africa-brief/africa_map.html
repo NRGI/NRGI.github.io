@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="utf-8">
+		<title>RP Project Payments</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<style>
+			
+			#plot {
+				<!-- top: 0px; -->
+				<!-- height: 200px; -->
+				<!-- width: 300px; -->
+				<!-- float: left -->
+				width: 300px;
+				height: 400px;
+				float: left;
+				background-opacity: .5;
+				background-color: #d91023
+			}
+			
+			#chart {
+				<!-- width: 300px; -->
+				<!-- height: 200px; -->
+				
+				width: 600px;
+				height: 400px;
+				background-opacity: .5;
+				background-color: #7977F4
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		
+		<div style="width: 900px; overflow:hidden">
+			<div id="plot" ></div>
+			<div id="chart"></div>
+		</div>
+		
+		<script>
+			var margin = {top:40, bottom:40, left:-40, right:100}
+			var width = 300 - margin.left - margin.right
+			var height = 400 - margin.top - margin.bottom
+			
+			var svg = d3.select('#plot').append('svg')
+							.attr('width', width + margin.left + margin.right)
+							.attr('height', height + margin.top + margin.bottom)
+						.append('g')
+							.attr('transform','translate('+margin.left+','+margin.top+')')
+			
+			
+			
+			
+			var tooltip = d3.select("body")
+										.append("div")
+										.attr('class','tooltip')
+										.style('color','black')
+										.style("position", "absolute")
+										.style("z-index", "10")
+										.style('visibility', 'hidden')
+			
+			var dat, xScale, yScale, dat2, roll, roll2
+			var addName = [], addIso = []
+			var af = ["DZA", "AGO", "SHN", "BEN", "BWA", "BFA", "BDI", "ESH", "CMR", "CPV", "CAF", "TCD", "COM", "COG", "COD", "DJI", "EGY", "GNQ", "ERI", "ETH", "GAB", "GMB", "GHA", "GIN", "GNB", "CIV", "KEN", "LSO", "LBR", "LBY", "MDG", "MWI", "MLI", "MRT", "MUS", "MYT", "MAR", "MOZ", "NAM", "NER", "NGA", "STP", "REU", "RWA", "STP", "SEN", "SYC", "SLE", "SOM", "ZAF", "SSD", "SHN", "SDN", "SWZ", "TZA", "TGO", "TUN", "UGA", "COD", "ZMB", "TZA", "ZWE"]
+			var africa = {"type":"FeatureCollection","features":[]}
+			var test
+			var cat
+//-------------------------------------------------------------------------------------------------------	
+//Chart		
+			
+			
+			var data = [{"question":"COMMODITY SALE DISCLOSURES","Failing":0.5843,"Good":0.0112,"NA":0.2472,"Poor":0.1124,"Satisfactory":0.0112,"Weak":0.0337},
+							   {"question":"COMMODITY SALE RULES","Failing":0.5618,"Good":0.1011,"NA":0.1798,"Poor":0.0562,"Satisfactory":0.0225,"Weak":0.0787},
+							   {"question":"SOE CORPORATE GOVERNANCE PRACTICE","Failing":0.3258,"Good":0.2022,"NA":0.1685,"Poor":0,"Satisfactory":0.1124,"Weak":0.191}];
+
+			var series = d3.stack()
+				.keys(["Failing","Good","NA","Poor","Satisfactory","Weak"])
+				//.offset(d3.stackOffsetDiverging)
+				(data);
+				
+			
+
+			var svg2 = d3.select("#chart").append('svg').attr('height', height).attr('width', 600),
+				margin2 = {top: 20, right: 30, bottom: 0, left: 150},
+				width2 = +svg2.attr("width"),
+				height2 = 300//+svg2.attr("height");
+
+			var y = d3.scaleBand()
+				.domain(["COMMODITY SALE DISCLOSURES","COMMODITY SALE RULES","SOE CORPORATE GOVERNANCE PRACTICE"])//data.map(function(d) { return d.question; }))
+				.range([height2 - margin2.bottom, margin2.top])
+				.paddingInner(0.05)
+
+			var x = d3.scaleLinear()
+				.domain([0,1])//[d3.min(series, stackMin), d3.max(series, stackMax)])
+				.rangeRound([margin2.left, width2-margin2.right]);
+
+			var z = d3.scaleOrdinal(d3.schemeCategory10);
+
+			svg2.append("g")
+			  .selectAll("g")
+			  .data(series)
+			  .enter().append("g")
+				.attr("fill", function(d) { return z(d.key); })
+				.attr("cat", function(d) { return d.key; })
+			  .selectAll("rect")
+			  .data(function(d) { return d; })
+			  .enter().append("rect")
+				.attr("height", y.bandwidth)
+				.attr("y", function(d) { return y(d.data.question); })
+				.attr("x", function(d) { return x(d[0]); })
+				.attr("width", function(d) { return x(d[1]) - x(d[0]); })
+				.attr('name', function(d) { return d.data.question; })
+				.attr("cat", function(d) { return d.data.key; })
+				.on('mouseover', function(){
+					dt = d3.select(this)
+					name = d3.select(this).attr(['name'])
+					cat = d3.select(this.parentNode).attr(['cat'])
+					dt.attr('opacity', .5)
+					test = cross[name][cat]					
+					test.forEach(function(x){
+						d3.select('[name="'+x+'"]').attr('fill', 'white')
+					})
+					
+					//d3.selectAll('[name="'KEN'"]')
+					
+					
+				})
+				.on('mouseout', function(){
+					dt = d3.select(this)
+					name = d3.select(this).attr(['name'])
+					cat = d3.select(this.parentNode).attr(['cat'])
+					dt.attr('opacity', 1)
+					test = cross[name][cat]					
+					test.forEach(function(x){
+						d3.select('[name="'+x+'"]').attr('fill', 'black')
+					})
+				})
+
+			svg2.append("g")
+				.attr("transform", "translate(0," + height2 + ")")
+				.call(d3.axisBottom(x));
+
+			svg2.append("g")
+				.attr("transform", "translate(" + margin2.left + ",0)")
+				.attr('class', 'yaxis')
+				.call(d3.axisLeft(y))
+			.selectAll(".tick text")
+				.call(wrap, margin2.left)
+			d3.selectAll('.yaxis')
+				.selectAll('.tick line')
+				.remove()
+			
+			function wrap(text, width) {
+			  text.each(function() {
+				var text = d3.select(this),
+					words = text.text().split(/\s+/).reverse(),
+					word,
+					line = [],
+					lineNumber = 0,
+					lineHeight = 1.1, // ems
+					y = text.attr("y"),
+					dy = parseFloat(text.attr("dy")),
+					tspan = text.text(null).append("tspan").attr("x", -5).attr("y", y).attr("dy", dy + "em");
+				while (word = words.pop()) {
+				  line.push(word);
+				  tspan.text(line.join(" "));
+				  if (tspan.node().getComputedTextLength() > width) {
+					line.pop();
+					tspan.text(line.join(" "));
+					line = [word];
+					tspan = text.append("tspan").attr("x", -5).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+				  }
+				}
+				
+			  });
+			}
+//-------------------------------------------------------------------------------------------------------			
+			
+			
+			d3.json("map.geo.json", function(d) {
+					map = d
+					
+					for(i=0; i<d.features.length; i++){
+						
+						if($.inArray(d.features[i].properties.name, addName)==-1)  {
+							addIso.push(d.features[i].id)
+							addName.push(d.features[i].properties.name)
+						}
+					}
+					
+					for(i=0; i<d.features.length; i++){
+						
+						if($.inArray(d.features[i].id, af)>=0)  {						
+							africa.features.push(d.features[i])
+						}
+						
+					}
+					
+					projection = d3.geoMercator()
+						   .translate([width/2, height/2])
+						   .scale([230]);
+					path = d3.geoPath()
+					   .projection(projection);
+					
+					svg.selectAll('path')
+					   .data(africa.features)
+					   .enter()
+					   .append('path')
+						  .attr('d', path)						
+						  .attr("stroke", "white")
+						  .attr("stroke-width", .5)
+						  .attr('fill','black')
+						  .attr('name', function(d){return d.id})
+						  .attr('opacity', 1)
+						 .on('mouseover', function(d){
+							ctry = d3.select(this).attr('name')							
+							d3.selectAll('[name="'+ctry+'"]').attr('fill','red')
+							
+							xcross[ctry].forEach(function(x, i){
+								d3.selectAll('[cat="'+[x.category]+'"] > [name="'+x.question+'"]').attr('fill', 'white')
+							})
+							
+						 
+						 })
+						 .on('mouseout', function(d){
+							ctry = d3.select(this).attr('name')							
+							d3.selectAll('[name="'+ctry+'"]').attr('fill','black')
+							
+							xcross[ctry].forEach(function(x, i){
+								d3.selectAll('[cat="'+[x.category]+'"] > [name="'+x.question+'"]').attr('fill', z(x.category))
+							})							
+						 
+						 })
+						
+				});
+			
+			
+			
+			var cross = {
+				'COMMODITY SALE DISCLOSURES': {
+					'Failing':["LBY"],
+					'Good':["KEN"]
+				
+				},
+				
+				'COMMODITY SALE RULES': {
+					'Failing':["MDG","NGA"],
+					'Good':["AGO","TZA","LBY"]					
+				}
+			}
+			
+			var xcross = {
+				'LBY': [
+					{'question':'COMMODITY SALE DISCLOSURES',
+					  'category':'Failing'},
+					{'question':'COMMODITY SALE RULES',
+					  'category':'Good'},
+					{'question':'SOE CORPORATE GOVERNANCE PRACTICE',
+					 'category':'Weak'}
+				]
+				
+				
+				
+			}
+					
+			
+		
+		
+		</script>
+	</body>
+
+
+</html>
