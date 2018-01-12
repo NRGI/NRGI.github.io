@@ -25,7 +25,7 @@
 				<!-- width: 300px; -->
 				<!-- height: 200px; -->
 				
-				width: 600px;
+				width: 800px;
 				height: 400px;
 				background-opacity: .5;
 				background-color: white
@@ -36,7 +36,7 @@
 
 	<body>
 		
-		<div style="width: 900px; overflow:hidden">
+		<div style="width: 1500px; overflow:hidden">
 			<div id="plot" ></div>
 			<div id="chart"></div>
 		</div>
@@ -89,10 +89,10 @@
 				
 			
 
-			var svg2 = d3.select("#chart").append('svg').attr('height', height).attr('width', 600),
-				margin2 = {top: 20, right: 30, bottom: 0, left: 150},
+			var svg2 = d3.select("#chart").append('svg').attr('height', height).attr('width', 800),
+				margin2 = {top: 20, right: 300, bottom: 0, left: 50},
 				width2 = +svg2.attr("width"),
-				height2 = 400//+svg2.attr("height");
+				height2 = 300//+svg2.attr("height");
 
 			var y = d3.scaleBand()
 				.domain(qs)//["COMMODITY SALE DISCLOSURES","COMMODITY SALE RULES","SOE CORPORATE GOVERNANCE PRACTICE"])//data.map(function(d) { return d.question; }))
@@ -154,9 +154,9 @@
 				.call(d3.axisBottom(x));
 
 			svg2.append("g")
-				.attr("transform", "translate(" + margin2.left + ",0)")
+				.attr("transform", "translate(" + 500 + ",0)")
 				.attr('class', 'yaxis')
-				.call(d3.axisLeft(y))
+				.call(d3.axisRight(y))
 			.selectAll(".tick text")
 				//.call(wrap, margin2.left)
 			d3.selectAll('.yaxis')
