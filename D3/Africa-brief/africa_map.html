@@ -28,7 +28,7 @@
 				width: 600px;
 				height: 400px;
 				background-opacity: .5;
-				background-color: #7977F4
+				background-color: white
 			}
 			
 		</style>
@@ -84,7 +84,7 @@
 			//				   {"question":"SOE CORPORATE GOVERNANCE PRACTICE","Failing":0.3258,"Good":0.2022,"NA":0.1685,"Poor":0,"Satisfactory":0.1124,"Weak":0.191}]
 
 			var series = d3.stack()
-				.keys(["Failing","Good","NA","Poor","Satisfactory","Weak"])
+				.keys(["NA", "Failing", "Weak", "Poor", "Satisfactory", "Good"])//["Failing","Good","NA","Poor","Satisfactory","Weak"])
 				(data);
 				
 			
@@ -92,7 +92,7 @@
 			var svg2 = d3.select("#chart").append('svg').attr('height', height).attr('width', 600),
 				margin2 = {top: 20, right: 30, bottom: 0, left: 150},
 				width2 = +svg2.attr("width"),
-				height2 = 300//+svg2.attr("height");
+				height2 = 400//+svg2.attr("height");
 
 			var y = d3.scaleBand()
 				.domain(qs)//["COMMODITY SALE DISCLOSURES","COMMODITY SALE RULES","SOE CORPORATE GOVERNANCE PRACTICE"])//data.map(function(d) { return d.question; }))
@@ -120,6 +120,7 @@
 				.attr("width", function(d) { return x(d[1]) - x(d[0]); })
 				.attr('name', function(d) { return d.data.question; })
 				.attr("cat", function(d) { return d.data.key; })
+				.attr('stroke', 'black')
 				.on('mouseover', function(){
 					dt = d3.select(this)
 					name = d3.select(this).attr(['name'])
@@ -157,7 +158,7 @@
 				.attr('class', 'yaxis')
 				.call(d3.axisLeft(y))
 			.selectAll(".tick text")
-				.call(wrap, margin2.left)
+				//.call(wrap, margin2.left)
 			d3.selectAll('.yaxis')
 				.selectAll('.tick line')
 				.remove()
