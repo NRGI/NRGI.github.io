@@ -90,7 +90,7 @@
 			
 
 			var svg2 = d3.select("#chart").append('svg').attr('height', height).attr('width', 800),
-				margin2 = {top: 20, right: 300, bottom: 0, left: 50},
+				margin2 = {top: 50, right: 300, bottom: 0, left: 50},
 				width2 = +svg2.attr("width"),
 				height2 = 300//+svg2.attr("height");
 
@@ -114,7 +114,7 @@
 			  .selectAll("rect")
 			  .data(function(d) { return d; })
 			  .enter().append("rect")
-				.attr("height", y.bandwidth)
+				.attr("height", 10)//y.bandwidth)
 				.attr("y", function(d) { return y(d.data.question); })
 				.attr("x", function(d) { return x(d[0]); })
 				.attr("width", function(d) { return x(d[1]) - x(d[0]); })
