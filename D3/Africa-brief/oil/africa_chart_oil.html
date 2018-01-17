@@ -111,7 +111,7 @@
 				.paddingInner(0.05)
 
 			var x = d3.scaleLinear()
-				.domain([0,1])
+				.domain([0,100])
 				.rangeRound([margin2.left, width2-margin2.right])
 
 			var z = d3.scaleOrdinal(["#bfbfbf","#c00000","#ed7d31","#ffe699","#a9d18e","#385723"].reverse())
@@ -176,7 +176,7 @@
 
 			svg2.append("g")
 				.attr("transform", "translate(0," + height2 + ")")
-				.call(d3.axisBottom(x).tickFormat(d3.format(".0%")))
+				.call(d3.axisBottom(x))//.tickFormat(d3.format(".0%")))
 
 			svg2.append("g")
 				.attr("transform", "translate(" + 500 + ",0)")
