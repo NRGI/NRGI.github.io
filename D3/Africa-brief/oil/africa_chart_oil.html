@@ -55,7 +55,7 @@
 		<script type="text/javascript" src="oil_xcross.json"></script>
 		<script>
 			var margin = {top:40, bottom:40, left:-40, right:100}
-			var width = 100 - margin.left - margin.right
+			var width = 190 - margin.left - margin.right
 			var height = 400 - margin.top - margin.bottom
 			
 			var svg = d3.select('#plot')//.append('div')
@@ -64,7 +64,7 @@
 							//.attr('height', height + margin.top + margin.bottom)
 						//.append('g')
 							//.attr('transform','translate('+margin.left+','+margin.top+')')	
-						.append('ul').attr('id', 'listy')
+						.append('ul').attr('id', 'listy')//.attr('style', 'padding-top:50px')
 			
 			
 			
@@ -101,7 +101,7 @@
 			
 
 			var svg2 = d3.select("#chart").append('svg').attr('height', height + margin.top + margin.bottom).attr('width', 800),
-				margin2 = {top: 50, right: 300, bottom: 0, left: 50},
+				margin2 = {top: 50, right: 300, bottom: 0, left: 10},
 				width2 = +svg2.attr("width"),
 				height2 = 300
 
@@ -146,9 +146,10 @@
 						list.push(codelist.filter(function(j){ return j['alpha-3']==x})[0].name)
 					})
 					
-					//console.log(list)
 					
-					svg//.append('ul').selectAll('li')
+					
+					d3.select('#listy')
+							.attr('style', 'margin-top:' + ((list.length * -5) + 90) + 'px')
 						.selectAll('li')
 						.data(list)
 						.enter()
@@ -232,7 +233,7 @@
 					.selectAll("g")
 					.data(keys2.slice())
 					.enter().append("g")
-					  .attr("transform", function(d, i) { dsum = dsum+d.length; console.log(dsum); return "translate(" + ((i * 50) + (dsum*3.2) +220) + ", 0)"; });
+					  .attr("transform", function(d, i) { dsum = dsum+d.length; console.log(dsum); return "translate(" + ((i * 50) + (dsum*3.2) + 105) + ", 0)"; });
               
 			    legend.append("rect")
 			  	  .attr("x", width - 19)
