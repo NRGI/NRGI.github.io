@@ -1,1 +1,1561 @@
-xcross = {"DZA":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Good"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Poor"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Poor"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Failing"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Good"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Good"]},{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Weak"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Satisfactory"]}],"AGO":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Good"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Poor"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Failing"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Good"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Good"]},{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Poor"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"CMR":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Good"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Poor"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Weak"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Poor"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Good"]},{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Poor"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Poor"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"TCD":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Weak"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Failing"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Failing"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Good"]},{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Satisfactory"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Satisfactory"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"COG":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Weak"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Satisfactory"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Poor"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Failing"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Good"]},{"question":["COMMODITY SALE RULES"],"category":["Weak"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"CIV":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Weak"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Good"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Poor"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Good"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Good"]},{"question":["COMMODITY SALE RULES"],"category":["Weak"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Good"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"COD":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Failing"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Failing"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Failing"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["NA"]},{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Poor"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"EGY":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Good"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Satisfactory"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Failing"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Failing"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Weak"]},{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"GNQ":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Failing"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Poor"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Failing"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Failing"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Failing"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Failing"]},{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"GAB":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Failing"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Failing"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Failing"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Failing"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Failing"]},{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"GHA":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Good"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Satisfactory"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Satisfactory"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Good"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Good"]},{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Weak"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Good"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"LBY":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Good"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Weak"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Poor"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Failing"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Failing"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Failing"]},{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Poor"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"MOZ":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Failing"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Satisfactory"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Failing"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Good"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Weak"]},{"question":["COMMODITY SALE RULES"],"category":["Good"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Weak"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"NGA":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Good"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Poor"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Failing"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Failing"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Good"]},{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Poor"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Poor"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"SSD":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Good"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Failing"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Satisfactory"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["NA"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Failing"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Failing"]},{"question":["COMMODITY SALE RULES"],"category":["Weak"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"SDN":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Failing"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Failing"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Poor"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Failing"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Failing"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Failing"]},{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Satisfactory"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"TZA":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Good"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Good"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Good"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Failing"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Good"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["NA"]},{"question":["COMMODITY SALE RULES"],"category":["Weak"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Weak"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"TUN":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Good"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["Weak"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Satisfactory"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["Weak"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["Good"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["Good"]},{"question":["COMMODITY SALE RULES"],"category":["Good"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["Satisfactory"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Satisfactory"]}],"UGA":[{"question":["SOE-GOVERNMENT TRANSFERS RULES"],"category":["Failing"]},{"question":["SOE-GOVERNMENT TRANSFERS DISCLOSURE"],"category":["NA"]},{"question":["SOE FINANCIAL REPORTING RULES"],"category":["Failing"]},{"question":["SOE NON-COMMERCIAL ACTIVITY PRACTICE"],"category":["NA"]},{"question":["SOE FINANCIAL REPORTING PRACTICE"],"category":["NA"]},{"question":["SOE PRODUCTION DISCLOSURE"],"category":["NA"]},{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}]}
+xcross = {
+    "DZA": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Satisfactory"
+            ]
+        }
+    ],
+    "AGO": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        }
+    ],
+    "CMR": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        }
+    ],
+    "TCD": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Satisfactory"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Satisfactory"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        }
+    ],
+    "COG": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Satisfactory"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        }
+    ],
+    "CIV": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        }
+    ],
+    "COD": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "NA"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        }
+    ],
+    "EGY": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Satisfactory"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        }
+    ],
+    "GNQ": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        }
+    ],
+    "GAB": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        }
+    ],
+    "GHA": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Satisfactory"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Satisfactory"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        }
+    ],
+    "LBY": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        }
+    ],
+    "MOZ": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Satisfactory"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        }
+    ],
+    "NGA": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        }
+    ],
+    "SSD": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Satisfactory"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "NA"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "NA"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        }
+    ],
+    "SDN": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Poor"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Satisfactory"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        }
+    ],
+    "TZA": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "NA"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        }
+    ],
+    "TUN": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Satisfactory"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Good"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "Satisfactory"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Satisfactory"
+            ]
+        }
+    ],
+    "UGA": [
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE-GOVERNMENT TRANSFERS DISCLOSURE"
+            ],
+            "category": [
+                "NA"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "SOE NON-COMMERCIAL ACTIVITY PRACTICE"
+            ],
+            "category": [
+                "NA"
+            ]
+        },
+        {
+            "question": [
+                "SOE FINANCIAL REPORTING PRACTICE"
+            ],
+            "category": [
+                "NA"
+            ]
+        },
+        {
+            "question": [
+                "SOE PRODUCTION DISCLOSURE"
+            ],
+            "category": [
+                "NA"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE RULES"
+            ],
+            "category": [
+                "Failing"
+            ]
+        },
+        {
+            "question": [
+                "COMMODITY SALE DISCLOSURES"
+            ],
+            "category": [
+                "NA"
+            ]
+        },
+        {
+            "question": [
+                "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE"
+            ],
+            "category": [
+                "NA"
+            ]
+        },
+        {
+            "question": [
+                "SOE CORPORATE GOVERNANCE PRACTICE"
+            ],
+            "category": [
+                "Weak"
+            ]
+        }
+    ]
+}
+

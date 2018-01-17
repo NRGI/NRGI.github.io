@@ -1,1 +1,93 @@
-data = [{"question":"COMMODITY SALE DISCLOSURES","Failing":63.1579,"Good":0,"NA":10.5263,"Poor":15.7895,"Satisfactory":5.2632,"Weak":5.2632},{"question":"COMMODITY SALE RULES","Failing":68.4211,"Good":10.5263,"NA":0,"Poor":0,"Satisfactory":0,"Weak":21.0526},{"question":"SOE CORPORATE GOVERNANCE PRACTICE","Failing":57.8947,"Good":0,"NA":0,"Poor":0,"Satisfactory":10.5263,"Weak":31.5789},{"question":"SOE FINANCIAL REPORTING PRACTICE","Failing":52.6316,"Good":36.8421,"NA":5.2632,"Poor":5.2632,"Satisfactory":0,"Weak":0},{"question":"SOE FINANCIAL REPORTING RULES","Failing":26.3158,"Good":10.5263,"NA":0,"Poor":31.5789,"Satisfactory":31.5789,"Weak":0},{"question":"SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE","Failing":31.5789,"Good":10.5263,"NA":5.2632,"Poor":21.0526,"Satisfactory":15.7895,"Weak":15.7895},{"question":"SOE NON-COMMERCIAL ACTIVITY PRACTICE","Failing":47.3684,"Good":15.7895,"NA":10.5263,"Poor":10.5263,"Satisfactory":5.2632,"Weak":10.5263},{"question":"SOE PRODUCTION DISCLOSURE","Failing":26.3158,"Good":47.3684,"NA":15.7895,"Poor":0,"Satisfactory":0,"Weak":10.5263},{"question":"SOE-GOVERNMENT TRANSFERS DISCLOSURE","Failing":15.7895,"Good":57.8947,"NA":5.2632,"Poor":10.5263,"Satisfactory":0,"Weak":10.5263},{"question":"SOE-GOVERNMENT TRANSFERS RULES","Failing":31.5789,"Good":52.6316,"NA":0,"Poor":0,"Satisfactory":0,"Weak":15.7895}]
+data = [
+    {
+        "question": "COMMODITY SALE DISCLOSURES",
+        "Failing": 63.1579,
+        "Good": 0,
+        "NA": 10.5263,
+        "Poor": 15.7895,
+        "Satisfactory": 5.2632,
+        "Weak": 5.2632
+    },
+    {
+        "question": "COMMODITY SALE RULES",
+        "Failing": 68.4211,
+        "Good": 10.5263,
+        "NA": 0,
+        "Poor": 0,
+        "Satisfactory": 0,
+        "Weak": 21.0526
+    },
+    {
+        "question": "SOE CORPORATE GOVERNANCE PRACTICE",
+        "Failing": 57.8947,
+        "Good": 0,
+        "NA": 0,
+        "Poor": 0,
+        "Satisfactory": 10.5263,
+        "Weak": 31.5789
+    },
+    {
+        "question": "SOE FINANCIAL REPORTING PRACTICE",
+        "Failing": 52.6316,
+        "Good": 36.8421,
+        "NA": 5.2632,
+        "Poor": 5.2632,
+        "Satisfactory": 0,
+        "Weak": 0
+    },
+    {
+        "question": "SOE FINANCIAL REPORTING RULES",
+        "Failing": 26.3158,
+        "Good": 10.5263,
+        "NA": 0,
+        "Poor": 31.5789,
+        "Satisfactory": 31.5789,
+        "Weak": 0
+    },
+    {
+        "question": "SOE JOINT VENTURES AND SUBSIDIARIES DISCLOSURE",
+        "Failing": 31.5789,
+        "Good": 10.5263,
+        "NA": 5.2632,
+        "Poor": 21.0526,
+        "Satisfactory": 15.7895,
+        "Weak": 15.7895
+    },
+    {
+        "question": "SOE NON-COMMERCIAL ACTIVITY PRACTICE",
+        "Failing": 47.3684,
+        "Good": 15.7895,
+        "NA": 10.5263,
+        "Poor": 10.5263,
+        "Satisfactory": 5.2632,
+        "Weak": 10.5263
+    },
+    {
+        "question": "SOE PRODUCTION DISCLOSURE",
+        "Failing": 26.3158,
+        "Good": 47.3684,
+        "NA": 15.7895,
+        "Poor": 0,
+        "Satisfactory": 0,
+        "Weak": 10.5263
+    },
+    {
+        "question": "SOE-GOVERNMENT TRANSFERS DISCLOSURE",
+        "Failing": 15.7895,
+        "Good": 57.8947,
+        "NA": 5.2632,
+        "Poor": 10.5263,
+        "Satisfactory": 0,
+        "Weak": 10.5263
+    },
+    {
+        "question": "SOE-GOVERNMENT TRANSFERS RULES",
+        "Failing": 31.5789,
+        "Good": 52.6316,
+        "NA": 0,
+        "Poor": 0,
+        "Satisfactory": 0,
+        "Weak": 15.7895
+    }
+]
+
