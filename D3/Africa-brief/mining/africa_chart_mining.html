@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="utf-8">
+		<title>RGI AFRICA SOE MINING</title>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<style>
+			html {
+				font-family: "Open Sans",Helvetica,Arial,sans-serif
+			}
+			
+			#plot {
+				<!-- top: 0px; -->
+				<!-- height: 200px; -->
+				<!-- width: 300px; -->
+				<!-- float: left -->
+				width: 300px;
+				height: 400px;
+				float: left;
+				background-opacity: .5;
+				background-color: white;
+			}
+			
+			#chart {
+				<!-- width: 300px; -->
+				<!-- height: 200px; -->
+				
+				width: 800px;
+				height: 400px;
+				background-opacity: .5;
+				background-color: white
+			}
+			
+			#title {
+				padding-left: 40px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		
+		<div id="title"><h1>SOE governance scores by indicator: mining</h1></div>
+		<div style="width: 1500px; overflow:hidden">
+			<div id="plot" ></div>
+			<div id="chart"></div>
+		</div>
+		
+		<script type="text/javascript" src="mining_cross.json"></script>
+		<script type="text/javascript" src="countrycodes.json"></script>
+		<script type="text/javascript" src="rgi_mining.json"></script>
+		<script type="text/javascript" src="mining_xcross.json"></script>
+		<script>
+			var margin = {top:40, bottom:40, left:-40, right:100}
+			var width = 100 - margin.left - margin.right
+			var height = 400 - margin.top - margin.bottom
+			
+			var svg = d3.select('#plot')//.append('div')
+							.attr('style', 'width:'+(width + margin.left + margin.right)+'px')
+							//.attr('width', width + margin.left + margin.right)
+							//.attr('height', height + margin.top + margin.bottom)
+						//.append('g')
+							//.attr('transform','translate('+margin.left+','+margin.top+')')	
+						.append('ul').attr('id', 'listy')
+			
+			
+			
+			var tooltip = d3.select("body")
+										.append("div")
+										.attr('class','tooltip')
+										.style('color','black')
+										.style("position", "absolute")
+										.style("z-index", "10")
+										.style('visibility', 'hidden')
+			
+			
+			var addName = [], addIso = []
+			var af = ["DZA", "AGO", "SHN", "BEN", "BWA", "BFA", "BDI", "ESH", "CMR", "CPV", "CAF", "TCD", "COM", "COG", "COD", "DJI", "EGY", "GNQ", "ERI", "ETH", "GAB", "GMB", "GHA", "GIN", "GNB", "CIV", "KEN", "LSO", "LBR", "LBY", "MDG", "MWI", "MLI", "MRT", "MUS", "MYT", "MAR", "MOZ", "NAM", "NER", "NGA", "STP", "REU", "RWA", "STP", "SEN", "SYC", "SLE", "SOM", "ZAF", "SSD", "SHN", "SDN", "SWZ", "TZA", "TGO", "TUN", "UGA", "COD", "ZMB", "TZA", "ZWE"]
+			var africa = {"type":"FeatureCollection","features":[]}
+			var test
+			var cat
+			var countryFill = ["#e2c600"]
+			var qs = []
+			
+			data.forEach(function(x){qs.push(x.question)})
+//-------------------------------------------------------------------------------------------------------	
+//Chart		
+			
+			
+			//var data = [{"question":"COMMODITY SALE DISCLOSURES","Failing":0.5843,"Good":0.0112,"NA":0.2472,"Poor":0.1124,"Satisfactory":0.0112,"Weak":0.0337},
+			//				   {"question":"COMMODITY SALE RULES","Failing":0.5618,"Good":0.1011,"NA":0.1798,"Poor":0.0562,"Satisfactory":0.0225,"Weak":0.0787},
+			//				   {"question":"SOE CORPORATE GOVERNANCE PRACTICE","Failing":0.3258,"Good":0.2022,"NA":0.1685,"Poor":0,"Satisfactory":0.1124,"Weak":0.191}]
+
+			var series = d3.stack()
+				.keys(["NA", "Failing", "Weak", "Poor", "Satisfactory", "Good"].reverse())//["Failing","Good","NA","Poor","Satisfactory","Weak"])
+				(data);
+				
+			
+
+			var svg2 = d3.select("#chart").append('svg').attr('height', height + margin.top + margin.bottom).attr('width', 800),
+				margin2 = {top: 50, right: 300, bottom: 0, left: 50},
+				width2 = +svg2.attr("width"),
+				height2 = 300
+
+			var y = d3.scaleBand()
+				.domain(qs)
+				.range([height2 - margin2.bottom, margin2.top])
+				.paddingInner(0.05)
+
+			var x = d3.scaleLinear()
+				.domain([0,1])
+				.rangeRound([margin2.left, width2-margin2.right])
+
+			var z = d3.scaleOrdinal(["#bfbfbf","#c00000","#ed7d31","#ffe699","#a9d18e","#385723"].reverse())
+
+			svg2.append("g")
+			  .selectAll("g")
+			  .data(series)
+			  .enter().append("g")
+				.attr("fill", function(d) { return z(d.key); })
+				.attr("cat", function(d) { return d.key; })
+			  .selectAll("rect")
+			  .data(function(d) { return d; })
+			  .enter().append("rect")
+				.attr("height", 10)//y.bandwidth)
+				.attr("y", function(d) { return y(d.data.question); })
+				.attr("x", function(d) { return x(d[0]); })
+				.attr("width", function(d) { return x(d[1]) - x(d[0]); })
+				.attr('name', function(d) { return d.data.question; })
+				.attr("cat", function(d) { return d.data.key; })
+				.attr('stroke', 'black')
+				.on('mouseover', function(){
+					dt = d3.select(this)
+					name = d3.select(this).attr(['name'])
+					cat = d3.select(this.parentNode).attr(['cat'])
+					dt.attr('fill', 'white')
+					
+					test = cross[name][cat]
+					list = []
+					
+					test.forEach(function(x){
+						d3.select('[name="'+x+'"]').attr('fill', 'white')
+						list.push(codelist.filter(function(j){ return j['alpha-3']==x})[0].name)
+					})
+					
+					//console.log(list)
+					
+					svg//.append('ul').selectAll('li')
+						.selectAll('li')
+						.data(list)
+						.enter()
+						.append('li')
+						.html(String)
+					
+					
+				})
+				.on('mouseout', function(){
+					dt = d3.select(this)
+					name = d3.select(this).attr(['name'])
+					cat = d3.select(this.parentNode).attr(['cat'])
+					dt.attr('fill', z(cat))
+					
+					
+					test = cross[name][cat]
+					test.forEach(function(x){
+						d3.select('[name="'+x+'"]').attr('fill', countryFill	)
+					})
+					
+					d3.selectAll('li').remove()
+					
+				})
+
+			svg2.append("g")
+				.attr("transform", "translate(0," + height2 + ")")
+				.call(d3.axisBottom(x).tickFormat(d3.format(".0%")))
+
+			svg2.append("g")
+				.attr("transform", "translate(" + 500 + ",0)")
+				.attr('class', 'yaxis')
+				.call(d3.axisRight(y))
+			.selectAll(".tick text")
+				//.call(wrap, margin2.left)
+			d3.selectAll('.yaxis')
+				.selectAll('.tick line')
+				.remove()
+			
+			d3.selectAll(".yaxis>.tick>text").attr('transform', 'translate(0, -7)')
+			
+			svg2.append("text")             
+				.attr("transform", "translate(" + (200) + " ," +  (height2 + 50) + ")")
+				.style("text-anchor", "right")
+				.text("Share of assesments (%)");
+			
+			function wrap(text, width) {
+			  text.each(function() {
+				var text = d3.select(this),
+					words = text.text().split(/\s+/).reverse(),
+					word,
+					line = [],
+					lineNumber = 0,
+					lineHeight = 1.1, // ems
+					y = text.attr("y"),
+					dy = parseFloat(text.attr("dy")),
+					tspan = text.text(null).append("tspan").attr("x", -5).attr("y", y).attr("dy", dy + "em");
+				while (word = words.pop()) {
+				  line.push(word);
+				  tspan.text(line.join(" "));
+				  if (tspan.node().getComputedTextLength() > width) {
+					line.pop();
+					tspan.text(line.join(" "));
+					line = [word];
+					tspan = text.append("tspan").attr("x", -5).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+				  }
+				}
+				
+			  });
+			}
+			
+			
+			var keys2 = ["NA", "Failing", "Weak", "Poor", "Satisfactory", "Good"].reverse()
+			var dsum = 0
+			
+			var legend = svg2.append("g")
+					  .attr("transform", "translate(" + -150 + ",0)")
+					  .attr("font-family", "sans-serif")
+					  .attr("font-size", 10)
+					  .attr("text-anchor", "end")
+					.selectAll("g")
+					.data(keys2.slice())
+					.enter().append("g")
+					  .attr("transform", function(d, i) { dsum = dsum+d.length; console.log(dsum); return "translate(" + ((i * 50) + (dsum*3.2) +220) + ", 0)"; });
+              
+			    legend.append("rect")
+			  	  .attr("x", width - 19)
+			  	  .attr("width", 19)
+			  	  .attr("height", 19)
+			  	  .attr("fill", z);
+              
+			    legend.append("text")
+			  	  .attr("x", width - 24)
+			  	  .attr("y", 9.5)
+			  	  .attr("dy", "0.32em")
+			  	  .text(function(d) { return d; });
+//-------------------------------------------------------------------------------------------------------			
+			
+			
+			
+			
+		//
+		//
+		////countries w/ RGI scores to be differentiated on map
+		//
+		//Object.keys(xcross)
+		//
+		//
+		//
+		//d3.json("map.geo.json", function(d) {
+		//		map = d
+		//		
+		//		for(i=0; i<d.features.length; i++){
+		//			
+		//			if($.inArray(d.features[i].properties.name, addName)==-1)  {
+		//				addIso.push(d.features[i].id)
+		//				addName.push(d.features[i].properties.name)
+		//			}
+		//		}
+		//		
+		//		for(i=0; i<d.features.length; i++){
+		//			
+		//			if($.inArray(d.features[i].id, af)>=0)  {						
+		//				africa.features.push(d.features[i])
+		//			}
+		//			
+		//		}
+		//		
+		//		projection = d3.geoMercator()
+		//			   .translate([width/2, height/2])
+		//			   .scale([230]);
+		//		path = d3.geoPath()
+		//		   .projection(projection);
+		//		
+		//		svg.selectAll('path')
+		//		   .data(africa.features)
+		//		   .enter()
+		//		   .append('path')
+		//			  .attr('d', path)						
+		//			  .attr("stroke", "black")
+		//			  .attr("stroke-width", .5)
+		//			  .attr('fill', countryFill)
+		//			  .attr('name', function(d){return d.id})
+		//			  .attr('opacity', .5)
+		//			 .on('mouseover', function(d){
+		//				ctry = d3.select(this).attr('name')							
+		//				d3.selectAll('[name="'+ctry+'"]').attr('fill','red')
+		//				
+		//				xcross[ctry].forEach(function(x, i){
+		//					d3.selectAll('[cat="'+[x.category]+'"] > [name="'+x.question+'"]').attr('fill', 'white')
+		//				})
+		//				
+		//			 
+		//			 })
+		//			 .on('mouseout', function(d){
+		//				ctry = d3.select(this).attr('name')							
+		//				d3.selectAll('[name="'+ctry+'"]').attr('fill', countryFill)
+		//				
+		//				xcross[ctry].forEach(function(x, i){
+		//					d3.selectAll('[cat="'+[x.category]+'"] > [name="'+x.question+'"]').attr('fill', z(x.category))
+		//				})							
+		//			 
+		//			 })
+		//			 
+		//		Object.keys(xcross).forEach(function(x){
+		//			d3.select('[name="'+x+'"]').attr('opacity', 1)
+		//		})
+		//			
+		//	});
+		//
+		//
+			//var cross = {"COMMODITY SALE RULES":{"NA":["AFG","AUS","BFA","KHM","CAN","GTM","LAO","LBR","MLI","PER","SLE","GBR","USA","ZMB"],"Failing":["DZA","AGO","AZE","BHR","BWA","BRA","CMR","TCD","CHN","CUB","ECU","EGY","GNQ","ERI","ETH","GAB","GIN","IRN","KAZ","KGZ","LBY","MDG","MYS","MRT","MNG","NER","NGA","NOR","PHL","QAT","RUS","SAU","SDN","TLS","TTO","TKM","UGA","ARE","VEN","ZWE"],"Poor":["BGD","IND","PNG","VNM"],"Weak":["COG","CIV","KWT","SSD","UZB"],"Satisfactory":["BOL","UKR"],"Good":["ARG","CHL","IRQ","MAR","MOZ","OMN","ZAF","YEM"]},"COMMODITY SALE DISCLOSURES":{"NA":["AFG","AUS","BFA","KHM","CAN","CUB","ERI","GTM","IND","LAO","LBR","MLI","PER","SLE","SSD","TLS","UGA","GBR","USA","VNM"],"Failing":["DZA","ARG","BHR","BWA","BRA","CHL","CHN","COG","CIV","ECU","EGY","GNQ","ETH","GAB","GIN","IRN","KAZ","KWT","KGZ","LBY","MDG","MYS","MRT","MNG","MAR","MOZ","NER","NOR","OMN","PNG","PHL","QAT","RUS","SAU","SDN","TTO","TKM","ARE","UZB","VEN"],"Poor":["AGO","AZE","BGD","BOL","CMR","NGA","ZAF","UKR","ZWE"],"Weak":["IRQ","ZMB"],"Satisfactory":["TCD"],"Good":["YEM"]},"SOE CORPORATE GOVERNANCE PRACTICE":{"NA":["AFG","AUS","BFA","KHM","CAN","GTM","LAO","LBR","MLI","PER","SLE","GBR","USA"],"Failing":["BGD","CMR","TCD","COG","CIV","CUB","EGY","GNQ","ERI","ETH","GAB","GIN","KGZ","MDG","MRT","MNG","NER","NGA","SAU","SSD","SDN","TKM","UZB","YEM"],"Poor":[],"Weak":["AGO","BHR","LBY","MOZ","PNG","QAT","TLS","TTO","UGA","VEN","VNM","ZMB","ZWE"],"Satisfactory":["DZA","ARG","BOL","ECU","MAR","PHL","RUS","ARE"],"Good":["AZE","BWA","BRA","CHL","CHN","IND","IRN","IRQ","KAZ","KWT","MYS","NOR","OMN","ZAF","UKR"]}}
+			//var xcross = {"AFG":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["NA"]}],"DZA":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Satisfactory"]}],"AGO":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Poor"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"ARG":[{"question":["COMMODITY SALE RULES"],"category":["Good"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Satisfactory"]}],"AUS":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["NA"]}],"AZE":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Poor"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"BHR":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"BGD":[{"question":["COMMODITY SALE RULES"],"category":["Poor"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Poor"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"BOL":[{"question":["COMMODITY SALE RULES"],"category":["Satisfactory"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Poor"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Satisfactory"]}],"BWA":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"BRA":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"BFA":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["NA"]}],"KHM":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["NA"]}],"CMR":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Poor"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"CAN":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["NA"]}],"TCD":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Satisfactory"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"CHL":[{"question":["COMMODITY SALE RULES"],"category":["Good"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"CHN":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"COG":[{"question":["COMMODITY SALE RULES"],"category":["Weak"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"CIV":[{"question":["COMMODITY SALE RULES"],"category":["Weak"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"CUB":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"ECU":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Satisfactory"]}],"EGY":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"GNQ":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"ERI":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"ETH":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"GAB":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"GTM":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["NA"]}],"GIN":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"IND":[{"question":["COMMODITY SALE RULES"],"category":["Poor"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"IRN":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"IRQ":[{"question":["COMMODITY SALE RULES"],"category":["Good"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Weak"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"KAZ":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"KWT":[{"question":["COMMODITY SALE RULES"],"category":["Weak"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"KGZ":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"LAO":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["NA"]}],"LBR":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["NA"]}],"LBY":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"MDG":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"MYS":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"MLI":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["NA"]}],"MRT":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"MNG":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"MAR":[{"question":["COMMODITY SALE RULES"],"category":["Good"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Satisfactory"]}],"MOZ":[{"question":["COMMODITY SALE RULES"],"category":["Good"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"NER":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"NGA":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Poor"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"NOR":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"OMN":[{"question":["COMMODITY SALE RULES"],"category":["Good"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"PNG":[{"question":["COMMODITY SALE RULES"],"category":["Poor"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"PER":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["NA"]}],"PHL":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Satisfactory"]}],"QAT":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"RUS":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Satisfactory"]}],"SAU":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"SLE":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["NA"]}],"ZAF":[{"question":["COMMODITY SALE RULES"],"category":["Good"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Poor"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"SSD":[{"question":["COMMODITY SALE RULES"],"category":["Weak"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"SDN":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"TLS":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"TTO":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"TKM":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"UGA":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"UKR":[{"question":["COMMODITY SALE RULES"],"category":["Satisfactory"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Poor"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Good"]}],"ARE":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Satisfactory"]}],"GBR":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["NA"]}],"USA":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["NA"]}],"UZB":[{"question":["COMMODITY SALE RULES"],"category":["Weak"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"VEN":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Failing"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"VNM":[{"question":["COMMODITY SALE RULES"],"category":["Poor"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["NA"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"YEM":[{"question":["COMMODITY SALE RULES"],"category":["Good"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Good"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Failing"]}],"ZMB":[{"question":["COMMODITY SALE RULES"],"category":["NA"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Weak"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}],"ZWE":[{"question":["COMMODITY SALE RULES"],"category":["Failing"]},{"question":["COMMODITY SALE DISCLOSURES"],"category":["Poor"]},{"question":["SOE CORPORATE GOVERNANCE PRACTICE"],"category":["Weak"]}]}
+			//var cross = {
+			//	'COMMODITY SALE DISCLOSURES': {
+			//		'Failing':["LBY"],
+			//		'Good':["KEN"]
+			//	
+			//	},
+			//	
+			//	'COMMODITY SALE RULES': {
+			//		'Failing':["MDG","NGA"],
+			//		'Good':["AGO","TZA","LBY"]					
+			//	}
+			//}
+			
+			//var xcross = {
+			//	'LBY': [
+			//		{'question':'COMMODITY SALE DISCLOSURES',
+			//		  'category':'Failing'},
+			//		{'question':'COMMODITY SALE RULES',
+			//		  'category':'Good'},
+			//		{'question':'SOE CORPORATE GOVERNANCE PRACTICE',
+			//		 'category':'Weak'}
+			//	]
+			//	
+			//	
+			//	
+			//}
+					
+			
+		
+		
+		</script>
+	</body>
+
+
+</html>
